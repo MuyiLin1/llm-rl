@@ -1,0 +1,285 @@
+{
+ "updated": "2026-10-08 23:31:36",
+ "workers": 3,
+ "chains": [
+  {
+   "name": "BERT Tier 1+3",
+   "stage": "finished",
+   "specs_done": 30,
+   "specs_total": 30,
+   "batches_pending": 0,
+   "batches_running": 0
+  },
+  {
+   "name": "BGE Tier 1+3",
+   "stage": "finished",
+   "specs_done": 60,
+   "specs_total": 60,
+   "batches_pending": 0,
+   "batches_running": 0
+  },
+  {
+   "name": "BERT Tier 2",
+   "stage": "finished",
+   "specs_done": 30,
+   "specs_total": 30,
+   "batches_pending": 0,
+   "batches_running": 0
+  },
+  {
+   "name": "BERT exploration sweep",
+   "stage": "finished",
+   "specs_done": 200,
+   "specs_total": 200,
+   "batches_pending": 0,
+   "batches_running": 0
+  },
+  {
+   "name": "Skew 30%",
+   "stage": "finished",
+   "specs_done": 40,
+   "specs_total": 40,
+   "batches_pending": 0,
+   "batches_running": 0
+  },
+  {
+   "name": "Skew 20%",
+   "stage": "finished",
+   "specs_done": 40,
+   "specs_total": 40,
+   "batches_pending": 0,
+   "batches_running": 0
+  },
+  {
+   "name": "Skew 10%",
+   "stage": "finished",
+   "specs_done": 40,
+   "specs_total": 40,
+   "batches_pending": 0,
+   "batches_running": 0
+  },
+  {
+   "name": "Skew 05%",
+   "stage": "finished",
+   "specs_done": 40,
+   "specs_total": 40,
+   "batches_pending": 0,
+   "batches_running": 0
+  }
+ ],
+ "selections": {
+  "bert_S1_rank": [
+   [
+    "fast",
+    0.05,
+    0.11342400000000001
+   ],
+   [
+    "slow",
+    0.01,
+    0.10464
+   ],
+   [
+    "slow",
+    0.1,
+    0.10421799999999999
+   ],
+   [
+    "slow",
+    0.05,
+    0.103702
+   ],
+   [
+    "const",
+    0.2,
+    0.102396
+   ],
+   [
+    "const",
+    1.0,
+    0.10081599999999999
+   ],
+   [
+    "fast",
+    0.01,
+    0.09687599999999999
+   ],
+   [
+    "slow",
+    0.5,
+    0.09488200000000001
+   ],
+   [
+    "fast",
+    0.5,
+    0.094794
+   ],
+   [
+    "const",
+    0.01,
+    0.09355
+   ],
+   [
+    "slow",
+    0.2,
+    0.08421599999999999
+   ],
+   [
+    "fast",
+    0.1,
+    0.082816
+   ],
+   [
+    "const",
+    0.5,
+    0.077686
+   ],
+   [
+    "const",
+    0.05,
+    0.076184
+   ],
+   [
+    "fast",
+    0.2,
+    0.073484
+   ],
+   [
+    "const",
+    0.1,
+    0.065082
+   ]
+  ],
+  "bert_S2_lambda": {
+   "('fast', 0.05, 0.1)": 0.11342400000000001,
+   "('fast', 0.05, 0.01)": 0.074962,
+   "('fast', 0.05, 1.0)": 0.10296799999999999,
+   "('fast', 0.05, 10.0)": 0.08696200000000001
+  },
+  "bert_cold_best": [
+   "fast",
+   0.05,
+   0.1
+  ],
+  "bert_S4_c": {
+   "10": 0.18772199999999997,
+   "100": 0.2091926666666667,
+   "1000": 0.21208200000000002
+  },
+  "bert_router_c_at_best": 1000.0,
+  "bge_S1_rank": [
+   [
+    "const",
+    0.2,
+    0.35849600000000004
+   ],
+   [
+    "const",
+    0.01,
+    0.355592
+   ],
+   [
+    "const",
+    0.1,
+    0.354598
+   ],
+   [
+    "slow",
+    0.01,
+    0.352062
+   ],
+   [
+    "slow",
+    0.1,
+    0.35030799999999995
+   ],
+   [
+    "const",
+    0.5,
+    0.34954
+   ],
+   [
+    "fast",
+    0.01,
+    0.34925
+   ],
+   [
+    "slow",
+    0.05,
+    0.34855
+   ],
+   [
+    "fast",
+    0.1,
+    0.347676
+   ],
+   [
+    "fast",
+    0.05,
+    0.347154
+   ],
+   [
+    "slow",
+    0.5,
+    0.34079999999999994
+   ],
+   [
+    "fast",
+    0.5,
+    0.339706
+   ],
+   [
+    "slow",
+    0.2,
+    0.33956200000000003
+   ],
+   [
+    "const",
+    1.0,
+    0.33733
+   ],
+   [
+    "fast",
+    0.2,
+    0.33723000000000003
+   ],
+   [
+    "const",
+    0.05,
+    0.33176
+   ]
+  ],
+  "bge_S2_lambda": {
+   "('const', 0.2, 0.1)": 0.35849600000000004,
+   "('const', 0.2, 0.01)": 0.393052,
+   "('const', 0.2, 1.0)": 0.178946,
+   "('const', 0.2, 10.0)": 0.11464400000000001
+  },
+  "bge_cold_best": [
+   "const",
+   0.2,
+   0.01
+  ],
+  "bge_S4_c": {
+   "0.01": 0.42100933333333335,
+   "0.1": 0.481008,
+   "1": 0.2364866666666667
+  },
+  "bge_router_c_at_best": 0.1,
+  "bert_A1": {
+   "fast/0.05": 0.1597,
+   "slow/0.01": 0.12068000000000001,
+   "slow/0.1": 0.128076,
+   "fast/0.1": 0.11319199999999999
+  },
+  "bert_arm_best": [
+   "fast",
+   0.05
+  ],
+  "bert_A3_c": {
+   "10": 0.3612386666666667,
+   "100": 0.382286,
+   "1000": 0.3404453333333333
+  }
+ }
+}

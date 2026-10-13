@@ -1,0 +1,39 @@
+== Exploration sweep (BERT, constant exploration, lambda 0.1, c=100, T=50,000, seeds 1-10) ==
+floor 0.1: cold 10.05% (settles on 1471 in 1/10)
+    small: Router 13.74%  LLM 5.20%  mult 1.37x  regret ratio 1.043  t   1.27  settles 2/10
+    base : Router 20.45%  LLM 3.61%  mult 2.03x  regret ratio 1.131  t   3.35  settles 5/10
+    large: Router 24.78%  LLM 5.27%  mult 2.47x  regret ratio 1.196  t   4.00  settles 8/10
+floor 0.3: cold  8.25% (settles on 1471 in 1/10)
+    small: Router 12.24%  LLM 5.20%  mult 1.48x  regret ratio 1.045  t   2.31  settles 1/10
+    base : Router 22.94%  LLM 3.61%  mult 2.78x  regret ratio 1.191  t   5.92  settles 7/10
+    large: Router 24.74%  LLM 5.27%  mult 3.00x  regret ratio 1.219  t   7.16  settles 8/10
+floor 1: cold  9.09% (settles on 1471 in 0/10)
+    small: Router 13.98%  LLM 5.20%  mult 1.54x  regret ratio 1.057  t   2.89  settles 3/10
+    base : Router 15.84%  LLM 3.61%  mult 1.74x  regret ratio 1.080  t   2.72  settles 6/10
+    large: Router 15.12%  LLM 5.27%  mult 1.66x  regret ratio 1.071  t   2.66  settles 3/10
+floor 3: cold  8.01% (settles on 1471 in 0/10)
+    small: Router  8.76%  LLM 5.20%  mult 1.09x  regret ratio 1.008  t   0.78  settles 0/10
+    base : Router  7.97%  LLM 3.61%  mult 0.99x  regret ratio 1.000  t  -0.05  settles 0/10
+    large: Router  8.87%  LLM 5.27%  mult 1.11x  regret ratio 1.009  t   0.96  settles 0/10
+floor 10: cold  3.69% (settles on 1471 in 0/10)
+    small: Router  3.76%  LLM 5.20%  mult 0.72x  regret ratio 0.985  t   2.56  settles 0/10
+    base : Router  3.73%  LLM 3.61%  mult 1.01x  regret ratio 1.000  t   1.27  settles 0/10
+    large: Router  3.80%  LLM 5.27%  mult 0.72x  regret ratio 0.985  t   3.82  settles 0/10
+
+== Skew (BERT, paper settings, c=100, T=14,000, seeds 1-10) ==
+bertcap30 (top category on 29.8% of contexts): cold  5.17% (settles on 1471 in 0/10)
+    small: Router  8.13%  LLM 5.18%  mult 1.57x  regret ratio 1.032  t   2.12  settles 2/10
+    base : Router 17.63%  LLM 3.64%  mult 3.41x  regret ratio 1.151  t   4.72  settles 7/10
+    large: Router 22.31%  LLM 5.27%  mult 4.23x  regret ratio 1.219  t  10.01  settles 9/10
+bertcap20 (top category on 20.0% of contexts): cold  5.54% (settles on 1471 in 0/10)
+    small: Router 10.43%  LLM 5.01%  mult 1.88x  regret ratio 1.055  t   3.85  settles 2/10
+    base : Router 10.23%  LLM 3.34%  mult 1.85x  regret ratio 1.052  t   3.38  settles 2/10
+    large: Router 10.28%  LLM 4.60%  mult 1.86x  regret ratio 1.053  t   2.59  settles 3/10
+bertcap10 (top category on 10.0% of contexts): cold  4.88% (settles on 1471 in 0/10)
+    small: Router  7.71%  LLM 5.46%  mult 1.41x  regret ratio 1.024  t   2.78  settles 0/10
+    base : Router  7.65%  LLM 3.39%  mult 1.57x  regret ratio 1.030  t   2.40  settles 0/10
+    large: Router  7.85%  LLM 4.44%  mult 1.61x  regret ratio 1.032  t   3.79  settles 1/10
+bertcap05 (top category on 5.0% of contexts): cold  2.58% (settles on 1471 in 0/10)
+    small: Router  5.84%  LLM 5.97%  mult 0.98x  regret ratio 0.999  t   5.08  settles 0/10
+    base : Router  5.04%  LLM 3.66%  mult 1.38x  regret ratio 1.015  t   4.67  settles 0/10
+    large: Router  6.76%  LLM 4.71%  mult 1.44x  regret ratio 1.022  t   6.94  settles 0/10

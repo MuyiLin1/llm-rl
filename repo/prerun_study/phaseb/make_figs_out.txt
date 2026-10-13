@@ -1,0 +1,16 @@
+== BERT tuned baseline (fast, floor 0.05, lambda 0.1; Router c=1000), seeds 1-10 ==
+cold 8.37 +- 5.23, settles 1/10
+Flan-T5-small: Router 17.30 +- 7.77, mult 2.07, regret ratio 1.108, t 2.75, settles 4/10, routed 13.13%
+Flan-T5-base: Router 24.94 +- 1.09, mult 2.98, regret ratio 1.221, t 10.42, settles 10/10, routed 15.15%
+Flan-T5-large: Router 25.35 +- 0.94, mult 3.03, regret ratio 1.228, t 9.87, settles 10/10, routed 15.64%
+
+== Regret ratios (cold / Router regret) ==
+alpha 0.1: small 1.043, base 1.131, large 1.196
+alpha 0.3: small 1.045, base 1.191, large 1.219
+alpha 1: small 1.057, base 1.080, large 1.071
+alpha 3: small 1.008, base 1.000, large 1.009
+alpha 10: small 1.001, base 1.000, large 1.001
+bertcap30: small 1.032, base 1.151, large 1.221
+bertcap20: small 1.055, base 1.052, large 1.053
+bertcap10: small 1.031, base 1.030, large 1.032
+bertcap05: small 1.035, base 1.026, large 1.045

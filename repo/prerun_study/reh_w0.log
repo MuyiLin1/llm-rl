@@ -1,0 +1,43 @@
+[w0] A cold  s1: acc 3.98%  147s
+[w0] A router base s1: acc 23.72%  213s
+[w0] A cold  s2: acc 3.33%  244s
+[w0] A router base s2: acc 9.21%  251s
+[w0] A cold  s3: acc 2.41%  247s
+[w0] A router base s3: acc 19.51%  248s
+[w0] A cold  s4: acc 2.63%  254s
+[w0] A router base s4: acc 21.84%  247s
+[w0] A cold  s5: acc 3.24%  252s
+[w0] A router base s5: acc 5.28%  258s
+[w0] A cold  s6: acc 2.62%  254s
+[w0] A router base s6: acc 19.88%  263s
+[w0] A cold  s7: acc 5.81%  1224s
+[w0] A router base s7: acc 21.76%  258s
+[w0] A cold  s8: acc 8.64%  247s
+[w0] A router base s8: acc 8.33%  245s
+[w0] A cold  s9: acc 2.68%  242s
+[w0] A router base s9: acc 21.93%  251s
+[w0] A cold  s10: acc 1.41%  250s
+[w0] A router base s10: acc 5.92%  285s
+[w0] A cold  s11: acc 7.94%  258s
+[w0] A router base s11: acc 21.63%  260s
+[w0] A cold  s12: acc 2.57%  233s
+[w0] A router base s12: acc 8.46%  244s
+[w0] A cold  s13: acc 3.55%  252s
+[w0] A router base s13: acc 21.47%  241s
+[w0] A cold  s14: acc 2.14%  250s
+[w0] A router base s14: acc 5.91%  266s
+[w0] A cold  s15: acc 2.67%  248s
+[w0] A router base s15: acc 16.77%  278s
+[w0] A cold  s16: acc 2.45%  335s
+[w0] A router base s16: acc 8.24%  417s
+[w0] A cold  s17: acc 4.06%  444s
+[w0] A router base s17: acc 19.28%  418s
+[w0] A cold  s18: acc 15.19%  19028s
+[w0] A router base s18: acc 5.76%  528s
+[w0] A cold  s19: acc 8.88%  383s
+[w0] A router base s19: acc 22.44%  439s
+[w0] A cold  s20: acc 6.32%  263s
+[w0] A router base s20: acc 3.38%  317s
+[w0] C cold  s1: acc 21.71%  396s
+[w0] C router base s1: acc 22.35%  360s
+[w0] C cold  s2: acc 18.60%  275s

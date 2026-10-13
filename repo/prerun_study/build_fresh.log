@@ -1,0 +1,5 @@
+total contexts 1186239
+small: cache len 1186239, fresh-block acc 5.40%, dominant-hit rate 0.20 per 1000
+base: cache len 1186239, fresh-block acc 3.86%, dominant-hit rate 1.82 per 1000
+large: cache len 1186239, fresh-block acc 5.33%, dominant-hit rate 1.92 per 1000
+saved /private/tmp/claude-502/-Users-linmuyi-code-DMwithLLM/68dc0ee2-93ec-4e14-b569-9bbcd9293426/scratchpad/prerun/fresh_v1.npz (50000, 768)

@@ -1,0 +1,17 @@
+{
+  "task": "warm",
+  "seed": 3,
+  "T_dry": 50000,
+  "lam": 0.1,
+  "beta": 1.0,
+  "device": "cuda",
+  "complete": true,
+  "llm_type": "base",
+  "tau": 1600,
+  "held_out_err": 0.9619,
+  "C_E": 1539.04,
+  "R_warm_tail": 45329.0,
+  "rounds": 48400,
+  "warm_tail_acc": 0.06345041322314049,
+  "seconds": 396.12450981140137
+}

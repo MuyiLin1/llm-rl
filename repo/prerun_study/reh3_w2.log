@@ -1,0 +1,23 @@
+[w2] E router small s2: acc 10.31%  1158s
+[w2] E cold  s3: acc 10.64%  4808s
+[w2] E router large s3: acc 11.62%  1120s
+[w2] E router base s4: acc 26.61%  1121s
+[w2] E router small s5: acc 12.09%  18060s
+[w2] E cold  s6: acc 9.85%  1200s
+[w2] E router large s6: acc 29.66%  1084s
+[w2] E router base s7: acc 25.70%  838s
+[w2] E router small s8: acc 18.84%  798s
+[w2] E cold  s9: acc 4.46%  799s
+[w2] E router large s9: acc 26.63%  795s
+[w2] E router base s10: acc 26.89%  797s
+[w2] F router base s1: acc 24.41%  773s
+[w2] F router base s2: acc 12.70%  770s
+[w2] F router base s3: acc 30.20%  771s
+[w2] F router base s4: acc 12.90%  769s
+[w2] F router base s5: acc 27.05%  39946s
+[w2] F router base s6: acc 10.93%  4250s
+[w2] F router base s7: acc 28.82%  771s
+[w2] F router base s8: acc 8.25%  757s
+[w2] F router base s9: acc 27.48%  749s
+[w2] F router base s10: acc 25.40%  750s
+[w2] DONE

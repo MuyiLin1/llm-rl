@@ -1,0 +1,112 @@
+{
+  "config": {
+    "d": 200,
+    "K": 1000,
+    "N": 20000,
+    "T": 5000,
+    "noise": 0.3,
+    "data_seed": 0
+  },
+  "diagnostics": {
+    "alpha_hat": 0.05719775563623419,
+    "r_hat": 191.72759023516068,
+    "d": 200,
+    "K": 1000,
+    "N": 20000
+  },
+  "llm_accuracy": 0.42135,
+  "c_sweep": {
+    "0.01": {
+      "avg_router": 0.3322,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.0,
+      "multiplication": 0.7696941612604263,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "0.05": {
+      "avg_router": 0.2752,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.0002,
+      "multiplication": 0.6376274328081557,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "0.1": {
+      "avg_router": 0.4004,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.01,
+      "multiplication": 0.927710843373494,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "0.5": {
+      "avg_router": 0.475,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.0524,
+      "multiplication": 1.1005560704355886,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "1.0": {
+      "avg_router": 0.4996,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.0768,
+      "multiplication": 1.1575532900834107,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "2.0": {
+      "avg_router": 0.5134,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.1208,
+      "multiplication": 1.1895273401297497,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "5.0": {
+      "avg_router": 0.5244,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.239,
+      "multiplication": 1.2150139017608896,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "10.0": {
+      "avg_router": 0.469,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 0.4302,
+      "multiplication": 1.0866543095458758,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "50.0": {
+      "avg_router": 0.4316,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 1.0,
+      "multiplication": 1.0,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    },
+    "100.0": {
+      "avg_router": 0.4316,
+      "avg_cold": 0.3322,
+      "avg_llm": 0.4316,
+      "llm_pct": 1.0,
+      "multiplication": 1.0,
+      "std_router": 0.0,
+      "std_cold": 0.0
+    }
+  },
+  "best_c": 5.0,
+  "best_mult": 1.2150139017608896
+}

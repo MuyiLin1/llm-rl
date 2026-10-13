@@ -1,0 +1,13 @@
+{
+  "task": "cold",
+  "seed": 2,
+  "T_dry": 50000,
+  "lam": 0.1,
+  "beta": 1.0,
+  "device": "cpu",
+  "complete": true,
+  "mistakes": 47180.0,
+  "acc": 0.056400000000000006,
+  "rounds": 50000,
+  "seconds": 17040.78642821312
+}

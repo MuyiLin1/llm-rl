@@ -1,0 +1,19 @@
+
+== WikiLinks Flan-T5 (BERT-768d), c=1e4, seeds 1-10 ==
+cold 10.71 +- 0.04
+Flan-T5-small  LLM  7.16  Router 10.71 +- 0.03  routed 14.70%  lift -0.00pp  mult 1.000x  regret ratio 1.000  t vs cold -0.04  A -2395  I 2392 (I>0 on 10/10)  B 22066
+Flan-T5-base   LLM 10.56  Router 11.29 +- 0.02  routed 13.42%  lift +0.58pp  mult 1.054x  regret ratio 1.007  t vs cold 36.44  A 732  I 2859 (I>0 on 10/10)  B 4507
+Flan-T5-large  LLM 12.43  Router 11.56 +- 0.04  routed 13.80%  lift +0.85pp  mult 0.930x  regret ratio 0.990  t vs cold 52.24  A 2201  I 3098 (I>0 on 10/10)  B -5385
+
+== WikiLinks Qwen2.5 (BGE-1024d), c=10, seeds 1-10 ==
+cold 18.90 +- 0.02
+Qwen-0.5B      LLM 18.72  Router 18.72 +- 0.00  routed 100.00%  lift -0.18pp  mult 0.990x  regret ratio 0.998  t vs cold -25.19  A -1122  I 0 (I>0 on 0/10)  B 0
+Qwen-3B        LLM 29.47  Router 29.47 +- 0.00  routed 100.00%  lift +10.57pp  mult 1.000x  regret ratio 1.000  t vs cold 1476.26  A 65772  I 0 (I>0 on 0/10)  B 0
+Qwen-7B        LLM 38.74  Router 38.74 +- 0.00  routed 100.00%  lift +19.85pp  mult 1.000x  regret ratio 1.000  t vs cold 2770.65  A 123441  I 0 (I>0 on 0/10)  B 0
+
+== Qwen sweep, tuning seeds 11-20: routed share and Router accuracy by c ==
+c=0.01: routed 0.00 / 0.00 / 0.00   Router 18.88 / 18.88 / 18.88   cold 18.88
+c=0.1: routed 0.00 / 0.00 / 0.00   Router 18.88 / 18.87 / 18.88   cold 18.88
+c=1: routed 13.62 / 13.59 / 13.65   Router 18.98 / 20.55 / 21.89   cold 18.88
+c=10: routed 100.00 / 100.00 / 100.00   Router 18.72 / 29.47 / 38.74   cold 18.88
+c=100: routed 100.00 / 100.00 / 100.00   Router 18.72 / 29.47 / 38.74   cold 18.88

@@ -1,0 +1,4 @@
+[w0] P router small_plusrand s1: acc 6.14%  361s
+[w0] P router small_plus7961 s1: acc 11.78%  359s
+[w0] P router small_plusrand s2: acc 22.90%  359s
+[w0] P router small_plus7961 s2: acc 15.99%  352s

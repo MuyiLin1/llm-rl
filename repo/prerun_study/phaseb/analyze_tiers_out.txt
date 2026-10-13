@@ -1,0 +1,25 @@
+BERT tuned (fast/0.05, lambda 0.1, c 1000)
+  cold  8.37 +- 5.23%  settles 1/10   (top category 1471 on 29.8% of contexts)
+  small: Router 17.30 +- 7.77%  LLM  5.20%  mult 2.07x  regret ratio 1.108  t   2.75  routed 13.13%  settles 4/10
+  base : Router 24.94 +- 1.09%  LLM  3.61%  mult 2.98x  regret ratio 1.221  t  10.42  routed 15.15%  settles 10/10
+  large: Router 25.35 +- 0.94%  LLM  5.27%  mult 3.03x  regret ratio 1.228  t   9.87  routed 15.64%  settles 10/10
+BERT category-term features (fast/0.05, lambda 0.1, c 100)
+  cold 12.56 +- 5.89%  settles 2/10   (top category 1471 on 29.8% of contexts)
+  small: Router 30.46 +- 7.82%  LLM  5.20%  mult 2.42x  regret ratio 1.257  t   5.31  routed  4.64%  settles 4/10
+  base : Router 38.02 +- 4.48%  LLM  3.61%  mult 3.03x  regret ratio 1.411  t   9.60  routed  5.32%  settles 10/10
+  large: Router 42.41 +- 2.97%  LLM  5.27%  mult 3.38x  regret ratio 1.518  t  12.75  routed  5.40%  settles 10/10
+BERT category-term features at default schedule (fast/0.1), Router at fast/0.05 c 100 [cold only differs]
+  cold 15.60 +- 6.59%  settles 7/10   (top category 1471 on 29.8% of contexts)
+  small: Router 30.46 +- 7.82%  LLM  5.20%  mult 1.95x  regret ratio 1.214  t   3.63  routed  4.64%  settles 4/10
+  base : Router 38.02 +- 4.48%  LLM  3.61%  mult 2.44x  regret ratio 1.362  t   9.50  routed  5.32%  settles 10/10
+  large: Router 42.41 +- 2.97%  LLM  5.27%  mult 2.72x  regret ratio 1.466  t  11.85  routed  5.40%  settles 10/10
+BGE default (fast/0.1, lambda 0.1, c 0.1)
+  cold 32.59 +- 5.00%  settles 2/10   (top category 1471 on 29.8% of contexts)
+  small: Router 32.61 +- 6.34%  LLM 21.38%  mult 1.00x  regret ratio 1.000  t   0.01  routed  0.04%  settles 4/10
+  base : Router 40.20 +- 4.45%  LLM 22.39%  mult 1.23x  regret ratio 1.127  t   3.92  routed  0.05%  settles 8/10
+  large: Router 38.71 +- 6.38%  LLM 27.17%  mult 1.19x  regret ratio 1.100  t   2.59  routed  0.05%  settles 7/10
+BGE tuned (const/0.2, lambda 0.01, c 0.1)
+  cold 43.25 +- 5.36%  settles 7/10   (top category 1471 on 29.8% of contexts)
+  small: Router 51.44 +- 1.58%  LLM 21.38%  mult 1.19x  regret ratio 1.169  t   4.48  routed 13.45%  settles 10/10
+  base : Router 42.93 +- 0.32%  LLM 22.39%  mult 0.99x  regret ratio 0.994  t  -0.20  routed 19.05%  settles 10/10
+  large: Router 51.59 +- 0.12%  LLM 27.17%  mult 1.19x  regret ratio 1.172  t   4.97  routed 19.07%  settles 10/10

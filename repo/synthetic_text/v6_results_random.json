@@ -1,0 +1,591 @@
+{
+  "qwen-0.5b": {
+    "accuracy": 0.11028846153846154,
+    "acc_llm_grp": 0.19604166666666667,
+    "acc_linucb_grp": 0.03678571428571428,
+    "c_sweep": {
+      "0.001": {
+        "avg_router": 0.2262666666666667,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 0.0,
+        "multiplication": 1.0,
+        "router_llmg": 0.12483080834214026,
+        "router_linucbg": 0.3115226122581319,
+        "std_router": 0.003597530016861869,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.0,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.2284,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 0.0,
+            "router_llmg": 0.1268882175226586,
+            "router_linucbg": 0.31606410734252705
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.2292,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 0.0,
+            "router_llmg": 0.1309155241043786,
+            "router_linucbg": 0.3103322380430814
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.2212,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 0.0,
+            "router_llmg": 0.11668868339938353,
+            "router_linucbg": 0.3081714913887871
+          }
+        ]
+      },
+      "0.005": {
+        "avg_router": 0.2262666666666667,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 0.0,
+        "multiplication": 1.0,
+        "router_llmg": 0.12483080834214026,
+        "router_linucbg": 0.3115226122581319,
+        "std_router": 0.003597530016861869,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.0,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.2284,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 0.0,
+            "router_llmg": 0.1268882175226586,
+            "router_linucbg": 0.31606410734252705
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.2292,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 0.0,
+            "router_llmg": 0.1309155241043786,
+            "router_linucbg": 0.3103322380430814
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.2212,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 0.0,
+            "router_llmg": 0.11668868339938353,
+            "router_linucbg": 0.3081714913887871
+          }
+        ]
+      },
+      "0.01": {
+        "avg_router": 0.2262666666666667,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 0.0,
+        "multiplication": 1.0,
+        "router_llmg": 0.12483080834214026,
+        "router_linucbg": 0.3115226122581319,
+        "std_router": 0.003597530016861869,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.0,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.2284,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 0.0,
+            "router_llmg": 0.1268882175226586,
+            "router_linucbg": 0.31606410734252705
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.2292,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 0.0,
+            "router_llmg": 0.1309155241043786,
+            "router_linucbg": 0.3103322380430814
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.2212,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 0.0,
+            "router_llmg": 0.11668868339938353,
+            "router_linucbg": 0.3081714913887871
+          }
+        ]
+      },
+      "0.02": {
+        "avg_router": 0.2238,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 0.42,
+        "multiplication": 0.9890984089569828,
+        "router_llmg": 0.12525948689283806,
+        "router_linucbg": 0.30662136291052033,
+        "std_router": 0.0037094473981982893,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.003603888923884135,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.227,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 0.4,
+            "router_llmg": 0.12861458782908933,
+            "router_linucbg": 0.3119642191576593
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.2258,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 0.38,
+            "router_llmg": 0.1309155241043786,
+            "router_linucbg": 0.3041255932822198
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.2186,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 0.48,
+            "router_llmg": 0.11624834874504623,
+            "router_linucbg": 0.3037742762916819
+          }
+        ]
+      },
+      "0.05": {
+        "avg_router": 0.22686666666666666,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 18.833333333333332,
+        "multiplication": 1.0026517383618148,
+        "router_llmg": 0.17687781051000825,
+        "router_linucbg": 0.26894594811889044,
+        "std_router": 0.002922708028904402,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.013560355088781234,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.2248,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 19.08,
+            "router_llmg": 0.16961588260681917,
+            "router_linucbg": 0.27245620573984347
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.231,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 18.8,
+            "router_llmg": 0.18708536045997345,
+            "router_linucbg": 0.2672508214676889
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.2248,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 18.62,
+            "router_llmg": 0.17393218846323205,
+            "router_linucbg": 0.2671308171491389
+          }
+        ]
+      },
+      "0.1": {
+        "avg_router": 0.21913333333333332,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 22.233333333333334,
+        "multiplication": 0.9684737772539774,
+        "router_llmg": 0.18252121746481367,
+        "router_linucbg": 0.24993839294288323,
+        "std_router": 0.0016996731711975963,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.008724592920082338,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.2208,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 22.46,
+            "router_llmg": 0.18170047475183426,
+            "router_linucbg": 0.25456578456951173
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.2198,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 22.24,
+            "router_llmg": 0.18752764263600177,
+            "router_linucbg": 0.24644030668127054
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.2168,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 22.0,
+            "router_llmg": 0.178335535006605,
+            "router_linucbg": 0.24880908757786735
+          }
+        ]
+      },
+      "0.2": {
+        "avg_router": 0.1502,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 48.800000000000004,
+        "multiplication": 0.6638185032410134,
+        "router_llmg": 0.17500336363767102,
+        "router_linucbg": 0.12946693436391754,
+        "std_router": 0.0028705400188814663,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.009021263037320686,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1488,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 48.06,
+            "router_llmg": 0.16443677168752696,
+            "router_linucbg": 0.13529631010063362
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.1542,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 48.9,
+            "router_llmg": 0.18620079610791684,
+            "router_linucbg": 0.12778386272362177
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.1476,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 49.44,
+            "router_llmg": 0.17437252311756934,
+            "router_linucbg": 0.12532063026749726
+          }
+        ]
+      },
+      "0.5": {
+        "avg_router": 0.12479999999999998,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 80.58666666666666,
+        "multiplication": 0.5515615792575131,
+        "router_llmg": 0.17488021495715947,
+        "router_linucbg": 0.08284002140136443,
+        "std_router": 0.0027760883751542743,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.014393728941540854,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1214,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 80.74,
+            "router_llmg": 0.16055243849805784,
+            "router_linucbg": 0.08758852031308237
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.1282,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 80.74,
+            "router_llmg": 0.18443166740380362,
+            "router_linucbg": 0.08178167214311792
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.1248,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 80.28,
+            "router_llmg": 0.17965653896961692,
+            "router_linucbg": 0.079149871747893
+          }
+        ]
+      },
+      "1.0": {
+        "avg_router": 0.10980000000000001,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 91.58,
+        "multiplication": 0.48526812021213905,
+        "router_llmg": 0.19092258774790064,
+        "router_linucbg": 0.04173177130939776,
+        "std_router": 0.002465765601187593,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.017595147589547163,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1066,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 91.97999999999999,
+            "router_llmg": 0.17911091929218817,
+            "router_linucbg": 0.04398061871039881
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.1102,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 91.66,
+            "router_llmg": 0.19946926138876603,
+            "router_linucbg": 0.03650967506389193
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.1126,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 91.10000000000001,
+            "router_llmg": 0.19418758256274768,
+            "router_linucbg": 0.04470502015390253
+          }
+        ]
+      },
+      "2.0": {
+        "avg_router": 0.11066666666666668,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 99.36,
+        "multiplication": 0.48909840895698287,
+        "router_llmg": 0.19558841745996203,
+        "router_linucbg": 0.039397251586218145,
+        "std_router": 0.002379542439676633,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.017337683670396082,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1076,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 99.2,
+            "router_llmg": 0.18429003021148035,
+            "router_linucbg": 0.0413715989563921
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.111,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 99.53999999999999,
+            "router_llmg": 0.20212295444493586,
+            "router_linucbg": 0.035779481562614096
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.1134,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 99.33999999999999,
+            "router_llmg": 0.20035226772346984,
+            "router_linucbg": 0.041040674239648224
+          }
+        ]
+      },
+      "5.0": {
+        "avg_router": 0.10806666666666666,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 100.0,
+        "multiplication": 0.47760754272245126,
+        "router_llmg": 0.19558841745996203,
+        "router_linucbg": 0.03460246044133363,
+        "std_router": 0.0028534579412043595,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.018683248020188028,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1042,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 100.0,
+            "router_llmg": 0.18429003021148035,
+            "router_linucbg": 0.035035408125232946
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.109,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20212295444493586,
+            "router_linucbg": 0.0321285140562249
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.111,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20035226772346984,
+            "router_linucbg": 0.03664345914254306
+          }
+        ]
+      },
+      "10.0": {
+        "avg_router": 0.10806666666666666,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 100.0,
+        "multiplication": 0.47760754272245126,
+        "router_llmg": 0.19558841745996203,
+        "router_linucbg": 0.03460246044133363,
+        "std_router": 0.0028534579412043595,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.018683248020188028,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1042,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 100.0,
+            "router_llmg": 0.18429003021148035,
+            "router_linucbg": 0.035035408125232946
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.109,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20212295444493586,
+            "router_linucbg": 0.0321285140562249
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.111,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20035226772346984,
+            "router_linucbg": 0.03664345914254306
+          }
+        ]
+      },
+      "50.0": {
+        "avg_router": 0.10806666666666666,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 100.0,
+        "multiplication": 0.47760754272245126,
+        "router_llmg": 0.19558841745996203,
+        "router_linucbg": 0.03460246044133363,
+        "std_router": 0.0028534579412043595,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.018683248020188028,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1042,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 100.0,
+            "router_llmg": 0.18429003021148035,
+            "router_linucbg": 0.035035408125232946
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.109,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20212295444493586,
+            "router_linucbg": 0.0321285140562249
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.111,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20035226772346984,
+            "router_linucbg": 0.03664345914254306
+          }
+        ]
+      },
+      "100.0": {
+        "avg_router": 0.10806666666666666,
+        "avg_llm": 0.10806666666666666,
+        "avg_cold": 0.2262666666666667,
+        "llm_pct": 100.0,
+        "multiplication": 0.47760754272245126,
+        "router_llmg": 0.19558841745996203,
+        "router_linucbg": 0.03460246044133363,
+        "std_router": 0.0028534579412043595,
+        "std_cold": 0.003597530016861869,
+        "std_mult": 0.018683248020188028,
+        "per_seed": [
+          {
+            "seed": 42,
+            "avg_router": 0.1042,
+            "avg_llm": 0.1042,
+            "avg_cold": 0.2284,
+            "llm_pct": 100.0,
+            "router_llmg": 0.18429003021148035,
+            "router_linucbg": 0.035035408125232946
+          },
+          {
+            "seed": 43,
+            "avg_router": 0.109,
+            "avg_llm": 0.109,
+            "avg_cold": 0.2292,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20212295444493586,
+            "router_linucbg": 0.0321285140562249
+          },
+          {
+            "seed": 44,
+            "avg_router": 0.111,
+            "avg_llm": 0.111,
+            "avg_cold": 0.2212,
+            "llm_pct": 100.0,
+            "router_llmg": 0.20035226772346984,
+            "router_linucbg": 0.03664345914254306
+          }
+        ]
+      }
+    },
+    "best_c": 0.05,
+    "best_mult": 1.0026517383618148,
+    "num_seeds": 3,
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  }
+}
