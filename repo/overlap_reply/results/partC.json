@@ -1,0 +1,180 @@
+{
+ "none": {
+  "acc": 14.365199999999998,
+  "sd": 6.115702645194946,
+  "mult": 1.7111614055985704,
+  "mult_sd_perseed": 1.1957387391510057,
+  "rr": 1.069716984216697,
+  "settle": 2
+ },
+ "seen": {
+  "acc": 21.504000000000005,
+  "sd": 6.802085431852661,
+  "mult": 2.5615247170935085,
+  "mult_sd_perseed": 1.4031952026747505,
+  "rr": 1.1670021402364452,
+  "settle": 7,
+  "routed_changed": 2.6,
+  "vs_none": {
+   "t": 3.4308339883383296,
+   "p": 0.007498349812318903,
+   "mcnemar": 0.0625
+  }
+ },
+ "hidden": {
+  "acc": 15.453,
+  "sd": 5.706620891560959,
+  "mult": 1.840738534842168,
+  "mult_sd_perseed": 0.6920392970381886,
+  "rr": 1.0834801944480585,
+  "settle": 3,
+  "routed_changed": 2.6,
+  "vs_none": {
+   "t": 0.5312903331705265,
+   "p": 0.608078261178108,
+   "mcnemar": 1.0
+  },
+  "vs_seen": {
+   "t": -2.3618508104481144,
+   "p": 0.04247237047882606,
+   "mcnemar": 0.125
+  }
+ },
+ "rand": {
+  "acc": 15.415999999999999,
+  "sd": 9.405660848659174,
+  "mult": 1.8363311494937462,
+  "mult_sd_perseed": 1.4873196645959093,
+  "rr": 1.0830062423153315,
+  "settle": 3,
+  "routed_changed": 2.4,
+  "vs_none": {
+   "t": 0.4944284557644377,
+   "p": 0.632847300769179,
+   "mcnemar": 1.0
+  },
+  "vs_seen": {
+   "t": -1.6663213408866944,
+   "p": 0.130000712641354,
+   "mcnemar": 0.21875
+  }
+ },
+ "oracle": {
+  "acc": 13.136600000000001,
+  "sd": 5.82125004139527,
+  "mult": 1.564812388326385,
+  "mult_sd_perseed": 0.5643504119444901,
+  "rr": 1.0545868570652313,
+  "settle": 2,
+  "routed_changed": 2.6,
+  "vs_none": {
+   "t": -0.6494049611508959,
+   "p": 0.5322980678851296,
+   "mcnemar": 1.0
+  },
+  "vs_seen": {
+   "t": -3.623786491203006,
+   "p": 0.005538974302831927,
+   "mcnemar": 0.0625
+  }
+ },
+ "checks": [
+  {
+   "seed": 1,
+   "first_changed_routed": 690,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 2,
+   "first_changed_routed": 215,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 3,
+   "first_changed_routed": 71,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 4,
+   "first_changed_routed": 1167,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 5,
+   "first_changed_routed": 135,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 6,
+   "first_changed_routed": 450,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 7,
+   "first_changed_routed": null,
+   "identical_before": true,
+   "identical_whole_run": true
+  },
+  {
+   "seed": 8,
+   "first_changed_routed": 171,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 9,
+   "first_changed_routed": 452,
+   "identical_before": true,
+   "identical_whole_run": false
+  },
+  {
+   "seed": 10,
+   "first_changed_routed": 280,
+   "identical_before": true,
+   "identical_whole_run": false
+  }
+ ],
+ "oracle_rewards_fed": {
+  "n": 26,
+  "mean": 0.004516923707367149,
+  "min": 0.0022614117197715475,
+  "max": 0.007532196848742185,
+  "values": [
+   0.004590329843981096,
+   0.006445466492245965,
+   0.004260344749407015,
+   0.007075934690452498,
+   0.005106281829221007,
+   0.004206752307072476,
+   0.0040645340255082195,
+   0.007532196848742185,
+   0.0035236571496524696,
+   0.005326431629311897,
+   0.003020160891959848,
+   0.00394058797459825,
+   0.0022614117197715475,
+   0.004042257193909686,
+   0.004046463619148392,
+   0.004263265982318502,
+   0.00394058797459825,
+   0.002773904800499413,
+   0.003509399651294179,
+   0.0035236571496524696,
+   0.004101746343412991,
+   0.005326431629311897,
+   0.005574291384855533,
+   0.00394058797459825,
+   0.007048174319550727,
+   0.003995158216471137
+  ]
+ },
+ "cold": {
+  "acc": 8.395
+ }
+}

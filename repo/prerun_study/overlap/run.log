@@ -1,0 +1,32 @@
+Part A written
+small s1: tau 2179 n1471 0 settled no N 870.5 mu -0.007 rho_max 8.77 frac>=1 0.284 omega 12109.143 h -10541049.63 top1471 0.00 check True 6s
+small s2: tau 2335 n1471 0 settled yes N 966.5 mu -0.008 rho_max 8.87 frac>=1 0.265 omega 76193.495 h -73644133.05 top1471 0.00 check True 5s
+small s3: tau 3914 n1471 0 settled no N 1903.2 mu -0.010 rho_max 9.10 frac>=1 0.271 omega 5817.074 h -11070843.74 top1471 0.00 check True 5s
+small s4: tau 1981 n1471 0 settled no N 755.0 mu -0.006 rho_max 9.14 frac>=1 0.263 omega 17135.824 h -12937995.77 top1471 0.00 check True 5s
+small s5: tau 3242 n1471 0 settled no N 1588.1 mu -0.010 rho_max 8.44 frac>=1 0.299 omega 26015.915 h -41316986.10 top1471 0.01 check True 6s
+small s6: tau 4117 n1471 0 settled no N 2045.6 mu -0.009 rho_max 8.65 frac>=1 0.268 omega 7367.764 h -15071810.27 top1471 0.00 check True 6s
+small s7: tau 4146 n1471 1 settled yes N 2147.2 mu -0.007 rho_max 8.45 frac>=1 0.261 omega 8597.373 h -18460422.84 top1471 0.00 check True 5s
+small s8: tau 8703 n1471 0 settled no N 4329.0 mu -0.015 rho_max 7.47 frac>=1 0.325 omega 12930.673 h -55977285.20 top1471 0.00 check True 6s
+small s9: tau 4382 n1471 0 settled no N 2563.8 mu -0.011 rho_max 8.86 frac>=1 0.291 omega 4432.573 h -11364337.04 top1471 0.00 check True 6s
+small s10: tau 4830 n1471 0 settled no N 2069.0 mu -0.014 rho_max 8.41 frac>=1 0.274 omega 30237.214 h -62560514.45 top1471 0.00 check True 6s
+base s1: tau 4729 n1471 2 settled no N 1962.7 mu -0.014 rho_max 8.25 frac>=1 0.236 omega 25155.848 h -49374556.73 top1471 0.00 check True 6s
+base s2: tau 2189 n1471 5 settled yes N 828.0 mu 0.002 rho_max 10.00 frac>=1 0.255 omega 7158.699 h -5927232.53 top1471 0.01 check True 5s
+base s3: tau 3914 n1471 3 settled yes N 2201.2 mu -0.002 rho_max 7.63 frac>=1 0.220 omega 69660.378 h -153336776.28 top1471 0.00 check True 5s
+base s4: tau 2037 n1471 5 settled yes N 779.5 mu 0.006 rho_max 9.62 frac>=1 0.257 omega 55397.050 h -43184406.94 top1471 0.01 check True 5s
+base s5: tau 2502 n1471 2 settled no N 836.0 mu -0.006 rho_max 9.02 frac>=1 0.215 omega 62277.958 h -52064521.33 top1471 0.00 check True 5s
+base s6: tau 2484 n1471 5 settled yes N 4277.3 mu 0.038 rho_max 13.03 frac>=1 0.328 omega 7892.606 h -33758663.70 top1471 0.38 check True 5s
+base s7: tau 2157 n1471 3 settled yes N 765.1 mu 0.001 rho_max 9.42 frac>=1 0.258 omega 52036.635 h -39813341.52 top1471 0.01 check True 5s
+base s8: tau 2427 n1471 4 settled yes N 1959.7 mu 0.025 rho_max 10.31 frac>=1 0.289 omega 290160.322 h -568620635.77 top1471 0.35 check True 5s
+base s9: tau 4447 n1471 2 settled yes N 15089.2 mu 0.038 rho_max 17.30 frac>=1 0.386 omega 3365.457 h -50781469.62 top1471 0.52 check True 5s
+base s10: tau 2350 n1471 5 settled yes N 1457.0 mu 0.018 rho_max 9.59 frac>=1 0.241 omega 84076.358 h -122501768.32 top1471 0.28 check True 6s
+large s1: tau 4139 n1471 5 settled yes N 15276.8 mu 0.040 rho_max 14.60 frac>=1 0.394 omega 8644.577 h -132060462.36 top1471 0.47 check True 5s
+large s2: tau 2772 n1471 4 settled yes N 1976.7 mu 0.016 rho_max 9.91 frac>=1 0.246 omega 17085.585 h -33773850.07 top1471 0.22 check True 6s
+large s3: tau 3914 n1471 3 settled yes N 13198.6 mu 0.041 rho_max 16.58 frac>=1 0.336 omega 5219.466 h -68889263.42 top1471 0.44 check True 5s
+large s4: tau 2466 n1471 5 settled yes N 1056.0 mu 0.003 rho_max 9.82 frac>=1 0.220 omega 15121.023 h -15968092.34 top1471 0.01 check True 5s
+large s5: tau 2238 n1471 4 settled no N 909.3 mu 0.002 rho_max 9.40 frac>=1 0.223 omega 60768.331 h -55254976.89 top1471 0.01 check True 5s
+large s6: tau 2673 n1471 6 settled yes N 5578.3 mu 0.041 rho_max 15.26 frac>=1 0.326 omega 4950.975 h -27617917.21 top1471 0.34 check True 5s
+large s7: tau 2683 n1471 2 settled yes N 1304.5 mu -0.000 rho_max 8.81 frac>=1 0.204 omega 19446.729 h -25367864.31 top1471 0.01 check True 5s
+large s8: tau 8703 n1471 2 settled yes N 43290.9 mu 0.040 rho_max 19.10 frac>=1 0.364 omega 9146.229 h -395946902.56 top1471 0.54 check True 5s
+large s9: tau 3030 n1471 4 settled yes N 2836.2 mu 0.019 rho_max 9.53 frac>=1 0.307 omega 48054.331 h -136289915.28 top1471 0.28 check True 5s
+large s10: tau 7470 n1471 8 settled yes N 38803.0 mu 0.038 rho_max 18.22 frac>=1 0.420 omega 1557.749 h -60443867.22 top1471 0.56 check True 5s
+DONE

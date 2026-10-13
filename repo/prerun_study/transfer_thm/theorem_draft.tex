@@ -1,0 +1,206 @@
+%% DRAFT (not yet in v7.tex). New result for Section "Coverage and the Transfer".
+%% Uses the paper's macros (\Cold, \Exp, \Hyb, \eps, \R). Verified numerically:
+%%   prerun_study/transfer_thm/{sim_full.py,sim_fast.py,dose.py,checks2.py,checks3.py,variant.py}
+
+%% ---------------------------------------------------------------------------
+%% (1) Proposed replacement for Proposition "The transfer" (prop:transfer).
+%%     The current version defines m from a fixed residual function eps(x) and
+%%     treats the rest as noise whose law depends only on M. That misses an
+%%     expert that sees information the features do not carry (an LLM reading the
+%%     raw text): its choices correlate with the noise. Defining the transfer from
+%%     the realized residuals covers both sources, is an exact identity, and is
+%%     what the "transfer removed" ablation of Section 4 actually removes.
+%% ---------------------------------------------------------------------------
+
+\begin{proposition}[The transfer]
+\label{prop:transfer}
+For any reference $\theta^\star\in\R^d$, a warm start built from
+$(x_s,r_s)_{s\le\tau}$ satisfies, exactly,
+\[
+\widehat\theta_1=\theta^\star-\lambda V_1^{-1}\theta^\star+m,
+\qquad
+m:=V_1^{-1}\sum_{s\le\tau}\bigl(r_s-\langle\theta^\star,x_s\rangle\bigr)\,x_s .
+\]
+Given $M$, the \emph{transfer} $m$ is the only term that depends on which
+rounds were logged and what they returned. Under the linear model, with noise
+independent of the routed actions, $m=V_1^{-1}\xi$ and its law is fixed by $M$
+(Proposition~\ref{prop:response-sum}). It departs from that law in two ways:
+through a residual $\varepsilon(x)=\E[r\mid x]-\langle\theta^\star,x\rangle$
+(misspecification), and through an expert whose choices depend on information
+about the reward that the features do not carry, as an LLM reading the raw
+text does; the second makes
+$\E[r_s-\langle\theta^\star,x_s\rangle\mid x_s]\ne0$ on the routed rounds even
+when $\varepsilon\equiv0$.
+\end{proposition}
+
+%% ---------------------------------------------------------------------------
+%% (2) New result.
+%% ---------------------------------------------------------------------------
+
+\paragraph{Equal coverage, unequal value.}
+Proposition~\ref{prop:response-sum} says that under linear rewards two experts
+of equal coverage are interchangeable. The next result shows how far this
+fails once the expert sees more than the learner. It uses the canonical
+instance of Proposition~\ref{prop:three-way} with one change: the good action
+is right only on a fraction $p$ of the rounds, and which rounds is visible to
+the expert but not to the learner.
+
+\emph{The instance.} Fix $k\ge1$, $0\le q<p$ with $p+q\le1$, $L>1$,
+$\lambda>0$, a horizon $T>4k$, and $d=T+2$. At round $t$ the learner is
+offered $D=e_1$, $R=e_2$ and a fresh arm $b_t=Le_{t+2}$. Each round has a type
+$y_t\in\{D,R,\varnothing\}$ that the learner does not see: the action named by
+$y_t$ has reward $1$ and every other action reward $0$ (so $b_t$ is never
+rewarded). The first $\tau:=4k$ rounds contain $k$ rounds of type $D$, $k$ of
+type $R$ and $2k$ of type $\varnothing$, in any order; later types are
+i.i.d.\ with $\Prb(D)=p$, $\Prb(R)=q$. The learner's expected reward is linear
+in its features, $\mu(x)=\langle\theta^\star,x\rangle$ with
+$\theta^\star=pe_1+qe_2$, and regret is measured against it: the gaps are
+$0$ for $D$, $p-q$ for $R$ and $p$ for every $b_t$. Two experts see the type.
+$\Exp_A$ plays $D$ on rounds of types $D$ and $R$ and plays $R$ on rounds of
+type $\varnothing$; $\Exp_B$ plays $R$ on rounds of types $D$ and $R$ and plays
+$D$ on rounds of type $\varnothing$. LinUCB uses regularization $\lambda$ and a
+constant radius $\beta>0$; we write $c:=\beta L/\sqrt\lambda$ for the index of
+an untried fresh arm, and break ties in favour of the fresh arm.
+
+\begin{theorem}[Equal coverage, unequal value]
+\label{thm:transfer-separation}
+On this instance the following hold.
+\begin{enumerate}[itemsep=1pt,topsep=1pt,leftmargin=*]
+\item[(i)] \emph{(Same coverage, same cost, same accuracy.)}
+$M_\tau^{A}=M_\tau^{B}=2k(e_1e_1^\top+e_2e_2^\top)$, both acquisition regrets
+equal $2k(p-q)$, and each expert is right on exactly $k$ of its $\tau$ routed
+rounds. The two hybrids therefore hand off with the same design matrix, hence
+the same widths, certified directions and prices, and their estimates differ
+only through the transfer:
+$\widehat\theta^{A}_{\tau+1}=\frac{k}{\lambda+2k}\,e_1$ and
+$\widehat\theta^{B}_{\tau+1}=\frac{k}{\lambda+2k}\,e_2$.
+\item[(ii)] \emph{(Cold, and coverage alone.)} Cold LinUCB plays the fresh arm
+at every round, so $R_T(\Cold)=pT$. The same holds after round $\tau$ for
+either hybrid if the routed rounds contribute their covariance but not their
+rewards.
+\item[(iii)] \emph{(The expert whose right answers are rare.)}
+$\Hyb^{B}_\tau$ never plays $D$ after round $\tau$, so
+$R_T(\Hyb^{B}_\tau)\ge(p-q)(T-2k)$.
+\item[(iv)] \emph{(The expert whose right answers are frequent.)} Suppose
+$c\le\min\{p,\tfrac12\}/2$ and $h:=k(1-2c)-c\lambda>0$. With probability at
+least
+\[
+1-e^{-8(p-c)h}\ \ \ge\ \ 1-e^{-2p(k-2c\lambda)},
+\]
+$\Hyb^{A}_\tau$ plays $D$ at every round after $\tau$, and then
+$R_T(\Hyb^{A}_\tau)=2k(p-q)$.
+\end{enumerate}
+Consequently, with that probability,
+\[
+\frac{R_T(\Cold)}{R_T(\Hyb^{A}_\tau)}=\frac{pT}{2k(p-q)},
+\qquad\text{while}\qquad
+\frac{R_T(\Cold)}{R_T(\Hyb^{B}_\tau)}\le\frac{p}{p-q}\cdot\frac{T}{T-2k}.
+\]
+\end{theorem}
+
+Two experts that buy exactly the same coverage, at exactly the same price,
+with exactly as many right answers, give warm starts whose multipliers over
+cold LinUCB differ by a factor of order $T/k$. Nothing that depends on
+coverage alone---the design matrix, the widths, the prices, the price bound of
+Theorem~\ref{thm:general-price}---can tell them apart, and neither can the
+experts' accuracy. What separates them is where their right answers fall:
+$\Exp_A$'s are on an action that is right on a fraction $p$ of all later
+rounds, $\Exp_B$'s on one that is right on a fraction $q$. The number of right
+answers needed does not grow with the horizon: the failure probability in (iv)
+decays exponentially in $k$ alone.
+
+\begin{remark}[Where the theorem sits]
+\label{rem:transfer-regime}
+The instance violates the hypotheses of both earlier results, and each
+violation is needed. The experts see the type, so their logged rewards are not
+independent of their actions, which Proposition~\ref{prop:response-sum}
+assumes. And $c\le p/2$ forces $\beta<\sqrt\lambda\,\|\theta^\star\|$, below
+any valid confidence radius, which Theorem~\ref{thm:general-price} assumes.
+If instead $\beta(L-1)/\sqrt\lambda\ge1$, the regime of
+Proposition~\ref{prop:one-pass}, then $\langle\widehat\theta_t,D\rangle<1$
+gives $\mathrm{UCB}_t(D)<1+\beta/\sqrt\lambda\le c$ for every warm start, so no
+hybrid plays $D$ after $\tau$ and neither expert helps. With a valid radius,
+coverage governs; with the annealed exploration used in practice
+(Section~\ref{sec:exp-setup}), the transfer decides.
+\end{remark}
+
+\begin{remark}[Settling, and a more accurate but useless expert]
+\label{rem:transfer-extensions}
+(a) The theorem also shows the all-or-nothing behaviour seen on AmazonCat
+(Appendix~\ref{app:dominant}): once $\Hyb^A_\tau$ plays a fresh arm, the
+statistics of $D$ stop changing and every later fresh arm has index $c$, so it
+never plays $D$ again. It either settles on $D$ for good or never does.
+(b) $\Exp_B$ can be made strictly more accurate without changing anything
+after $\tau$: add $j$ window rounds on which the round's fresh arm is right and
+$j$ on which no action is; let $\Exp_B$ play the fresh arm on the former and
+$D$ on the latter, and $\Exp_A$ the reverse. Both still play $D$ equally often
+and differ only on fresh directions that never recur, $\Exp_B$ is right on
+$k+j$ routed rounds against $\Exp_A$'s $k$. Both acquisition regrets become
+$2k(p-q)+jp$, each hybrid has played $D$ $2k+j$ times at handoff, and
+(iii)--(iv) go through with $2k+j$ in place of $2k$ in the count of $D$, so
+that (iv) needs $h:=k-c(\lambda+2k+j)>0$.
+(c) The proof uses the radius only through $c$, so the theorem holds for any
+non-increasing schedule $\beta_t$ with $c:=\sup_{t>\tau}\beta_tL/\sqrt\lambda$.
+\end{remark}
+
+%% ---------------------------------------------------------------------------
+%% (3) Proof (for the appendix).
+%% ---------------------------------------------------------------------------
+
+\begin{proof}[Proof of Theorem~\ref{thm:transfer-separation}]
+Every offered arm is a multiple of a coordinate vector, so for every policy
+$V_t$ is diagonal and each coordinate of $\widehat\theta_t$ is computed
+separately. If before round $t$ the action $D$ has been played $n_D$ times with
+total reward $s_D$, and $R$ has been played $n_R$ times with total reward
+$s_R$, then
+\[
+\mathrm{UCB}_t(D)=\frac{s_D}{\lambda+n_D}+\frac{\beta}{\sqrt{\lambda+n_D}},\qquad
+\mathrm{UCB}_t(R)=\frac{s_R}{\lambda+n_R}+\frac{\beta}{\sqrt{\lambda+n_R}},\qquad
+\mathrm{UCB}_t(b_t)=c,
+\]
+the last because coordinate $t+2$ has not been touched before round $t$.
+Since $L>1$, $c=\beta L/\sqrt\lambda>\beta/\sqrt{\lambda+n}$ for every
+$n\ge0$.
+
+\emph{(i)} On the window, $\Exp_A$ plays $D$ on the $k$ rounds of type $D$
+(right) and the $k$ of type $R$ (wrong), and $R$ on the $2k$ of type
+$\varnothing$ (wrong); $\Exp_B$ plays $R$ on the $k$ rounds of type $D$ (wrong)
+and the $k$ of type $R$ (right), and $D$ on the $2k$ of type $\varnothing$
+(wrong). Each plays $D$ and $R$ exactly $2k$ times, so
+$M^A_\tau=M^B_\tau=2k(e_1e_1^\top+e_2e_2^\top)$, each pays $2k(p-q)$ for its
+plays of $R$, and each is right $k$ times. The response sums are $ke_1$ and
+$ke_2$, which gives the two estimates.
+
+\emph{(ii)} Cold LinUCB has $n_D=n_R=0$, so $\mathrm{UCB}_t(D)=\mathrm{UCB}_t(R)
+=\beta/\sqrt\lambda<c$ and it plays $b_t$; by induction it does so at every
+round, paying $p$ each time. If the routed rounds contribute no rewards, then
+after $\tau$ we have $s_D=s_R=0$, both indices equal $\beta/\sqrt{\lambda+2k}<c$,
+and the same induction applies.
+
+\emph{(iii)} After the window $\Hyb^B_\tau$ has $n_D=2k$ and $s_D=0$, because
+$\Exp_B$ played $D$ only on rounds of type $\varnothing$. Hence
+$\mathrm{UCB}_t(D)=\beta/\sqrt{\lambda+2k}<c$, and as long as $D$ is not
+played these statistics do not change; so $D$ is never played. Every round
+after $\tau$ then costs at least $p-q$, and the window cost $2k(p-q)$, so
+$R_T(\Hyb^B_\tau)\ge2k(p-q)+(T-4k)(p-q)=(p-q)(T-2k)$.
+
+\emph{(iv)} Let $X_i:=\ind\{y_{\tau+i}=D\}$, which are i.i.d.\ Bernoulli$(p)$,
+$S_n:=\sum_{i\le n}X_i$, and
+$G:=\{k+S_n>c(\lambda+2k+n)\ \text{for all }n\ge0\}$. On $G$, $\Hyb^A_\tau$
+plays $D$ at every round after $\tau$: if it has done so at rounds
+$\tau+1,\dots,\tau+n$, then $n_D=2k+n$ and $s_D=k+S_n$, so
+$\mathrm{UCB}(D)>s_D/(\lambda+n_D)>c$; and $n_R=2k$, $s_R=0$, so
+$\mathrm{UCB}(R)=\beta/\sqrt{\lambda+2k}<c$. It therefore plays $D$ at round
+$\tau+n+1$. Every round after $\tau$ then has gap $0$, and
+$R_T(\Hyb^A_\tau)=2k(p-q)$.
+
+For the probability, $n=0$ is in $G$ because $h>0$. For $n\ge1$, put
+$Y_i:=c-X_i\in[c-1,c]$, so that $\E Y_i=c-p<0$ and $G$ fails exactly when
+$\sum_{i\le n}Y_i\ge k-c(\lambda+2k)=h$ for some $n\ge1$. By Hoeffding's lemma,
+$\E e^{\theta Y_i}\le\exp(\theta(c-p)+\theta^2/8)$, which equals $1$ at
+$\theta=8(p-c)>0$. So $\exp(\theta\sum_{i\le n}Y_i)$ is a nonnegative
+supermartingale starting at $1$, and Ville's maximal inequality gives
+$\Prb(G^c)\le e^{-\theta h}=e^{-8(p-c)h}$. Finally $c\le p/2$ gives
+$8(p-c)\ge4p$ and $c\le1/4$ gives $h\ge(k-2c\lambda)/2$, so
+$8(p-c)h\ge2p(k-2c\lambda)$. The ratios follow from (ii)--(iv).
+\end{proof}

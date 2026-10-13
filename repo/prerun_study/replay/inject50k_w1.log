@@ -1,0 +1,16 @@
+[j1] hidden s1: acc 12.19%  injected routed 2  1452s
+[j1] seen s2: acc 30.16%  injected routed 6  1311s
+[j1] rand s2: acc 28.54%  injected routed 5  1310s
+[j1] hidden s3: acc 7.63%  injected routed 4  1308s
+[j1] seen s4: acc 12.47%  injected routed 1  1304s
+[j1] rand s4: acc 11.17%  injected routed 1  1309s
+[j1] hidden s5: acc 14.36%  injected routed 2  1304s
+[j1] seen s6: acc 22.70%  injected routed 1  1304s
+[j1] rand s6: acc 7.42%  injected routed 1  1314s
+[j1] hidden s7: acc 26.62%  injected routed 0  1305s
+[j1] seen s8: acc 27.62%  injected routed 5  1304s
+[j1] rand s8: acc 6.62%  injected routed 4  1310s
+[j1] hidden s9: acc 13.04%  injected routed 2  1302s
+[j1] seen s10: acc 12.03%  injected routed 3  1304s
+[j1] rand s10: acc 30.55%  injected routed 3  1305s
+[j1] DONE

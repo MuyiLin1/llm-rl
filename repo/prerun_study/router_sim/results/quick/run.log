@@ -1,0 +1,14 @@
+[2026-10-09 13:38:24] start pid=48020 cells total=12 todo=12 (resumed 0) out=results/quick
+[2026-10-09 13:38:24] done 1/12 s1|k=1|T=500|scripted seeds=50 0.1s | cold 150.0 hybA 15.2 (settle 0.900) hybB 148.8 | c=100: RA 46.0 (settle 0.020, routed 284) RB 53.0 (routed 443) | ETA 2s
+[2026-10-09 13:38:24] done 2/12 s1|k=1|T=500|adaptive seeds=50 0.2s | cold 150.0 hybA 45.1 (settle 0.700) hybB 149.1 | c=100: RA 46.4 (settle 0.040, routed 286) RB 50.8 (routed 458) | ETA 2s
+[2026-10-09 13:38:24] done 3/12 s1|k=2|T=500|scripted seeds=50 0.1s | cold 150.0 hybA 6.5 (settle 0.960) hybB 147.8 | c=100: RA 44.5 (settle 0.120, routed 278) RB 54.3 (routed 439) | ETA 2s
+[2026-10-09 13:38:24] done 4/12 s1|k=2|T=500|adaptive seeds=50 0.1s | cold 150.0 hybA 13.0 (settle 0.920) hybB 148.1 | c=100: RA 46.0 (settle 0.080, routed 284) RB 51.0 (routed 459) | ETA 1s
+[2026-10-09 13:38:25] done 5/12 fgt|k=1|T=500|scripted seeds=50 0.1s | cold 25.0 hybA 3.8 (settle 0.860) hybB 29.7 | c=100: RA 10.5 (settle 1.000, routed 151) RB 76.2 (routed 232) | ETA 1s
+[2026-10-09 13:38:25] done 6/12 fgt|k=1|T=500|adaptive seeds=50 0.1s | cold 25.0 hybA 8.7 (settle 0.660) hybB 26.4 | c=100: RA 10.6 (settle 1.000, routed 152) RB 76.1 (routed 232) | ETA 1s
+[2026-10-09 13:38:25] done 7/12 fgt|k=2|T=500|scripted seeds=50 0.1s | cold 25.0 hybA 1.8 (settle 0.960) hybB 31.7 | c=100: RA 10.8 (settle 1.000, routed 153) RB 78.7 (routed 212) | ETA 1s
+[2026-10-09 13:38:25] done 8/12 fgt|k=2|T=500|adaptive seeds=50 0.1s | cold 25.0 hybA 2.9 (settle 0.900) hybB 26.9 | c=100: RA 10.8 (settle 1.000, routed 153) RB 76.7 (routed 227) | ETA 1s
+[2026-10-09 13:38:25] done 9/12 s1_bigR|k=1|T=500|scripted seeds=50 0.2s | cold 150.0 hybA 149.3 (settle 0.000) hybB 149.3 | c=100: RA 80.8 (settle 0.000, routed 500) RB 44.2 (routed 500) | ETA 0s
+[2026-10-09 13:38:25] done 10/12 s1_bigR|k=1|T=500|adaptive seeds=50 0.2s | cold 150.0 hybA 149.4 (settle 0.000) hybB 149.2 | c=100: RA 80.3 (settle 0.000, routed 500) RB 44.7 (routed 500) | ETA 0s
+[2026-10-09 13:38:26] done 11/12 s1_bigR|k=2|T=500|scripted seeds=50 0.1s | cold 150.0 hybA 148.6 (settle 0.000) hybB 148.6 | c=100: RA 81.0 (settle 0.000, routed 500) RB 44.0 (routed 500) | ETA 0s
+[2026-10-09 13:38:26] done 12/12 s1_bigR|k=2|T=500|adaptive seeds=50 0.2s | cold 150.0 hybA 148.9 (settle 0.000) hybB 148.3 | c=100: RA 81.2 (settle 0.000, routed 500) RB 43.8 (routed 500) | ETA 0s
+[2026-10-09 13:38:26] finished in 2s; rows in results/quick/results.csv

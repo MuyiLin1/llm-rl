@@ -1,0 +1,44 @@
+{
+ "condition": "small_plus1471, reward hidden on injected answers (covariance kept)",
+ "T": 10000,
+ "seeds": "1-20",
+ "cold_acc": 0.0463,
+ "router_acc": {
+  "none": 0.0614,
+  "plus1471_seen": 0.121,
+  "plus1471_hidden": 0.0683,
+  "plusrand": 0.0763
+ },
+ "acc_mult": {
+  "none": 1.33,
+  "plus1471_seen": 2.62,
+  "plus1471_hidden": 1.48,
+  "plusrand": 1.65
+ },
+ "settle_1471_thr20": {
+  "none": 1,
+  "plus1471_seen": 8,
+  "plus1471_hidden": 2,
+  "plusrand": 2
+ },
+ "paired_t_acc": {
+  "hidden_vs_none": {
+   "t": 0.74,
+   "p": 0.467
+  },
+  "seen_vs_hidden": {
+   "t": 3.46,
+   "p": 0.00264
+  },
+  "seen_vs_none": {
+   "t": 3.58,
+   "p": 0.00199
+  }
+ },
+ "mcnemar_settle": {
+  "hidden_vs_none": 1.0,
+  "seen_vs_hidden": 0.031,
+  "seen_vs_none": 0.016
+ },
+ "injected_answers_routed_per_seed_mean": 2.15
+}

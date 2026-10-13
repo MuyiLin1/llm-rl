@@ -1,0 +1,17 @@
+{
+ "pid": 48020,
+ "start_time": "2026-10-09T13:38:24",
+ "status": "finished",
+ "cells_total": 12,
+ "cells_done": 12,
+ "current_cell": null,
+ "elapsed_s": 2.161125898361206,
+ "eta_s": 0.0,
+ "out": "results/quick",
+ "argv": [
+  "run_sweep.py",
+  "--quick",
+  "--out",
+  "results/quick"
+ ]
+}

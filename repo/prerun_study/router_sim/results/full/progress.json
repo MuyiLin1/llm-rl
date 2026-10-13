@@ -1,0 +1,16 @@
+{
+ "pid": 31999,
+ "start_time": "2026-10-10T00:01:44",
+ "status": "finished",
+ "cells_total": 128,
+ "cells_done": 128,
+ "current_cell": null,
+ "elapsed_s": 535.8623170852661,
+ "eta_s": 0.0,
+ "out": "/Users/linmuyi/code/DMwithLLM/prerun_study/router_sim/results/full",
+ "argv": [
+  "/Users/linmuyi/code/DMwithLLM/prerun_study/router_sim/run_sweep.py",
+  "--out",
+  "/Users/linmuyi/code/DMwithLLM/prerun_study/router_sim/results/full"
+ ]
+}

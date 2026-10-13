@@ -1,0 +1,17 @@
+expert acc on stream: small 5.20%  seen 5.35%  rand 5.35%
+[j0] seen s1: acc 24.93%  injected routed 2  1451s
+[j0] rand s1: acc 8.41%  injected routed 2  1312s
+[j0] hidden s2: acc 10.98%  injected routed 5  1310s
+[j0] seen s3: acc 19.53%  injected routed 4  1308s
+[j0] rand s3: acc 8.22%  injected routed 4  1304s
+[j0] hidden s4: acc 11.48%  injected routed 1  1310s
+[j0] seen s5: acc 25.87%  injected routed 2  1304s
+[j0] rand s5: acc 13.64%  injected routed 2  1304s
+[j0] hidden s6: acc 17.28%  injected routed 2  1315s
+[j0] seen s7: acc 26.62%  injected routed 0  1306s
+[j0] rand s7: acc 26.62%  injected routed 0  1306s
+[j0] hidden s8: acc 20.48%  injected routed 5  1309s
+[j0] seen s9: acc 13.12%  injected routed 2  1302s
+[j0] rand s9: acc 12.96%  injected routed 2  1304s
+[j0] hidden s10: acc 20.47%  injected routed 3  1304s
+[j0] DONE

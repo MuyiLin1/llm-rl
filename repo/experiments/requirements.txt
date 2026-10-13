@@ -1,0 +1,14 @@
+# Minimal environment for the online experiments and analysis.
+#
+# The online runner needs only NumPy. torch is optional: it is used for GPU
+# scoring (--device cuda) and for reading the legacy .pickle.gz datasets.
+# GPU float32 scoring and CPU float64 scoring were verified to give identical
+# results, so CPU-only reproduction is exact, just slower.
+numpy>=1.24,<3
+scipy>=1.10          # paired t-tests in the analysis scripts
+matplotlib>=3.7      # figures only
+
+# Optional, for --device cuda and for rebuilding datasets from the raw sources:
+# torch>=2.0
+# sentence-transformers>=2.2   # rebuilding embeddings (01_data_preparation)
+# transformers>=4.35           # regenerating the LLM caches (02_llm_caching)

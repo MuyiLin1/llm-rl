@@ -1,0 +1,11 @@
+[h1] s2: acc 4.15%  hidden rounds 1  303s
+[h1] s4: acc 4.03%  hidden rounds 2  313s
+[h1] s6: acc 4.17%  hidden rounds 1  310s
+[h1] s8: acc 7.21%  hidden rounds 2  319s
+[h1] s10: acc 4.82%  hidden rounds 4  321s
+[h1] s12: acc 3.83%  hidden rounds 3  292s
+[h1] s14: acc 7.11%  hidden rounds 2  281s
+[h1] s16: acc 8.42%  hidden rounds 2  278s
+[h1] s18: acc 13.13%  hidden rounds 3  278s
+[h1] s20: acc 7.60%  hidden rounds 1  263s
+[h1] DONE
