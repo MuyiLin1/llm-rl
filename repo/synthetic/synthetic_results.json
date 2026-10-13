@@ -1,0 +1,35 @@
+[
+  {
+    "option": "A",
+    "regime": "warm-start-likely (2/3 deviate)",
+    "llm_name": "oracle_30pct",
+    "llm_acc": 0.30594,
+    "angle": 6.560619831085205,
+    "avg_router": 0.03279552930756868,
+    "avg_llm": 0.025329134656903445,
+    "avg_cold": 0.034075184169175717,
+    "llm_pct": 2.4379999999999997
+  },
+  {
+    "option": "A",
+    "regime": "warm-start-likely (2/3 deviate)",
+    "llm_name": "oracle_50pct",
+    "llm_acc": 0.5029,
+    "angle": 6.365478515625,
+    "avg_router": 0.03283652113807433,
+    "avg_llm": 0.032949708234027264,
+    "avg_cold": 0.034075184169175717,
+    "llm_pct": 1.4200000000000002
+  },
+  {
+    "option": "A",
+    "regime": "warm-start-likely (2/3 deviate)",
+    "llm_name": "oracle_70pct",
+    "llm_acc": 0.701,
+    "angle": 6.6355204582214355,
+    "avg_router": 0.03292557448438504,
+    "avg_llm": 0.0364732341253679,
+    "avg_cold": 0.034075184169175717,
+    "llm_pct": 1.0919999999999999
+  }
+]

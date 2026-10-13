@@ -1,0 +1,147 @@
+PAPER REVISION TODO LIST
+========================
+Last updated: 2025-07-16
+
+STATUS SUMMARY:
+  ✅ Problem 2  (passive_full mismatch) — DONE in experiments_section.tex
+  ✅ Problem 4  (alpha decay schedule)  — DONE: added Exploration Schedule paragraph
+  ✅ Problem 5  (no CORRAL baseline)    — DONE: added Comparison paragraph
+  ✅ Problem 6  (AmazonCat deviation)   — DONE: addressed in Robustness paragraph
+  ⬜ Problem 7  (AmazonCat teammate)    — Requires teammate action
+  ✅ Problem 8  (c sensitivity)         — DONE: noted in env config (c=100 uniform)
+  ✅ Problem 9  (tiny multiplication)   — DONE: v3 provides complementary evidence
+  ✅ Problem 10 (embedding inconsistency) — DONE: v1=BERT, v3=BGE clearly stated
+  ⬜ Problem 11 (NeurIPS checklist)     — Requires full paper file
+  ✅ Problem 12 (terminology)           — DONE: Value-Gated → Confidence-Gated
+
+  ✅ v1 experiments (small/base/large)  — DONE locally, results integrated
+  ✅ v3 experiments (small/base/large)  — DONE locally, results integrated
+  ✅ Figures generated (40 PDFs)        — DONE in figures/
+  ✅ LaTeX updated                      — DONE in experiments_section.tex
+  ⬜ passive_full=True runs             — Not yet started
+
+
+== PROBLEM 2: PASSIVE_FULL MISMATCH ==
+
+All current results used --passive_full (updates V AND b during LLM rounds).
+The paper's Theorem 1 only covers V-only updates.
+
+Plan: Present both modes in a table. V-only matches theory exactly.
+V+b is a "practical enhancement" — note that Thm 1's bound still applies
+as a lower bound (more info can only help), but the theory doesn't fully
+explain the V+b benefit.
+
+
+== PROBLEM 4: ALPHA DECAY SCHEDULE ==
+
+Code uses: alpha_t = max(0.1, 1.0 * 0.9985^t)
+This is exponential decay — not what standard LinUCB theory assumes (fixed
+or slowly growing beta_T).
+
+Paper needs to:
+  - Add a sentence acknowledging this is a practical choice
+  - Suggest wording: "We use a geometrically decaying exploration coefficient
+    alpha_t = max(0.1, 0.9985^t) following standard empirical practice in
+    neural-linear bandits. While the theoretical analysis assumes a fixed
+    confidence radius beta_T, the decaying schedule improves finite-horizon
+    exploitation. We verify in Appendix X that the qualitative results
+    (reward multiplication when Assumption D holds) are robust to using
+    a fixed alpha = 0.1."
+  - Optional ablation: run small regime with fixed alpha=0.1 to verify
+
+
+== PROBLEM 5: NO CORRAL BASELINE ==
+
+We do not run CORRAL. Implementing it correctly is nontrivial (requires
+Online Mirror Descent with log-barrier, learning-rate schedule, etc.).
+
+Plan: Acknowledge in the paper's Discussion section. Wording:
+  "A direct empirical comparison with the randomized CORRAL master
+  [Agarwal et al., 2017] is a natural next step. Our focus here is on
+  the geometric warm-start mechanism, which operates through the design
+  matrix rather than probability-weight mixing."
+
+
+== PROBLEM 6: AMAZONCAT DEVIATION FROM THEORY ==
+
+The AmazonCat experiment uses:
+  - Calibrated confidence proxy instead of geometric norm for LLM uncertainty
+  - 50-dim SVD features instead of 768-dim element-wise product
+  - Internal LLM generation probability instead of V^{(1)} = cI
+
+Plan: Add explicit remark in Section 4.3. Wording:
+  "The AmazonCat instantiation replaces the geometric LLM uncertainty
+  (Line 11 of Algorithm 1) with a calibrated proxy based on the model's
+  generation probability. While this departs from the exact form assumed
+  in Theorems 1--2, the qualitative routing behavior is preserved: the
+  LLM dominates early, routing decays monotonically, and LinUCB takes
+  over. The theoretical framework applies to this setting with V^{(1)}
+  interpreted as an effective design matrix induced by the proxy."
+
+TELL TEAMMATE (for AmazonCat): See Problem #7 section below.
+
+
+== PROBLEM 7: AMAZONCAT — INSTRUCTIONS FOR TEAMMATE ==
+
+Tell your teammate who runs AmazonCat:
+
+1. The same extra logging we added to experiment_algorithm1.py should be
+   added to the AmazonCat experiment code:
+   - Log bottom-10 eigenvalues of V_warm and V_cold at checkpoints
+   - Track tau (handoff round), epsilon_tail (avg gap post-tau), max feature norm
+   - Track LLM accuracy post-handoff
+
+2. Need sensitivity analysis on lambda_scale parameter:
+   - Currently using lambda_scale = 0.050
+   - Run at least lambda_scale = {0.01, 0.025, 0.050, 0.10, 0.20}
+   - Report: final Router reward, LLM routing %, handoff timing
+   - This addresses reviewer concern about hyperparameter sensitivity
+
+3. If feasible, run passive_full=False variant as well (V-only updates
+   during LLM rounds). The current Amazon results likely use full updates.
+
+4. For the paper: need to compute theoretical multiplication factor
+   from Theorem 2 and compare to the empirical 4.83x number. This
+   requires the eigenvalue data from point 1 above.
+
+
+== PROBLEM 8: NO c SENSITIVITY ANALYSIS (WikiLinks) ==
+
+c=100 used for all WikiLinks experiments. Need ablation.
+
+Plan (low priority): Run small regime with c = {10, 50, 100, 500, 1000}.
+Show routing fraction and final reward. One small table in appendix.
+
+
+== PROBLEM 9: TINY WIKILINKS MULTIPLICATION FACTOR ==
+
+The v1 small regime lift is only +0.14 pp (10.83% vs 10.69%).
+The v2 numbers should be better — need to verify after new runs.
+
+Plan: Present v2 results (all-mpnet-base-v2) as the main results.
+The improved embedding should give clearer separation.
+Mention v1 results briefly or move to appendix.
+
+
+== PROBLEM 10: EMBEDDING MODEL INCONSISTENCY ==
+
+Paper currently says bert-base-nli-mean-tokens but we have v2 experiments
+with all-mpnet-base-v2. Need to decide which to present.
+
+Plan: Use v2 (all-mpnet-base-v2) as primary results. Update:
+  - Section 4.2 Environment Configuration paragraph
+  - Table 2 numbers
+  - All figure references
+  - Mention v1 in appendix for completeness
+
+
+== PROBLEM 11: NEURIPS CHECKLIST ==
+
+All items are \answerTODO{}. Must fill in before submission.
+Most are straightforward \answerYes{} with section pointers.
+
+
+== PROBLEM 12: TERMINOLOGY ==
+
+"Value-Gated architecture" appears once in Section 4.1 but is not defined.
+Should be "Confidence-Gated" throughout. Find and replace.

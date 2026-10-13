@@ -1,0 +1,1955 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2026
+
+% The authors should use one of these tracks.
+% Before accepting by the NeurIPS conference, select one of the options below.
+% 0. "default" for submission
+\usepackage{neurips_2026}
+% the "default" option is equal to the "main" option, which is used for the Main Track with double-blind reviewing.
+% 1. "main" option is used for the Main Track
+%  \usepackage[main]{neurips_2026}
+% 2. "position" option is used for the Position Paper Track
+%  \usepackage[position]{neurips_2026}
+% 3. "eandd" option is used for the Evaluations & Datasets Track
+ % \usepackage[eandd]{neurips_2026}
+ % if you need to opt-in for a single-blind submission in the E&D track:
+ %\usepackage[eandd, nonanonymous]{neurips_2026}
+% 4. "creativeai" option is used for the Creative AI Track
+%  \usepackage[creativeai]{neurips_2026}
+% 5. "sglblindworkshop" option is used for the Workshop with single-blind reviewing
+ % \usepackage[sglblindworkshop]{neurips_2026}
+% 6. "dblblindworkshop" option is used for the Workshop with double-blind reviewing
+%  \usepackage[dblblindworkshop]{neurips_2026}
+
+% After being accepted, the authors should add "final" behind the track to compile a camera-ready version.
+% 1. Main Track
+ % \usepackage[main, final]{neurips_2026}
+% 2. Position Paper Track
+%  \usepackage[position, final]{neurips_2026}
+% 3. Evaluations & Datasets Track
+ % \usepackage[eandd, final]{neurips_2026}
+% 4. Creative AI Track
+%  \usepackage[creativeai, final]{neurips_2026}
+% 5. Workshop with single-blind reviewing
+%  \usepackage[sglblindworkshop, final]{neurips_2026}
+% 6. Workshop with double-blind reviewing
+%  \usepackage[dblblindworkshop, final]{neurips_2026}
+% Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote.
+% For workshops (5., 6.), the authors should add the name of the workshop, "\workshoptitle" command is used to set the workshop title.
+% \workshoptitle{WORKSHOP TITLE}
+
+% "preprint" option is used for arXiv or other preprint submissions
+ % \usepackage[preprint]{neurips_2026}
+
+% to avoid loading the natbib package, add option nonatbib:
+%    \usepackage[nonatbib]{neurips_2026}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+
+
+
+
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{algorithm,algpseudocode}
+\usepackage{forest}
+\usepackage{tcolorbox}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+
+
+% Solution environment
+\newenvironment{solution}{\paragraph{Solution.}}{\hfill$\square$}
+
+% Blackboard bold sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+% Labels
+\newcommand{\alg}{\mathrm{alg}}
+\newcommand{\meta}{\mathrm{meta}}
+\newcommand{\fix}{\mathrm{fix}}
+
+% Probability
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+% Operators
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\UCB}{UCB}
+
+\newcommand{\argmax}{\operatorname*{arg\,max}}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\ind}{\mathbf{1}}
+
+% Inner product
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+
+% Calligraphic sets
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cE}{\mathcal{E}}
+
+% RL notation
+\newcommand{\SSS}{\mathcal{S}}
+\newcommand{\AAA}{\mathcal{A}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\RRR}{\mathcal{R}}
+\newcommand{\gammaRL}{\gamma}
+
+% Confidence bounds
+\newcommand{\olQ}{\overline{Q}}
+\newcommand{\ulQ}{\underline{Q}}
+\newcommand{\olV}{\overline{V}}
+\newcommand{\ulV}{\underline{V}}
+
+% Misc
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dt}{\mathrm{d}t}
+\newcommand{\given}{\,\bigl\vert\,}
+
+% Fractions
+\newcommand{\half}{\tfrac12}
+\newcommand{\thalf}{\tfrac32}
+
+% Notes
+\newcommand{\note}[1]{\paragraph{Note.} #1}
+
+% Theorem environments
+
+\theoremstyle{definition}
+\theoremstyle{remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+
+% Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote. 
+\title{Reward Multiplication in Contextual Bandits: A Confidence-Gated Meta-Algorithm}
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+
+\author{%
+  David S.~Hippocampus\thanks{Use footnote for providing further information
+    about author (webpage, alternative address)---\emph{not} for acknowledging
+    funding agencies.} \\
+  Department of Computer Science\\
+  Cranberry-Lemon University\\
+  Pittsburgh, PA 15213 \\
+  \texttt{hippo@cs.cranberry-lemon.edu} \\
+  % examples of more authors
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \AND
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Large pretrained models such as large language models (LLMs) provide strong
+prior knowledge that can accelerate sequential decision making, yet combining
+such frozen predictors with adaptive contextual bandit learners remains
+poorly understood from a regret-theoretic standpoint.
+Existing model-selection results guarantee performance competitive with the
+best base algorithm in hindsight but fail to explain why combining a fixed
+policy with an adaptive learner can \emph{strictly outperform both}---a
+phenomenon recently observed empirically and termed \emph{reward
+multiplication}.
+In this work, we develop a regret-based explanation for this effect in linear
+contextual bandits. We show that a fixed policy should be interpreted not
+merely as a competitor, but as a source of structured exploration that
+reshapes the geometry of the LinUCB design matrix.
+Concretely, we prove that under mild coverage assumptions the cumulative
+regret of a confidence-gated meta-algorithm decomposes into (i) a small
+additive early-reward term from the frozen policy, plus (ii) an adaptive term
+whose uncertainty radius is multiplicatively reduced by a factor
+$\sqrt{\lambda/(\lambda+\nu\tau)}$ relative to cold-start LinUCB.
+We further introduce a deterministic confidence-gated selector that routes
+decisions between one or more frozen experts and an online LinUCB learner
+based on self-normalized uncertainty scores, and translate the regret
+decomposition into an average-reward multiplication bound against the best
+frozen policy. Experiments on a large-scale entity-linking task with
+Flan-T5 predictors of varying capacity empirically validate the theory:
+our meta-algorithm achieves strict reward multiplication precisely when the
+adaptive learner's asymptotic ceiling exceeds the frozen policy's accuracy,
+and fails gracefully outside this regime.
+\end{abstract}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+Sequential decision making studies how an agent can adapt to an unknown
+environment through repeated interaction, where it observes contexts,
+selects actions, and receives feedback over time
+\cite{zhu2022largeaction,zhu2022contextual}.
+This framework underlies a wide range of applications, including
+recommendation systems \cite{li2010contextual,agarwal2016making},
+healthcare decision support \cite{tewari2017ads,svensson2023sequential},
+and dialogue systems \cite{li2016deep}.
+In many modern applications, large pretrained models such as large language
+models (LLMs) provide strong prior knowledge that can guide early decisions,
+raising the question of how such fixed predictors should be integrated into
+adaptive sequential learning algorithms
+\cite{brown2020language,ouyang2022training,achiam2023gpt,
+alamdari2024jumpstarting,abbasiyadkori2024believe}.
+Recent work increasingly highlights the complementary strengths of bandit
+algorithms and foundation models, where bandits provide principled
+exploration guarantees while pretrained models contribute structured prior
+information \cite{bouneffouf2025banditsllms}.
+
+Existing efforts to incorporate LLMs into sequential decision making largely
+follow two directions.
+The first treats decision making itself as a sequence modeling problem and
+adapts transformer-based architectures through pretraining or finetuning to
+interactive environments
+\cite{chen2021decision,zheng2022online,reid2022can,
+sun2023smart,raparthy2023generalization,lee2023supervised}.
+While effective empirically, these approaches require substantial
+computational resources.
+The second direction relies on prompt engineering and in-context learning to
+deploy pretrained models directly as policies
+\cite{krishnamurthy2024can}.
+Such approaches are supported by recent evidence that LLMs can exhibit
+in-context reinforcement learning behavior, enabling sequential adaptation
+without gradient-based updates \cite{monea2024llms}.
+Although computationally attractive, these methods typically require
+frontier-scale models and carefully designed prompts to achieve reliable
+performance.
+
+An alternative approach, introduced in \cite{chen2024llmdecision}, combines a
+fixed pretrained policy with an adaptive contextual bandit learner using an
+online model selection framework
+\cite{auer2002nonstochastic,agarwal2017corralling,pacchiano2020model,
+foster2020beyond}.
+This method is motivated by a simple empirical observation: pretrained
+policies often achieve strong initial performance due to prior knowledge,
+while adaptive bandit algorithms improve gradually through exploration.
+Recent studies further demonstrate that LLM-derived priors can significantly
+accelerate early learning by improving exploration efficiency in contextual
+bandits \cite{alamdari2024jumpstarting}.
+Surprisingly, combining the two can yield performance substantially higher
+than either component alone over finite horizons, a phenomenon referred to as
+\emph{reward multiplication}.
+
+While existing model selection guarantees ensure performance competitive
+with the best base learner in hindsight, they do not explain why combining a
+fixed policy with an adaptive learner can strictly outperform both.
+In particular, standard expert-aggregation analyses treat the fixed policy as
+a competitor rather than as a mechanism that reshapes the learning dynamics
+of the adaptive algorithm.
+
+In this work, we develop a regret-theoretic explanation for this phenomenon.
+We show that a fixed policy should be viewed not merely as a policy to
+imitate, but as a source of structured exploration that alters the geometry
+of the design matrix in linear contextual bandits.
+When early actions selected by the fixed policy align with
+reward-relevant directions, they accelerate the growth of the covariance
+matrix in informative subspaces, shrink confidence ellipsoids more rapidly,
+and improve short-horizon performance.
+This produces both an additive early reward gain and a multiplicative
+reduction in the uncertainty of the adaptive learner.
+
+Motivated by this perspective, we study the following questions:
+\begin{enumerate}
+    \item When can a fixed policy improve the average reward of an adaptive
+    contextual bandit algorithm, especially over finite horizons?
+    \item If multiple fixed policies are available (e.g., different prompts,
+    embeddings, or pretrained predictors), how should they be combined with
+    online exploration?
+\end{enumerate}
+
+To address the second question, we propose a confidence-gated meta-algorithm
+that dynamically routes decisions between candidate fixed policies and an
+adaptive contextual bandit learner.
+The method evaluates the uncertainty of each estimator relative to the
+current context and selects the policy with the smallest confidence radius.
+As the adaptive learner gathers information and its confidence ellipsoid
+contracts, control naturally shifts toward the online algorithm, yielding
+strong short-horizon performance while preserving optimal asymptotic regret.
+
+\paragraph{Our Contributions.}
+\begin{itemize}[itemsep=2pt, topsep=2pt]
+    \item \textbf{A geometric mechanism for reward multiplication.}
+    We give a concrete linear-bandit construction
+    (Proposition~\ref{prop:three-way}) in which, for $d\ge T$, a cold-start
+    LinUCB provably plays a suboptimal action on every round while an
+    anisotropically warm-started LinUCB plays the optimal action at every
+    round with high probability.
+    This isolates the mechanism by which a fixed policy alters LinUCB's
+    exploration trajectory.
+    \item \textbf{A confidence-gated meta-algorithm for multiple frozen
+    policies} (Algorithm~\ref{alg:confidence-gated}).
+    Given $m$ frozen estimators $\{(\widehat\theta_i,V^{(i)})\}_{i=1}^m$ and
+    an online LinUCB learner, the algorithm routes each round to the
+    predictor with the smallest self-normalized uncertainty, and admits an
+    optional one-way handover criterion that retires the frozen experts
+    once LinUCB's lower confidence bound dominates their upper bounds.
+    \item \textbf{A warm-started regret decomposition.}
+    Under coverage assumptions on the frozen expert's early actions, we
+    prove (Theorem~\ref{thm:warm-start-regret}) that the meta-algorithm's
+    regret decomposes as $\tau\varepsilon_0 + \mathcal{O}(\beta_T\sqrt{r(T-\tau)\log(1+L^2(T-\tau)/(\lambda+\nu\tau))})$,
+    whose adaptive term is smaller than cold-start LinUCB's by a
+    multiplicative factor $\Psi(\tau,\nu)\approx\sqrt{\lambda/(\lambda+\nu\tau)}$.
+    \item \textbf{Average-reward multiplication over the best frozen
+    policy.} Under a uniform tail-gap assumption, we prove
+    (Theorem~\ref{thm:avg-mult}) that the meta-algorithm's average reward
+    strictly exceeds that of the best frozen expert, with a lower bound
+    quantifying the multiplication factor explicitly.
+    \item \textbf{Empirical validation across three regimes.} On a
+    622{,}000-round entity-linking benchmark with three Flan-T5 predictors,
+    we show that the meta-algorithm achieves strict reward multiplication
+    precisely when the frozen policy is weaker than LinUCB's asymptotic
+    ceiling (matching our tail-gap condition), fails gracefully when this
+    condition is violated, and that the bulk of its advantage over cold
+    LinUCB comes from the geometric warm-start effect predicted by the
+    theory, not from direct early reward. We further demonstrate the same
+    mechanism at scale on AmazonCat-13K (1.18M rounds, 13{,}330 actions),
+    where the meta-algorithm breaks the frozen policy's accuracy ceiling
+    and achieves a $\sim 4.8\times$ reward multiplication factor.
+\end{itemize}
+
+\paragraph{Related Work.}
+A detailed discussion of related work---covering linear contextual bandit
+geometry, model selection and expert aggregation, warm-starting, and LLMs
+for sequential decision making---is deferred to Appendix~\ref{sec:related}.
+
+\section{Preliminaries}
+\label{sec:preliminaries}
+
+To formalize the phenomenon discussed above, we work in a standard contextual bandit setting \cite{zhu2022largeaction, zhu2022contextual}. At each round $t=1,\dots,T$, the learner observes a context and an action set $\mathcal{A}_t$, selects an action $a \in \mathcal{A}_t$, and receives bandit feedback. In the linear setting studied later, each action $a$ is associated with a feature vector $x_t(a)\in\mathbb{R}^d$, and the expected reward takes the form
+\[
+\mu_t(a)=x_t(a)^\top \theta^\star
+\]
+for an unknown parameter $\theta^\star\in\mathbb{R}^d$. The learner has access to two qualitatively different decision rules:
+\begin{enumerate}
+    \item a \emph{fixed policy}, induced by some estimator or prior vector $\widehat{\theta}$, which does not change with online data;
+    \item an \emph{adaptive bandit algorithm}, such as LinUCB, which updates its estimate over time and eventually improves through exploration.
+\end{enumerate}
+The fixed policy may be interpreted as coming from an LLM, pretraining, offline supervision, or another external source of prior knowledge. The key structural asymmetry is that the fixed policy may be good initially but cannot improve, whereas the adaptive algorithm may be weak initially but statistically improves as more data are collected.
+
+In the next section, we instantiate this idea in a linear contextual bandit model with a fixed linear policy and an adaptive bandit algorithm to demonstrate how initialization impacts early exploration, and then study how to route decisions among multiple fixed policies.
+
+\section{Main Results}
+\label{sec:main-results}
+
+This section develops the paper's main contributions. Section~\ref{sec:specific} gives a high-dimensional example isolating the geometric mechanism by which an initialization affects LinUCB's trajectory. Section~\ref{sec:master-multiple} introduces the confidence-gated meta-algorithm that routes decisions between frozen policies and online LinUCB. Section~\ref{sec:reward-multiplication} states the warm-started regret decomposition (Theorem~\ref{thm:warm-start-regret}) and Section~\ref{sec:avg-reward-multiplication} translates it into an average-reward multiplication bound against the best frozen policy (Theorem~\ref{thm:avg-mult}). Proofs of all results in this section are deferred to Appendix~\ref{app:proofs}.
+
+\subsection{A Geometric Mechanism: Constant Policies and Warm-Started LinUCB}
+\label{sec:specific}
+
+We construct a linear bandit instance on which three natural strategies behave very differently: (i) a constant policy based on a fixed parameter estimate, (ii) LinUCB with isotropic initialization, and (iii) LinUCB warm-started by the data the constant policy would generate. The first two suffer linear regret, while their composition achieves constant regret with high probability. The point of the example is not that warm-starting helps, but that two individually inadequate components --- a non-learning prior policy and an explore-aggressive online algorithm --- combine to produce a strategy that neither attains alone. The phenomenon relies on a large ambient dimension and carefully structured context vectors.
+
+\begin{proposition}[Three-way separation in high-dimensional linear bandits]
+\label{prop:three-way}
+Fix a horizon $n\ge 1$, a constant $L>1$, and a regularization parameter $\lambda>0$. There exist a dimension $d\ge n+1$, an unknown parameter $\theta^\star\in\mathbb{R}^d$, and a sequence of two-action sets $\{\mathcal{A}_t\}_{t=1}^n$ such that the following hold for any sub-Gaussian noise model with parameter $\sigma$:
+\begin{enumerate}
+    \item there is a constant (non-updating) policy $\pi_{\mathrm{const}}$ whose cumulative pseudo-regret on the horizon $n$ is exactly $n$;
+    \item LinUCB initialized with $V_0=\lambda I_d$ and $\widehat{\theta}_0=0$ also incurs cumulative pseudo-regret $n$, selecting the same action as $\pi_{\mathrm{const}}$ at every round;
+    \item for any $m$ sufficiently large (in particular satisfying the explicit condition stated in Appendix~\ref{app:proof-three-way}), LinUCB warm-started with the design matrix that $\pi_{\mathrm{const}}$ would generate from $mn$ offline rollouts incurs cumulative pseudo-regret $O(1)$ with probability at least $1-\delta$.
+\end{enumerate}
+\end{proposition}
+
+The construction, the supporting subgaussian concentration lemma, and the full proof are given in Appendix~\ref{app:proof-three-way}.
+
+The roles of the two components are complementary. The constant policy contributes no online exploitation but reshapes the geometry of $V_0$ in the directions LinUCB would otherwise over-explore; isotropic LinUCB contributes online exploitation but is misled into expending its budget on directions irrelevant to reward. Composed --- the constant policy as data collector, LinUCB as online learner --- they recover the reward-relevant direction after a single pull. This is the central qualitative point of the example: when the dimension is large relative to the horizon, the value of warm-start data is not that it estimates $\theta^\star$ (it doesn't --- the warm-started parameter satisfies $\widehat\theta_0'=0$), but that it constrains LinUCB's optimism enough for one good observation to settle the comparison.
+
+\begin{remark}
+This phenomenon is analogous to the classical multi-armed bandit setting, where an unpulled arm remains highly optimistic. In the contextual setting, such examples are less immediate because all actions share the same unknown parameter $\theta^\star$, so information can in principle transfer across arms. Here, the orthogonality of the bad directions prevents that transfer from helping. Note that the constant policy and isotropic LinUCB select the \emph{same} action at every round, but for very different reasons: $\pi_{\mathrm{const}}$ is hard-coded to favor the bad direction, whereas LinUCB is misled by isotropic uncertainty.
+\end{remark}
+
+\subsection{Mastering Multiple Constant Policies via a Confidence-Gated Meta-Algorithm}
+\label{sec:master-multiple}
+
+In the previous section, we showed that a better initialization of $V_0$
+can substantially improve performance, especially in the short-horizon regime.
+When the horizon $T$ is not large relative to the ambient dimension $d$,
+a favorable initialization shrinks the initial confidence ellipsoid in
+reward-relevant directions and can therefore accelerate reward accumulation.
+
+In this section, we take an algorithmic perspective.
+Rather than encoding prior knowledge through a single improved initialization,
+we assume access to \emph{multiple frozen policy estimators}
+$\{(\widehat{\theta}_i,V^{(i)})\}_{i=1}^m$.
+Each pair should be thought of as a constant policy obtained offline:
+$\widehat{\theta}_i$ is a fixed linear predictor, and $V^{(i)}$ is the
+corresponding design matrix that captures the geometry of the data on which
+that predictor was trained.
+
+Our goal is not to compete with the single best expert in hindsight.
+That objective is closer in spirit to online model-selection methods such as
+CORRAL \cite{agarwal2017corralling}, which are also used by
+\cite{chen2024llmdecision} to randomly mix LLM-based policies with
+contextual bandit algorithms.
+Such methods are well suited for robustness guarantees of the form
+``perform nearly as well as the best base algorithm.''
+Here, however, our objective is different:
+we want to exploit \emph{reward multiplication} from good frozen policies in the
+early rounds, while still allowing the online learner to take over once it has
+become sufficiently confident.
+For that reason, we use a deterministic confidence-gated rule rather than a
+randomized master algorithm.
+
+\paragraph{Setting.}
+At each round $t=1,\dots,T$, the learner observes a finite action set
+$\mathcal{A}_t$.
+Each action $a\in\mathcal{A}_t$ is associated with a feature vector
+$x_{t,a}\in\mathbb{R}^d$.
+The learner selects an action $A_t\in\mathcal{A}_t$ and observes reward
+$r_t = \langle \theta^\star, x_{t,A_t}\rangle + \eta_t$,
+where $\eta_t$ is conditionally mean-zero sub-Gaussian noise.
+We are given $m$ frozen estimators $\{(\widehat{\theta}_i,V^{(i)})\}_{i=1}^m$
+and an online LinUCB learner with state $(V_t,b_t,\widehat{\theta}_t)$,
+where $\widehat{\theta}_t = V_t^{-1} b_t$.
+The frozen estimators are never updated; only LinUCB is updated online.
+
+\paragraph{Expert proposals and geometry-aware confidence.}
+Each frozen expert $i\in[m]$ proposes the greedy action
+$a_t^{(i)} \in \arg\max_{a\in\mathcal{A}_t} \langle \widehat{\theta}_i, x_{t,a}\rangle$.
+To measure how trustworthy expert $i$ is on the current round, we evaluate the
+uncertainty of its proposed action under its own design geometry:
+\[
+u_t^{(i)}
+:=
+\bigl\|x_{t,a_t^{(i)}}\bigr\|_{(V^{(i)})^{-1}},
+\qquad
+\|x\|_{M^{-1}} := \sqrt{x^\top M^{-1}x}.
+\]
+The interpretation is simple. If the proposed action lies in directions that
+are well covered by the offline data underlying expert $i$, then $u_t^{(i)}$
+is small and the expert is more trustworthy; if instead the current context
+points in directions poorly represented in $V^{(i)}$, then $u_t^{(i)}$ is
+large and the expert should be trusted less.
+We treat LinUCB itself as an additional candidate, indexed by $0$, with proposal
+\[
+a_t^{(0)}
+\in
+\arg\max_{a\in\mathcal{A}_t}
+\left\{
+\langle \widehat{\theta}_t, x_{t,a}\rangle
++
+\alpha_t \|x_{t,a}\|_{V_t^{-1}}
+\right\},
+\]
+and uncertainty score $u_t^{(0)} := \|x_{t,a_t^{(0)}}\|_{V_t^{-1}}$.
+
+\paragraph{Deterministic confidence-gated selection.}
+A natural rule is to prefer the frozen expert whose proposed action has the
+smallest uncertainty score, unless the online learner is already at least as
+confident. Concretely, define $i_t^\star \in \arg\min_{i\in[m]} u_t^{(i)}$,
+and choose
+\[
+I_t
+=
+\begin{cases}
+i_t^\star, & \text{if } u_t^{(i_t^\star)} < u_t^{(0)},\\[3pt]
+0, & \text{otherwise},
+\end{cases}
+\qquad
+A_t := a_t^{(I_t)}.
+\]
+Thus the master algorithm is entirely deterministic:
+on each round it compares the most geometry-confident frozen policy against the
+current LinUCB proposal and selects whichever source appears more reliable.
+Early in learning, LinUCB typically has a large confidence radius, so one of
+the frozen experts may be preferred. As data accumulate, the online design
+matrix $V_t$ grows and the LinUCB uncertainty shrinks, and eventually the
+adaptive learner becomes the most confident option and takes over automatically.
+
+\paragraph{Optional permanent handover to LinUCB.}
+To formalize the idea that LinUCB should eventually dominate, it is useful to
+include a one-way switching criterion. For each frozen expert $i\in[m]$,
+define an upper confidence score
+\[
+U_t^{(i)}
+=
+\langle \widehat{\theta}_i, x_{t,a_t^{(i)}}\rangle
++
+\sqrt{\beta_i}\,
+\|x_{t,a_t^{(i)}}\|_{(V^{(i)})^{-1}},
+\]
+and a lower confidence score for LinUCB
+\[
+L_t^{(0)}
+=
+\langle \widehat{\theta}_t, x_{t,a_t^{(0)}}\rangle
+-
+\sqrt{\beta_t}\,
+\|x_{t,a_t^{(0)}}\|_{V_t^{-1}}.
+\]
+If for $K$ consecutive rounds we have $L_t^{(0)} \ge \max_{i\in[m]} U_t^{(i)}$,
+then we permanently hand control over to LinUCB. This test expresses the
+high-level principle that once the adaptive learner's lower confidence bound
+exceeds every frozen expert's upper confidence bound, there is no longer any
+reason to consult the frozen policies.
+
+\begin{algorithm}[t]
+\caption{Confidence-Gated Master over Frozen Policies and LinUCB}
+\label{alg:confidence-gated}
+\begin{algorithmic}[1]
+\Require Frozen estimators $\{(\widehat{\theta}_i,V^{(i)})\}_{i=1}^m$, regularization $\lambda>0$, confidence parameters $\{\alpha_t\}_{t=1}^T$
+\State Initialize LinUCB state:
+\[
+V_1=\lambda I_d,\qquad b_1=0,\qquad \widehat{\theta}_1=0
+\]
+\State Set $\textsc{handover}\gets \mathrm{False}$
+\For{$t=1,\dots,T$}
+    \State Observe action set $\mathcal{A}_t$
+    \State Compute LinUCB proposal
+    \[
+    a_t^{(0)} \in \arg\max_{a\in\mathcal{A}_t}
+    \left\{
+    \langle \widehat{\theta}_t,x_{t,a}\rangle
+    + \alpha_t \|x_{t,a}\|_{V_t^{-1}}
+    \right\}
+    \]
+    \State Set $u_t^{(0)} \gets \|x_{t,a_t^{(0)}}\|_{V_t^{-1}}$
+    \For{$i=1,\dots,m$}
+        \State Compute frozen proposal
+        \[
+        a_t^{(i)} \in \arg\max_{a\in\mathcal{A}_t}
+        \langle \widehat{\theta}_i,x_{t,a}\rangle
+        \]
+        \State Set
+        \[
+        u_t^{(i)} \gets \|x_{t,a_t^{(i)}}\|_{(V^{(i)})^{-1}}
+        \]
+    \EndFor
+    \If{$\textsc{handover}=\mathrm{True}$}
+        \State $A_t \gets a_t^{(0)}$
+    \Else
+        \State Choose
+        \[
+        i_t^\star \in \arg\min_{i\in[m]} u_t^{(i)}
+        \]
+        \If{$u_t^{(i_t^\star)} < u_t^{(0)}$}
+            \State $A_t \gets a_t^{(i_t^\star)}$
+        \Else
+            \State $A_t \gets a_t^{(0)}$
+        \EndIf
+    \EndIf
+    \State Observe reward $r_t$
+    \State Update LinUCB:
+    \[
+    V_{t+1}\gets V_t + x_{t,A_t}x_{t,A_t}^\top,
+    \qquad
+    b_{t+1}\gets b_t + r_t x_{t,A_t},
+    \qquad
+    \widehat{\theta}_{t+1}\gets V_{t+1}^{-1}b_{t+1}
+    \]
+    \State Compute $U_t^{(i)}$ for all $i\in[m]$ and $L_t^{(0)}$
+    \If{$L_t^{(0)} \ge \max_{i\in[m]} U_t^{(i)}$ for $K$ consecutive rounds}
+        \State $\textsc{handover}\gets \mathrm{True}$
+    \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Interpretation.}
+The key quantity in the master rule is not the frozen expert's predicted reward
+alone, but its confidence-adjusted geometric fit to the current action set.
+A frozen policy may be strong precisely because its training data produced a
+design matrix that is well aligned with reward-relevant directions.
+When this happens, the corresponding uncertainty score is small, and the master
+can use that policy as a reliable warm start. Conversely, if the current
+contexts fall outside the geometry captured by a frozen expert, its uncertainty
+score will be large and the rule will defer to LinUCB. This perspective also
+clarifies the distinction from expert-mixing approaches such as CORRAL: those
+methods randomize among base algorithms in order to achieve robust regret
+relative to the best base algorithm, whereas our goal is to use frozen policies
+to improve the \emph{trajectory of learning} itself by steering early data
+collection toward useful directions, thereby increasing short-horizon average
+reward and amplifying the eventual performance of the adaptive learner.
+
+\subsection{A Regret Decomposition for the Warm-Started Meta-Algorithm}
+\label{sec:reward-multiplication}
+
+The empirical phenomenon in \cite{chen2024llmdecision} suggests a useful
+decomposition of the benefit of combining a frozen LLM-style policy with an
+adaptive contextual bandit: (i) the frozen policy contributes \emph{good early
+actions}, which immediately improve reward; and (ii) those same actions
+contribute \emph{useful feature coverage}, so that when control is handed
+over to LinUCB, the adaptive learner starts from a better-conditioned design
+matrix and therefore learns faster.
+The second effect is the source of the apparent ``multiplication'': the frozen
+policy does not merely add reward on the rounds when it is played, it also
+shrinks the future uncertainty term of the adaptive algorithm.
+
+We now formalize this under a stylized warm-start model. Fix one frozen
+expert $i^\star\in[m]$, and suppose the meta-algorithm follows
+expert $i^\star$ for the first $\tau$ rounds and then permanently switches to
+LinUCB. Write $a_t^\star \in \arg\max_{a\in\mathcal A_t}\langle \theta^\star, x_{t,a}\rangle$
+for the optimal action, and define $\mu_t(a) := \langle \theta^\star, x_{t,a}\rangle$.
+The instantaneous gap of expert $i^\star$ is
+$\Delta_t^{(i^\star)} := \mu_t(a_t^\star)-\mu_t(a_t^{(i^\star)})$.
+We impose the following assumptions.
+
+\paragraph{Assumption A (uniform early quality).}
+There exists $\varepsilon_0\ge 0$ such that for all $t\le \tau$,
+$\Delta_t^{(i^\star)} \le \varepsilon_0$.
+Thus expert $i^\star$ is uniformly near-optimal during the warm-start phase.
+
+\paragraph{Assumption B (reward-relevant warm-start coverage).}
+There exists an $r$-dimensional orthogonal projector $P$ such that
+$\theta^\star \in \mathrm{Im}(P)$, $x_{t,a}\in \mathrm{Im}(P)$ for all $t,a$, and
+\[
+\sum_{t=1}^{\tau}
+x_{t,a_t^{(i^\star)}}x_{t,a_t^{(i^\star)}}^\top
+\succeq \nu \tau\, P
+\]
+for some $\nu>0$.
+In words, the frozen expert collects data that covers the reward-relevant
+subspace at rate $\nu\tau$.
+
+\paragraph{Assumption C (correct handover).}
+The confidence-gated switching rule triggers by time $\tau$, after which the
+algorithm follows LinUCB exclusively.
+
+Assumption B is the key structural condition. It says that the frozen expert is
+not merely good in reward, but that it also expands the design matrix in the
+subspace that matters for predicting reward. This is precisely the mechanism by
+which a fixed policy can improve the future adaptive learner.
+
+\begin{theorem}[Warm-started regret bound]
+\label{thm:warm-start-regret}
+Assume rewards follow the linear model
+\[
+r_t = \langle \theta^\star, x_{t,A_t}\rangle + \eta_t,
+\]
+where $(\eta_t)_t$ is conditionally $\sigma$-sub-Gaussian, and
+$\|x_{t,a}\|_2\le L$ for all $t,a$.
+Suppose Assumptions A--C hold. Then with probability at least $1-\delta$,
+the cumulative regret of the confidence-gated meta-algorithm satisfies
+\begin{equation}
+\label{eq:warm-meta-regret}
+R_T^{\mathrm{meta}}
+\;\le\;
+\tau\varepsilon_0
++
+C\,\beta_T\,
+\sqrt{
+r (T-\tau)
+\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr)
+},
+\end{equation}
+where $C>0$ is a universal constant and $\beta_T$ is the usual linear-bandit
+confidence radius.
+By comparison, a cold-start LinUCB bound takes the form
+\begin{equation}
+\label{eq:cold-regret}
+R_T^{\mathrm{cold}}
+\;\le\;
+C\,\beta_T\,
+\sqrt{
+rT
+\log\!\Bigl(
+1+\frac{L^2T}{\lambda}
+\Bigr)
+}.
+\end{equation}
+\end{theorem}
+
+The proof, which separately bounds the warm-start phase using
+Assumption~A and the post-handover LinUCB phase using a standard
+self-normalized concentration argument applied to the enlarged design
+matrix from Assumption~B, is given in Appendix~\ref{app:proof-warm-start}.
+
+Theorem~\ref{thm:warm-start-regret} cleanly separates the two benefits of the
+frozen policy:
+\[
+\underbrace{\tau\varepsilon_0}_{\text{early additive term}}
+\qquad+\qquad
+\underbrace{
+C\,\beta_T\,
+\sqrt{
+r (T-\tau)
+\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr)
+}
+}_{\text{late adaptive term}}.
+\]
+The early term measures how good the frozen policy is as a policy.
+The late term measures how much it improves the \emph{initial condition} of
+LinUCB through the enlarged matrix $\lambda+\nu\tau$ in the reward-relevant
+subspace.
+In particular, the adaptive part of the regret is reduced relative to cold-start
+LinUCB by the factor
+\[
+\Psi(\tau,\nu)
+:=
+\sqrt{\frac{T-\tau}{T}}
+\cdot
+\sqrt{
+\frac{
+\log\!\bigl(1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}\bigr)
+}{
+\log\!\bigl(1+\frac{L^2T}{\lambda}\bigr)
+}
+}
+\;\approx\;
+\sqrt{\frac{\lambda}{\lambda+\nu\tau}},
+\]
+ignoring horizon and logarithmic effects. Thus the warm-start phase
+\emph{multiplies down} the future uncertainty cost of LinUCB.
+
+\begin{corollary}[Strict improvement over the two baselines]
+\label{cor:strict-improvement-clean}
+Under the assumptions of Theorem~\ref{thm:warm-start-regret}, suppose in
+addition that the frozen expert has tail gap at least
+$\varepsilon_{\mathrm{tail}}>0$:
+\[
+\mu_t(a_t^\star)-\mu_t(a_t^{(i^\star)}) \ge \varepsilon_{\mathrm{tail}}
+\qquad
+\text{for all } t>\tau,
+\]
+and that
+\[
+\tau\varepsilon_0
+<
+C\,\beta_T
+\sqrt{
+r\tau\log\!\Bigl(1+\frac{L^2\tau}{\lambda}\Bigr)
+}
+\]
+and
+\[
+C\,\beta_T
+\sqrt{
+r (T-\tau)
+\log\!\Bigl(1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}\Bigr)
+}
+<
+(T-\tau)\varepsilon_{\mathrm{tail}}.
+\]
+Then
+$R_T^{\mathrm{meta}} < \min\{R_T^{\mathrm{cold}},\,R_T^{(i^\star)}\}$.
+Equivalently, the meta-algorithm obtains strictly larger cumulative reward
+than either base algorithm run in isolation.
+\end{corollary}
+
+The proof is given in Appendix~\ref{app:proof-strict-improvement}. The gain
+from combining a frozen policy with LinUCB should be read as
+``early additive gain $+$ late multiplicative shrinkage of uncertainty.''
+This gives a concrete theoretical interpretation of the empirical phenomenon:
+a good frozen policy not only earns reward early, it also preconditions the
+design matrix so that the adaptive learner improves faster thereafter.
+
+\subsection{Average-Reward Multiplication Against the Best Frozen Policy}
+\label{sec:avg-reward-multiplication}
+
+The empirical effect in \cite{chen2024llmdecision} is often more naturally
+described in terms of average reward than regret. Define
+$\bar r_T^{\alg} := \frac{1}{T}\sum_{t=1}^T \mathbb E[r_t^{\alg}]$.
+Since $R_T^{\alg} = \sum_{t=1}^T \mu_t(a_t^\star) - T\bar r_T^{\alg}$,
+a regret reduction is equivalent to an average-reward increase. However, to
+capture the observed ``reward multiplication'' effect, it is more transparent
+to compare the meta-algorithm directly to the best frozen policy.
+
+No algorithm can guarantee a factor strictly larger than $1$ against
+\emph{every} fixed policy without further assumptions: if some frozen
+policy is already optimal on every round, then no other algorithm can
+uniformly guarantee a larger average reward. Therefore, any nontrivial
+multiplication result must assume that the frozen policies are useful early
+but eventually suboptimal. To formalize this, for each frozen expert
+$i\in[m]$ let
+$a_t^{(i)} \in \arg\max_{a\in\mathcal A_t} \langle \widehat\theta_i, x_{t,a}\rangle$ and
+$\bar r_T^{(i)} := \frac1T \sum_{t=1}^T \mathbb E[\mu_t(a_t^{(i)})]$.
+Let $i^\star \in \arg\max_{i\in[m]} \bar r_T^{(i)}$ and
+$\bar r_T^{\fix}:=\bar r_T^{(i^\star)}$. We retain Assumptions A--C from
+Theorem~\ref{thm:warm-start-regret}, now applied to the best frozen expert
+$i^\star$, and add the following.
+
+\paragraph{Assumption D (uniform tail gap for frozen experts).}
+There exists $\varepsilon_{\mathrm{tail}}>0$ such that for every frozen
+expert $i\in[m]$,
+\[
+\frac{1}{T-\tau}\sum_{t=\tau+1}^T
+\bigl(
+\mu_t(a_t^\star)-\mu_t(a_t^{(i)})
+\bigr)
+\ge
+\varepsilon_{\mathrm{tail}}.
+\]
+In words, every frozen policy is eventually worse than the optimal adaptive
+behavior by at least $\varepsilon_{\mathrm{tail}}$ on average over the tail.
+This is the assumption that turns a regret improvement into a genuine
+``multiplication over fixed policies'' statement.
+
+\begin{theorem}[Average-reward multiplication against the best frozen policy]
+\label{thm:avg-mult}
+Under Assumptions A--D, with probability at least $1-\delta$,
+\begin{equation}
+\label{eq:avg-reward-improvement}
+\bar r_T^{\meta}
+\;\ge\;
+\bar r_T^{\fix}
++
+\frac{(T-\tau)\varepsilon_{\mathrm{tail}}}{T}
+-
+\frac{C\,\beta_T}{T}
+\sqrt{
+r(T-\tau)
+\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr)
+}.
+\end{equation}
+Consequently, whenever $\bar r_T^{\fix}>0$,
+\begin{equation}
+\label{eq:multiplication-lower-bound}
+\frac{\bar r_T^{\meta}}{\bar r_T^{\fix}}
+\;\ge\;
+1+
+\frac{
+(T-\tau)\varepsilon_{\mathrm{tail}}
+-
+C\,\beta_T
+\sqrt{
+r(T-\tau)
+\log\!\bigl(1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}\bigr)
+}
+}{
+T\,\bar r_T^{\fix}
+}.
+\end{equation}
+\end{theorem}
+
+The proof, which combines the post-handover regret bound from
+Theorem~\ref{thm:warm-start-regret} with the tail-gap inequality of
+Assumption~D, is given in Appendix~\ref{app:proof-avg-mult}.
+
+A simple sufficient condition for strict multiplication is immediate:
+whenever
+\[
+(T-\tau)\varepsilon_{\mathrm{tail}}
+>
+C\,\beta_T
+\sqrt{
+r(T-\tau)
+\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr)
+},
+\]
+we have $\bar r_T^{\meta} > \bar r_T^{\fix}$, so the meta-algorithm achieves
+strictly larger average reward than the best frozen policy in hindsight.
+Because the post-handover LinUCB term is sublinear in $T-\tau$ while the
+frozen-policy tail gap contributes a linear gain
+$(T-\tau)\varepsilon_{\mathrm{tail}}$, the improvement becomes especially
+transparent for large horizons: whenever $\tau=o(T)$ and $\bar r_T^{\fix}$
+stays bounded away from zero,
+\[
+\frac{\bar r_T^{\meta}}{\bar r_T^{\fix}}
+\ge
+1+\frac{\varepsilon_{\mathrm{tail}}}{\bar r_T^{\fix}}-o(1).
+\]
+The multiplication factor is large when (i) the frozen policy is strong
+enough to be useful in the warm-start phase; (ii) the frozen policies are
+eventually dominated by online learning, so that
+$\varepsilon_{\mathrm{tail}}>0$; and (iii) the actions selected in the
+warm-start phase generate good coverage in the reward-relevant subspace, so
+that $\nu\tau$ is large and the later LinUCB regret is small. In this sense,
+the combined algorithm beats a fixed policy twice: first through better
+early decisions, and second by using those decisions to build a better
+design matrix for future learning.
+
+
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{General Experimental Setup}
+
+\textbf{Datasets.} We evaluate the empirical performance of our Value-Gated architecture on two large-scale textual contextual bandit datasets characterized by massive action spaces, summarized in Table \ref{tab:datasets}. We formulate the objective as a strict Precision@1 task: the algorithm receives a binary reward of $r_t = 1$ for selecting a correct ground-truth action, and $r_t = 0$ otherwise.
+
+\begin{table}[h]
+\centering
+\caption{Summary of datasets used for contextual bandit experiments.}
+\label{tab:datasets}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Dataset} & \textbf{Time Horizon ($T$)} & \textbf{Action Space ($|A|$)} \\ \midrule
+OneShotWikiLinks-311 & 622,000 & 311 \\
+AmazonCat-13K & 1,186,239 & 13,330 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Baselines \& Meta-Algorithm.} Each experiment simultaneously tracks three policies on the same data stream:
+\begin{enumerate}[nosep]
+    \item \textbf{Router (Algorithm~\ref{alg:confidence-gated}):} The confidence-gated meta-algorithm. We model the frozen LLM's design matrix as $V^{(1)} = c \cdot I_d$ with confidence parameter $c$, simplifying the LLM uncertainty score to $u_t^{(1)} = \|\phi(x_t, a_t^{(1)})\|_2 / \sqrt{c}$. The adaptive LinUCB's uncertainty is $u_t^{(0)} = \|\phi(x_t, a_t^{(0)})\|_{V_t^{-1}}$. The deterministic routing rule selects the LLM when $u_t^{(1)} < u_t^{(0)}$ and LinUCB otherwise.
+    \item \textbf{LLM only (Pure Master):} A static frozen policy applied on every round, establishing the natural accuracy boundary.
+    \item \textbf{Cold LinUCB (Pure Apprentice):} An independent LinUCB instance initialized from $\lambda I_d$ with no warm-start data.
+\end{enumerate}
+
+Regardless of which policy is selected by the Router, the adaptive learner updates its design matrix $V$ and response vector $b$ with the played action and observed reward. 
+
+\textbf{Evaluation Metrics.} We measure learning efficiency using the Cumulative Average Reward (Precision@1). Mechanistically, we track the Fraction of LLM Routing over time to explicitly visualize the algorithm's ability to decay its reliance on the computationally expensive LLM.
+
+% ==========================================
+% WIKI RESULTS
+% ==========================================
+\subsection{Performance on OneShotWikiLinks-311}
+\label{sec:wiki_experiments}
+
+\paragraph{Environment Configuration.}
+The OneShotWikiLinks-311 benchmark consists of 622{,}000 context--entity pairs spanning 311 entities (filtered for $\geq$ 2{,}000 support). Context embeddings are produced by a frozen SentenceTransformer (\texttt{bert-base-nli-mean-tokens}), yielding $768$-dimensional vectors. Each entity is similarly embedded, producing a fixed action feature matrix $\Phi \in \mathbb{R}^{311 \times 768}$. The joint feature is the element-wise product $\phi(x,a) = x \odot a \in \mathbb{R}^{768}$. The frozen estimator is a Flan-T5 language model \cite{chung2024scaling} used in mask-filling mode: the masked context is passed through T5, the predicted token is embedded, and the entity with highest cosine similarity to the prediction is selected. We experiment with three model sizes---\texttt{small} (60M parameters), \texttt{base} (250M), and \texttt{large} (780M)---which achieve progressively higher accuracy but are never updated online. The adaptive algorithm is LinUCB with Sherman--Morrison rank-1 updates, ridge regularization $\lambda = 0.1$, and geometric decay $\alpha_t = \max(0.1,\, 1.0 \cdot 0.9985^t)$. Data arrive in batches of 128 samples (4{,}860 batches total). To ensure a controlled comparison across LLM regimes, all methods share the same fixed random seed and data ordering, so that the Cold LinUCB baseline produces identical reward trajectories regardless of which LLM is paired with the Router. The confidence parameter is set uniformly to $c=100$ across all three LLM sizes; this eliminates $c$ as a confound and ensures that any performance differences across regimes are attributable solely to the frozen policy's accuracy, not to per-regime hyperparameter tuning.
+
+\paragraph{Main Result: Reward Multiplication.}
+To validate Corollary~\ref{cor:strict-improvement-clean}, we deploy the Router using a \texttt{small} (60M parameter) Flan-T5 model ($c=100$) as the frozen policy. Flan-T5-small achieves 7.59\% accuracy, well below LinUCB's asymptotic ceiling of approximately 10.7\%. The performance dynamics are visualized in Figure~\ref{fig:wiki-small-learning}. The Router defers to the LLM for the initial phase of learning: LLM routing begins at near 100\%, drops below 50\% by batch~30, falls below 10\% by batch~150, and ultimately settles to 0.3\% of total rounds. During this early window, passive updates precondition LinUCB's design matrix. By batch~140 the Router's cumulative reward surpasses the LLM ceiling, and by batch~230 even Cold LinUCB catches up---but the warm-started Router maintains a persistent lead throughout the remaining horizon. After the hand-off, the warm-started LinUCB converges to a final accuracy of 10.83\%, strictly exceeding both the LLM baseline (7.59\%) and Cold LinUCB (10.69\%). This confirms the primary theoretical claim: an adaptive learner guided dynamically by a weak Master achieves strict reward multiplication.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{small-llm-reward-graph.png}
+    \caption{\textbf{Learning Curves on OneShotWikiLinks-311 (\texttt{small} LLM, $c=100$).} Cumulative Average Reward (Precision@1) over 622{,}000 timesteps. The pure LLM baseline provides a static floor (0.076), while Cold LinUCB converges slowly from scratch. The Confidence-Gated Router (Algorithm~\ref{alg:confidence-gated}) leverages the LLM for a geometric warm-start and maintains a persistent advantage over Cold LinUCB throughout the entire horizon, achieving a final reward of 0.108.}
+    \label{fig:wiki-small-learning}
+\end{figure}
+
+\paragraph{Varying Frozen-Policy Strength.}
+Our theoretical analysis predicts that reward multiplication requires the adaptive learner to eventually surpass the frozen policy (Assumption~D). To test the boundaries of our algorithm, we vary the LLM size, which controls the frozen policy's accuracy relative to LinUCB's asymptotic ceiling. Table~\ref{tab:results} summarizes the final cumulative accuracy across three frozen-policy regimes.
+
+\begin{table}[h]
+\centering
+\caption{Final cumulative accuracy across three frozen-policy regimes on OneShotWikiLinks-311. The Router achieves strict reward multiplication precisely when LinUCB's ceiling exceeds the LLM's accuracy.}
+\label{tab:results}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+LLM size & LLM acc.\ & Cold LinUCB & Router & LLM routing & Assumption~D \\
+\midrule
+\texttt{small}\,(60M) & 7.59\% & 10.69\% & \textbf{10.83\%} & 0.3\% & holds ($\varepsilon_{\mathrm{tail}}$ large) \\
+\texttt{base}\,(250M) & 10.56\% & 10.76\% & \textbf{10.87\%} & 0.3\% & holds ($\varepsilon_{\mathrm{tail}}$ small) \\
+\texttt{large}\,(780M) & 12.43\% & 10.76\% & 11.04\% & 0.9\% & \textbf{fails} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+With the \texttt{small} model (detailed above), Assumption~D holds with a large tail gap. The Router converges to 10.83\%, a +0.14 percentage point lift over Cold LinUCB (10.69\%), corresponding to approximately 857 additional correct predictions over 622{,}000 rounds. Since the LLM was active for only 0.3\% of the horizon, the bulk of this advantage comes from the warm-started LinUCB performing better \emph{after} the hand-off.
+
+\paragraph{Moderate Frozen Policy (\texttt{base}, $c=100$).}
+Flan-T5-base achieves 10.56\%, just below LinUCB's ceiling. The tail gap $\varepsilon_{\mathrm{tail}}$ is small but positive. The Router again outperforms both baselines (10.87\% vs.\ 10.76\% Cold and 10.56\% LLM), but the margin narrows. As shown in Figure~\ref{fig:wiki-base-learning}, the learning curves for the Router, Cold LinUCB, and the LLM baseline are tightly clustered, yet the Router maintains a consistent lead. Critically, the Router's cumulative reward surpasses the LLM ceiling at approximately batch~1{,}870, while Cold LinUCB does not cross the same threshold until batch~2{,}920---a gap of over 1{,}000 batches (${\sim}134{,}000$ rounds) demonstrating the warm-start's acceleration of learning even when the tail gap is small. This is consistent with the theory: as $\varepsilon_{\mathrm{tail}} \to 0$, the multiplication factor approaches~1, but the warm-start acceleration remains visible in learning speed.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{base-llm-reward-graph.png}
+    \caption{\textbf{Learning Curves on OneShotWikiLinks-311 (\texttt{base} LLM, $c=100$).} With a moderate frozen policy whose accuracy (0.106) sits just below LinUCB's ceiling, the three curves are tightly clustered. The Router narrowly but consistently leads Cold LinUCB, and surpasses the LLM ceiling over 1{,}000 batches earlier than Cold LinUCB.}
+    \label{fig:wiki-base-learning}
+\end{figure}
+
+\paragraph{Strong Frozen Policy (\texttt{large}, $c=100$).}
+Flan-T5-large achieves 12.43\%, exceeding LinUCB's asymptotic ceiling. Assumption~D fails: there is no tail gap, and the adaptive learner cannot surpass the frozen policy regardless of warm-start quality. The Router finishes at 11.04\%, trailing the pure LLM (12.43\%). Despite this, the Router still outperforms Cold LinUCB (10.76\%) by 0.28 percentage points because the LLM's early contributions provide additive reward before the hand-off. As shown in Figure~\ref{fig:wiki-large-learning}, the Router begins with the LLM's strong initial performance (${\sim}0.14$ cumulative reward in the first batches) but steadily declines toward LinUCB's lower ceiling as the hand-off proceeds. The geometric uncertainty comparison causes LinUCB to eventually take over---its confidence ellipsoid shrinks with data regardless of whether its \emph{accuracy} improves---dragging the Router's cumulative reward below the frozen policy. This confirms the necessity of Assumption~D: reward multiplication requires $\varepsilon_{\mathrm{tail}} > 0$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{large-llm-reward-graph.png}
+    \caption{\textbf{Learning Curves on OneShotWikiLinks-311 (\texttt{large} LLM, $c=100$).} When Assumption~D fails, the Router cannot surpass the LLM ceiling ($0.124$). The Router benefits from the LLM early but converges toward LinUCB's lower asymptote as the hand-off progresses, confirming that reward multiplication requires $\varepsilon_{\mathrm{tail}} > 0$.}
+    \label{fig:wiki-large-learning}
+\end{figure}
+
+\paragraph{Confidence-Gated Hand-Off Dynamics.}
+Figure~\ref{fig:wiki-handoff} visualizes the fraction of rounds routed to the LLM over time across all three regimes, all using $c=100$. For \texttt{small} and \texttt{base}, the routing curves are nearly identical: LLM routing drops from 100\% to below 50\% within the first 30 batches and falls below 10\% by batch~150. For \texttt{large}, the LLM retains routing authority somewhat longer because its higher accuracy keeps its proposed actions competitive with LinUCB for more rounds, even under the same confidence scaling. In all three cases the curves decay monotonically, consistent with the deterministic hand-off mechanism: as LinUCB accumulates data (both passive and active), its geometric uncertainty shrinks below the LLM's fixed uncertainty threshold.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{all-llm-handoff-graph-small-and-base-overlap.png}
+    \caption{\textbf{Confidence-Gated Hand-Off: LLM $\to$ LinUCB.} Fraction of cumulative rounds routed to the LLM over time ($c=100$ for all regimes). For \texttt{small} and \texttt{base}, routing drops rapidly and the curves nearly overlap. For \texttt{large}, the LLM's higher accuracy extends the routing phase slightly, but the hand-off still proceeds monotonically.}
+    \label{fig:wiki-handoff}
+\end{figure}
+
+\paragraph{Isolating the Warm-Start Effect.}
+To isolate the warm-start contribution from the early additive reward contribution, we compare the Router's final accuracy directly against Cold LinUCB across all three regimes. Both instances use identical hyperparameters; the only difference is that the Router's LinUCB received passive $V$ and $b$ updates during the LLM phase. The absolute improvement (Router $-$ Cold LinUCB) is visualized in Figure~\ref{fig:wiki-lift}.
+
+In the \texttt{small} regime, the lift is $+0.0014$ (857 additional correct predictions over 622{,}000 rounds). In the \texttt{base} regime the lift is $+0.0011$ (679 additional correct predictions). In the \texttt{large} regime the lift is largest at $+0.0028$ (1{,}721 additional correct predictions), because the higher-quality LLM provides more informative passive updates even though Assumption~D fails. This ordering is itself informative: \emph{the warm-start benefit scales with frozen-policy quality}. A stronger LLM preconditions the design matrix more effectively---the empirical signature of the multiplicative uncertainty reduction $\Psi(\tau,\nu) \approx \sqrt{\lambda / (\lambda + \nu\tau)}$ from Theorem~\ref{thm:warm-start-regret}, where the LLM's early actions shrink the confidence ellipsoid in reward-relevant directions, accelerating subsequent adaptive learning.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{all-llm-reward-increase-over-cold-linucb-bar-graph.png}
+    \caption{\textbf{LLM Guidance Lift: Router vs.\ Cold LinUCB.} Absolute improvement in final cumulative accuracy attributable to the geometric warm-start. The lift increases with frozen-policy strength, confirming that higher-quality passive updates yield a larger uncertainty reduction $\Psi(\tau,\nu)$.}
+    \label{fig:wiki-lift}
+\end{figure}
+
+\paragraph{Cross-Regime Summary.}
+Figure~\ref{fig:wiki-all-bars} summarizes the final performance of all three policies across the three regimes. The Router dominates both baselines when Assumption~D holds (\texttt{small}, \texttt{base}), and falls between the two when the assumption fails (\texttt{large}). In every case the Router strictly outperforms Cold LinUCB, demonstrating that the warm-start provides value even when full reward multiplication is not achievable. These results trace a clean boundary predicted by the theory: when the frozen policy is weaker than the adaptive learner's ceiling, the meta-algorithm achieves reward multiplication by combining early additive gain with late multiplicative uncertainty reduction; when the frozen policy is stronger, Assumption~D fails and the Router cannot exceed it. The key empirical finding is that the benefit is not merely from switching to the better policy at the right time, but from the geometric warm-start that preconditions the adaptive learner---a mechanism whose strength scales with frozen-policy quality (Figure~\ref{fig:wiki-lift}).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{all-llm-reward-bar-graph.png}
+    \caption{\textbf{Final Performance Comparison across all three LLM regimes on OneShotWikiLinks-311.} The Router achieves strict reward multiplication (beating both baselines) precisely when LinUCB's ceiling exceeds the LLM's accuracy (\texttt{small}, \texttt{base}). When the LLM exceeds LinUCB's ceiling (\texttt{large}), the Router cannot surpass the frozen policy but still outperforms Cold LinUCB.}
+    \label{fig:wiki-all-bars}
+\end{figure}
+
+
+\clearpage
+% ==========================================
+% AMAZON RESULTS
+% ==========================================
+\subsection{Large-Scale Exhibition on AmazonCat-13K}
+\label{sec:amazon_experiments}
+
+To test the limits of our theoretical framework, we scale the environment to the AmazonCat-13K dataset, expanding the action space to $K = 13,330$ dimensions. In standard contextual bandits, mapping complex text contexts jointly with massive action spaces often causes catastrophic initial regret. To effectively navigate this space and prevent ``dimensional warp,'' we strictly separate textual context processing from geometric learning.
+
+\paragraph{Unwarping the Feature Space.}
+To make exploration computationally and statistically tractable for the adaptive learner, the high-dimensional label space is projected into a dense, continuous latent space $\mathbb{R}^d$ (where $d=50$) using truncated Singular Value Decomposition (SVD). This yields a global feature representation $z_a \in \mathbb{R}^{50}$ for each action $a$. During the online phase, the adaptive learner (LinUCB) operates entirely within this reduced coordinate space, relying purely on the global label geometry $z_a$ rather than a dynamically warped, context-dependent feature vector.
+
+\paragraph{Instantiating the Meta-Algorithm with Internal Confidence.}
+We deploy the Confidence-Gated Meta-Algorithm (Algorithm~\ref{alg:confidence-gated}) using a single frozen expert ($m=1$), the Flan-T5 model. For this extreme multi-label setting, computing and maintaining an explicit offline design matrix $V^{(1)}$ for the LLM is computationally prohibitive. Instead, we introduce an efficient adaptation utilizing the LLM's internal generation probabilities.
+
+Let $c_{\mathrm{LLM}} \in [0, 1]$ be the Master's internal confidence score for its predicted action $a_t^{(1)}$. We define the frozen policy's uncertainty score as a calibrated proxy:
+\begin{equation}
+    u_t^{(1)} = \lambda_{\mathrm{scale}} \cdot (1 - c_{\mathrm{LLM}})
+\end{equation}
+where $\lambda_{\mathrm{scale}} \in (0, 1]$ is a micro-scale hyperparameter (e.g., $0.050$). This proxy efficiently replaces the geometric norm computation (Line 11 of Algorithm~\ref{alg:confidence-gated}). It directly maps the Master's predictive ``doubt'' into a compatible scalar, allowing it to be evaluated against LinUCB's geometric variance $u_t^{(0)} = \|z_{a_t^{(0)}}\|_{V_t^{-1}}$ at the decision gate (Line 18).
+
+If the Master wins the gate ($u_t^{(1)} < u_t^{(0)}$), its contextually accurate prediction is played. Regardless of which agent drives, LinUCB acts as a passive observer, updating its design matrix $V_t$ using the feature vector of the played action ($z_{A_t}$). Because the Master makes highly accurate contextual choices early on, it provides a guided geometric warm-start, causing the Apprentice's confidence ellipsoid to shrink rapidly along the true contours of the data until it is mathematically ready to take control.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{conf_0.05.png}
+    \caption{\textbf{Learning Curves on AmazonCat-13K.} Cumulative Average Reward (Precision@1) over 1.18 million timesteps. The pure LLM baseline provides a static ceiling (0.059), while the Cold LinUCB bandit struggles to learn the massive label space from scratch. Our Confidence-Gated Master-Apprentice (Alg 1) leverages the LLM for a geometric warm-start, seamlessly handing over control to break the teacher's ceiling and achieve a final reward of $\sim 0.285$.}
+    \label{fig:amazon_learning_curve}
+\end{figure}
+
+\paragraph{Empirical Results: Breaking the Teacher's Ceiling.}
+The performance dynamics in this extreme multi-label environment are visualized in Figure~\ref{fig:amazon_learning_curve}. The pure policy extremes effectively collapse under the scale of the task. The pure LinUCB Apprentice is blinded by the massive dimensionality, struggling to reach even a 0.04 reward after 1.18 million steps. The pure LLM (Flan-T5-small) establishes a strong initial prior but hits a hard accuracy boundary, flatlining at a static ceiling of 0.059.
+
+Conversely, our meta-algorithm perfectly executes the theoretical prediction of Theorem~\ref{thm:warm-start-regret}. By trusting the Master early, the algorithm avoids the catastrophic initial regret of the cold-start Bandit. Once the Apprentice's mathematical map is sufficiently preconditioned via the Master's early actions, $u_t^{(0)}$ decays below $u_t^{(1)}$, and the Apprentice smoothly takes the wheel---a transition visible in Figure~\ref{fig:amazon_learning_curve} as the orange curve crosses the LLM ceiling at approximately $t = 25{,}000$ steps and diverges sharply thereafter. Because its design matrix was geometrically warm-started, it learns substantially faster than the cold baseline, breaking entirely through the Master's natural accuracy ceiling. It achieves a final cumulative Precision@1 of $\sim 0.285$, yielding $\bar{r}^{\mathrm{meta}}/\bar{r}^{\mathrm{fix}} \approx 0.285/0.059 \approx 4.83$---a ${\sim}4.8\times$ reward multiplication factor consistent with the lower bound of Theorem~\ref{thm:avg-mult}, and far exceeding what either component achieves in isolation.
+
+\clearpage
+% ==========================================
+% CROSS-DATASET DISCUSSION
+% ==========================================
+\subsection{Cross-Dataset Discussion}
+\label{sec:cross_dataset}
+
+Taken together, the OneShotWikiLinks-311 and AmazonCat-13K experiments validate the theoretical predictions of Theorems~\ref{thm:warm-start-regret} and~\ref{thm:avg-mult} across two qualitatively different operating regimes.
+
+\paragraph{Same mechanism, different magnitudes.}
+In both settings the core mechanism is identical: the frozen policy's early actions precondition the LinUCB design matrix in reward-relevant directions (Assumption~B), the confidence-gated selector hands control to the adaptive learner once its geometric uncertainty shrinks below the frozen policy's (Assumption~C), and the warm-started LinUCB converges faster than a cold-start baseline. The magnitude of the effect, however, is governed by the tail gap $\varepsilon_{\mathrm{tail}}$ (Assumption~D). On OneShotWikiLinks-311, where the LLM and LinUCB ceilings are close, the multiplication factor is modest (${\sim}1.01\times$ for \texttt{small}). On AmazonCat-13K, where LinUCB's ceiling (${\sim}0.285$) vastly exceeds the LLM's ($0.059$), the tail gap is large and the multiplication factor reaches ${\sim}4.8\times$. This contrast directly mirrors Theorem~\ref{thm:avg-mult}: the reward-multiplication lower bound grows with $\varepsilon_{\mathrm{tail}} / \bar{r}_T^{\mathrm{fix}}$, and the two datasets sit at opposite ends of this spectrum.
+
+\paragraph{Robustness of the routing rule.}
+The confidence-gated selector operates without any dataset-specific tuning of the routing logic. On Wiki, the LLM uncertainty is modeled geometrically via $V^{(1)} = cI$; on Amazon, it is replaced by a calibrated confidence proxy $\lambda_{\mathrm{scale}}(1 - c_{\mathrm{LLM}})$. Despite these different instantiations of Line~11 of Algorithm~\ref{alg:confidence-gated}, the qualitative behavior is the same: the LLM dominates early, routing decays monotonically, and LinUCB takes over permanently. This suggests that the deterministic confidence-gated rule is robust to the specific form of the frozen-policy uncertainty estimate, so long as the estimate is calibrated to be comparable in scale to LinUCB's self-normalized uncertainty.
+
+\paragraph{When does multiplication fail?}
+The Wiki ablation provides a controlled answer: when the frozen policy exceeds the adaptive learner's ceiling (\texttt{large} regime), Assumption~D fails and the Router cannot surpass the LLM. Nevertheless, even in this regime the Router outperforms Cold LinUCB, confirming that the warm-start effect (the multiplicative reduction $\Psi(\tau,\nu)$ in Theorem~\ref{thm:warm-start-regret}) persists regardless of whether full reward multiplication is achieved. The AmazonCat-13K experiment does not exhibit this failure mode because the frozen policy is weak relative to LinUCB's capacity in the SVD-reduced space, placing it firmly in the Assumption~D-holds regime.
+
+\paragraph{Distinction from concurrent approaches.}
+Our experiments also clarify the design-space differences between the confidence-gated meta-algorithm and two concurrent lines of work that combine LLMs with contextual bandits.
+
+\cite{chen2024llmdecision} arbitrate between the LLM and the bandit via a randomized CORRAL master \cite{agarwal2017corralling}: each base algorithm maintains a probability weight that grows with its accumulated reward, and on every round the master samples from this distribution. Because the mixing is stochastic and reward-proportional, it guarantees near-optimal performance relative to the single best base algorithm in hindsight but does not exploit per-sample geometric information. By contrast, our Router evaluates the self-normalized confidence radius of each policy on \emph{every individual context} and deterministically selects the source with the smallest uncertainty. This sample-level routing explicitly forces the LLM's early actions into reward-relevant directions of the LinUCB design matrix, producing the geometric warm-start that drives the multiplicative regret reduction of Theorem~\ref{thm:warm-start-regret}---an effect that a probability-shifting framework is not designed to isolate. The three-regime ablation on OneShotWikiLinks-311 (Table~\ref{tab:results}) provides direct evidence: even in the \texttt{large} regime where Assumption~D fails, the deterministic Router still outperforms Cold LinUCB by $+0.28$ percentage points thanks to the warm-start, whereas a randomized master that increasingly favors the LLM would not transfer any geometric benefit to the bandit's design matrix.
+
+\cite{huangcontextual} take a complementary ``early-fusion'' approach: they structurally merge the LLM's prior into the bandit's reward model by appending a trainable adapter layer to the LLM and updating it online to calibrate the prior as the environment shifts. While this tight coupling can exploit richer reward signals, it requires gradient-based updates to the LLM backbone (or its adapter) on every round, incurring non-trivial computational overhead that scales with model size. Our meta-algorithm instead treats the LLM as a strictly frozen, zero-shot policy---no adapter, no gradient updates, no modification of any LLM layer. All online learning is confined to the separate LinUCB apprentice, whose Sherman--Morrison rank-1 updates cost $O(d^2)$ per round regardless of LLM size. This ``late-fusion'' separation is what enables the clean regret decomposition in Theorem~\ref{thm:warm-start-regret}: the frozen policy contributes a bounded additive early-reward term ($\tau\varepsilon_0$), while the warm-started adaptive term inherits the multiplicative uncertainty reduction $\Psi(\tau,\nu)\approx\sqrt{\lambda/(\lambda+\nu\tau)}$. The AmazonCat-13K experiment (Figure~\ref{fig:amazon_learning_curve}) demonstrates that this zero-cost-to-the-LLM design still achieves a ${\sim}4.8\times$ reward multiplication factor, confirming that active calibration of the LLM's internal layers is not necessary to obtain the geometric warm-start benefit.
+
+\paragraph{Practical implications.}
+These experiments suggest that the confidence-gated meta-algorithm is most valuable when (i) a pretrained model provides useful but imperfect prior knowledge, (ii) sufficient data exist for an adaptive learner to eventually surpass the frozen policy, and (iii) the action or feature space is large enough that cold-start exploration is prohibitively slow. The key empirical finding across both datasets is that the benefit is not merely from switching to the better policy at the right time, but from the geometric warm-start that preconditions the adaptive learner---a mechanism whose strength scales with frozen-policy quality (Figure~\ref{fig:wiki-lift}) and whose payoff grows with the tail gap (Figure~\ref{fig:amazon_learning_curve}).
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We studied the \emph{reward multiplication} phenomenon in which combining
+a frozen pretrained policy with an adaptive contextual bandit learner
+yields performance strictly exceeding either component in isolation.
+Our contribution is a regret-theoretic explanation for this effect in
+linear contextual bandits: a frozen policy should be understood not as a
+competitor but as a mechanism that reshapes the geometry of the LinUCB
+design matrix. Concretely, we gave (i) a high-dimensional example
+(Proposition~\ref{prop:three-way}) in which an anisotropic warm start
+enables persistent selection of the optimal action while an isotropic
+start persistently fails; (ii) a deterministic confidence-gated
+meta-algorithm (Algorithm~\ref{alg:confidence-gated}) that routes between
+one or more frozen experts and LinUCB using self-normalized uncertainty
+scores; (iii) a regret decomposition (Theorem~\ref{thm:warm-start-regret})
+whose adaptive term is multiplicatively smaller than cold-start LinUCB by
+the factor $\sqrt{\lambda/(\lambda+\nu\tau)}$ in reward-relevant directions;
+and (iv) an average-reward multiplication bound
+(Theorem~\ref{thm:avg-mult}) against the best frozen policy, contingent
+on a tail-gap condition that we verify empirically.
+Experiments on OneShotWikiLinks with three Flan-T5 predictors confirm
+that the multiplication factor materializes precisely when the tail-gap
+condition holds, and that the bulk of the advantage over cold LinUCB
+stems from the geometric warm-start effect rather than direct early
+reward. A large-scale exhibition on AmazonCat-13K (1.18M rounds,
+13{,}330 actions) further shows the meta-algorithm scaling to extreme
+multi-label settings, breaking the frozen policy's accuracy ceiling by
+roughly $4.8\times$.
+
+\paragraph{Limitations and future directions.}
+Our analysis assumes linear reward and coverage in a fixed
+reward-relevant subspace. Extending these results to generalized linear
+and neural-linear bandits, where the feature map itself is learned, is
+a natural next step; the routing criterion generalizes immediately, but
+the geometric warm-start argument does not. A second limitation is that
+Assumption~D is unverifiable online---our empirical ``Regime 3'' shows
+the meta-algorithm can underperform a very strong frozen policy when
+this assumption fails, suggesting the value of an anytime test for
+tail-gap violation and a safer routing rule that defers to the frozen
+policy when such a test fires. Finally, our experiments use a single
+frozen expert; leveraging multiple heterogeneous frozen policies---for
+example, multiple prompts, multiple embedding models, or multiple LLM
+sizes---and characterizing when the meta-algorithm benefits from the
+ensemble geometry is a promising direction that the theory already
+accommodates.
+
+
+
+\bibliography{references}
+\bibliographystyle{abbrv}
+
+
+\appendix
+
+\section{Proofs}
+\label{app:proofs}
+
+This appendix contains the deferred proofs of the results in
+Section~\ref{sec:main-results}: the construction underlying the motivating
+example (Proposition~\ref{prop:three-way}), the warm-started regret bound
+(Theorem~\ref{thm:warm-start-regret}), the strict-improvement corollary
+(Corollary~\ref{cor:strict-improvement-clean}), and the average-reward
+multiplication theorem (Theorem~\ref{thm:avg-mult}).
+
+\subsection{Proof of Proposition~\ref{prop:three-way}}
+\label{app:proof-three-way}
+
+We first record the standard subgaussian concentration lemma used in the
+high-probability part of the argument, and then construct the linear bandit
+instance and verify the three claims of Proposition~\ref{prop:three-way}.
+
+\begin{lemma}[Subgaussian concentration, Corollary 5.5 of \cite{lattimore2020bandit}]
+\label{lem:subgaussian}
+Assume that $X_1-\mu,\dots,X_n-\mu$ are independent, $\sigma$-subgaussian random variables. Then for any $\varepsilon \ge 0$,
+\[
+\mathbb{P}\!\left(\hat{\mu} \ge \mu+\varepsilon\right)
+\le
+\exp\!\left(-\frac{n\varepsilon^2}{2\sigma^2}\right),
+\qquad
+\mathbb{P}\!\left(\hat{\mu} \le \mu-\varepsilon\right)
+\le
+\exp\!\left(-\frac{n\varepsilon^2}{2\sigma^2}\right),
+\]
+where
+\[
+\hat{\mu}=\frac{1}{n}\sum_{t=1}^n X_t.
+\]
+\end{lemma}
+
+\subparagraph{Problem setup.}
+Let the dimension satisfy $d \ge n+1$, where $n$ is the horizon. The unknown parameter is
+\[
+\theta^\star = e_1 \in \mathbb{R}^d,
+\]
+where $\{e_i\}_{i=1}^d$ denotes the standard basis. Rewards follow the stochastic linear model
+\[
+X_t = \langle \theta^\star, A_t \rangle + \eta_t,
+\]
+where $\eta_t$ are independent mean-zero $\sigma$-subgaussian random variables.
+
+At each round $t=1,\dots,n$, the learner is offered two actions,
+\[
+g:=e_1,
+\qquad
+b_t:=L e_{t+1},
+\]
+where $L>1$ is a fixed constant. Their expected rewards are
+\[
+\langle \theta^\star,g\rangle = 1,
+\qquad
+\langle \theta^\star,b_t\rangle = 0.
+\]
+Both LinUCB variants below use the rule
+\[
+\mathrm{UCB}_t(a)
+=
+a^\top \hat{\theta}_{t-1}
++
+\beta \|a\|_{V_{t-1}^{-1}},
+\]
+with
+\[
+V_{t-1}=V_0+\sum_{s<t} A_sA_s^\top,
+\qquad
+\hat{\theta}_{t-1}
+=
+V_{t-1}^{-1}\sum_{s<t} A_s X_s.
+\]
+
+\subparagraph{Algorithm 1: a constant policy.}
+Consider a policy $\pi_{\mathrm{const}}$ that selects an action by maximizing $\langle \hat{\theta}_{\mathrm{const}}, a\rangle$ for some fixed parameter estimate $\hat{\theta}_{\mathrm{const}}\in\mathbb{R}^d$ that is never updated. For concreteness, take
+\[
+\hat{\theta}_{\mathrm{const}}
+=
+\frac{1}{L}\sum_{j=2}^{n+1} e_j,
+\]
+so that
+\[
+\langle \hat{\theta}_{\mathrm{const}},g\rangle = 0,
+\qquad
+\langle \hat{\theta}_{\mathrm{const}},b_t\rangle = 1
+\quad\text{for every } t\le n.
+\]
+Then $\pi_{\mathrm{const}}$ selects $b_t$ at every round $t$. Since each pull of $b_t$ yields expected reward $0$ while $g$ has expected reward $1$, the cumulative pseudo-regret of $\pi_{\mathrm{const}}$ on the horizon $n$ is exactly $n$. This proves part (1) of Proposition~\ref{prop:three-way}.
+
+The failure mode is structural rather than statistical: $\pi_{\mathrm{const}}$ never queries direction $e_1$, so no amount of data can refine $\hat{\theta}_{\mathrm{const}}$ in the reward-relevant direction. The policy has no learning mechanism. We will see, however, that the trajectory it produces is precisely what suppresses the misplaced optimism of LinUCB in the bad directions.
+
+\subparagraph{Algorithm 2: LinUCB with isotropic initialization.}
+The first LinUCB variant uses
+\[
+V_0=\lambda I_d,
+\qquad
+\hat{\theta}_0=0.
+\]
+At $t=1$,
+\[
+\|g\|_{V_0^{-1}}^2=\frac{1}{\lambda},
+\qquad
+\|b_1\|_{V_0^{-1}}^2=\frac{L^2}{\lambda}.
+\]
+Since $\hat{\theta}_0=0$, we have
+\[
+\mathrm{UCB}_1(b_1)>\mathrm{UCB}_1(g),
+\]
+so the algorithm selects $b_1$.
+
+Now suppose inductively that the algorithm has selected $b_1,\dots,b_{t-1}$ in the first $t-1$ rounds. Then
+\[
+V_{t-1}
+=
+\lambda I_d+\sum_{s=1}^{t-1} b_s b_s^\top
+=
+\lambda I_d + L^2\sum_{j=2}^{t} e_j e_j^\top.
+\]
+Hence $V_{t-1}$ is diagonal in the standard basis. In particular, for the fresh direction $e_{t+1}$,
+\[
+e_{t+1}^\top V_{t-1}^{-1} e_{t+1}=\frac{1}{\lambda},
+\qquad
+\|b_t\|_{V_{t-1}^{-1}}^2=\frac{L^2}{\lambda},
+\qquad
+\|g\|_{V_{t-1}^{-1}}^2=\frac{1}{\lambda}.
+\]
+
+The key point is that although the observed rewards on $b_1,\dots,b_{t-1}$ contain noise, the estimate
+\[
+\hat{\theta}_{t-1}
+=
+V_{t-1}^{-1}\sum_{s=1}^{t-1} b_s X_s
+\]
+lies entirely in $\mathrm{span}\{e_2,\dots,e_t\}$. Therefore,
+\[
+g^\top \hat{\theta}_{t-1}=0,
+\qquad
+b_t^\top \hat{\theta}_{t-1}=0,
+\]
+because both $g=e_1$ and the fresh arm $b_t=L e_{t+1}$ are orthogonal to $\mathrm{span}\{e_2,\dots,e_t\}$.
+
+Thus, even in the stochastic-reward setting, the comparison between $g$ and $b_t$ is determined purely by the confidence terms:
+\[
+\mathrm{UCB}_t(g)=\frac{\beta}{\sqrt{\lambda}},
+\qquad
+\mathrm{UCB}_t(b_t)=\frac{\beta L}{\sqrt{\lambda}}.
+\]
+Since $L>1$, we have $\mathrm{UCB}_t(b_t)>\mathrm{UCB}_t(g)$ for all $t\le n$. Hence the isotropically initialized algorithm selects $b_t$ at every round and, like $\pi_{\mathrm{const}}$, incurs cumulative pseudo-regret $n$. This proves part (2) of Proposition~\ref{prop:three-way}.
+
+\subparagraph{Algorithm 3: LinUCB with an anisotropic warm start.}
+We now define an initialization that is realized by exactly the trajectory $\pi_{\mathrm{const}}$ would produce. Fix an integer $m\ge 1$, and let
+\[
+V_0'
+=
+\lambda I_d + mL^2 \sum_{j=2}^{n+1} e_j e_j^\top,
+\qquad
+\hat{\theta}_0'=0.
+\]
+This corresponds to having observed each bad direction $L e_j$, $j=2,\dots,n+1$, exactly $m$ times before the online interaction begins --- precisely the kind of data $\pi_{\mathrm{const}}$ generates if rolled out for $mn$ rounds on a sequence of action sets containing each bad direction. Thus $V_0'$ is a genuine design matrix obtainable from a collection of outer products produced by a constant logging policy.
+
+At $t=1$,
+\[
+\|g\|_{(V_0')^{-1}}^2=\frac{1}{\lambda},
+\qquad
+\|b_1\|_{(V_0')^{-1}}^2
+=
+L^2\cdot \frac{1}{\lambda+mL^2}
+=
+\frac{L^2}{\lambda+mL^2}.
+\]
+Hence, if
+\[
+m > \frac{\lambda(L^2-1)}{L^2},
+\]
+then $\frac{1}{\lambda}>\frac{L^2}{\lambda+mL^2}$, and therefore
+\[
+\mathrm{UCB}_1'(g)>\mathrm{UCB}_1'(b_1).
+\]
+So the warm-started algorithm selects $g$ at round $1$.
+
+Suppose now that the algorithm continues to select $g$ for the first $s$ rounds. Then
+\[
+V_s'
+=
+\lambda I_d
++
+mL^2 \sum_{j=2}^{n+1} e_j e_j^\top
++
+s\, e_1 e_1^\top.
+\]
+Since each reward observed on $g$ has mean $1$,
+\[
+\sum_{i=1}^s X_i = s + \sum_{i=1}^s \eta_i,
+\]
+and therefore
+\[
+g^\top \hat{\theta}_s'
+=
+e_1^\top (V_s')^{-1}\sum_{i=1}^s g X_i
+=
+\frac{1}{\lambda+s}\sum_{i=1}^s X_i.
+\]
+Applying Lemma~\ref{lem:subgaussian} with $\mu=1$, we obtain that with probability at least $1-\delta$, simultaneously for all $1\le s\le n$,
+\[
+\frac{1}{s}\sum_{i=1}^s X_i
+\ge
+1-\sqrt{\frac{2\sigma^2\log(2n/\delta)}{s}}.
+\]
+On this event,
+\[
+g^\top \hat{\theta}_s'
+\ge
+\frac{s}{\lambda+s}
+\left(
+1-\sqrt{\frac{2\sigma^2\log(2n/\delta)}{s}}
+\right).
+\]
+
+For every fresh bad arm $b_{s+1}=Le_{s+2}$,
+\[
+b_{s+1}^\top \hat{\theta}_s' = 0,
+\]
+since the online trajectory has only sampled the direction $e_1$, and the warm-start contributes only to the design matrix, not to the response vector. Moreover,
+\[
+\|b_{s+1}\|_{(V_s')^{-1}}^2
+=
+\frac{L^2}{\lambda+mL^2},
+\qquad
+\|g\|_{(V_s')^{-1}}^2
+=
+\frac{1}{\lambda+s}.
+\]
+
+On the same high-probability event,
+\[
+\mathrm{UCB}_{s+1}'(g)
+\ge
+\frac{s}{\lambda+s}
+\left(
+1-\sqrt{\frac{2\sigma^2\log(2n/\delta)}{s}}
+\right)
++
+\frac{\beta}{\sqrt{\lambda+s}},
+\]
+while
+\[
+\mathrm{UCB}_{s+1}'(b_{s+1})
+=
+\frac{\beta L}{\sqrt{\lambda+mL^2}}.
+\]
+Consequently, if $m$ is chosen large enough so that for every $1\le s\le n$,
+\begin{equation}
+\label{eq:m-condition}
+\frac{s}{\lambda+s}
+\left(
+1-\sqrt{\frac{2\sigma^2\log(2n/\delta)}{s}}
+\right)
++
+\frac{\beta}{\sqrt{\lambda+s}}
+>
+\frac{\beta L}{\sqrt{\lambda+mL^2}},
+\end{equation}
+then, with probability at least $1-\delta$, the warm-started algorithm selects $g$ at every round, and the cumulative pseudo-regret over the $n$ online rounds is $O(1)$. This proves part (3) of Proposition~\ref{prop:three-way}; condition~\eqref{eq:m-condition} is the explicit ``$m$ sufficiently large'' requirement referenced in the proposition statement.\hfill$\square$
+
+\subsection{Proof of Theorem~\ref{thm:warm-start-regret}}
+\label{app:proof-warm-start}
+
+\begin{proof}
+Split the regret into the first $\tau$ rounds and the remaining rounds.
+
+For the warm-start phase, Assumption A gives
+\[
+\sum_{t=1}^{\tau}\bigl(\mu_t(a_t^\star)-\mu_t(A_t)\bigr)
+\le
+\tau\varepsilon_0.
+\]
+
+Now consider the post-handover phase. At time $\tau+1$, the LinUCB design
+matrix is
+\[
+V_{\tau+1}
+=
+\lambda I + \sum_{t=1}^{\tau}
+x_{t,a_t^{(i^\star)}}x_{t,a_t^{(i^\star)}}^\top.
+\]
+By Assumption B,
+\[
+V_{\tau+1}\succeq \lambda I + \nu\tau P.
+\]
+Since all action vectors lie in $\mathrm{Im}(P)$, the effective problem is
+$r$-dimensional and each reward-relevant direction has effective regularization
+at least $\lambda+\nu\tau$.
+
+On the standard self-normalized concentration event, LinUCB satisfies for every
+$t>\tau$,
+\[
+\mu_t(a_t^\star)-\mu_t(A_t)
+\le
+2\beta_T \|x_{t,A_t}\|_{V_t^{-1}}.
+\]
+Summing over $t=\tau+1,\dots,T$ and applying Cauchy--Schwarz yields
+\[
+\sum_{t=\tau+1}^T
+\bigl(\mu_t(a_t^\star)-\mu_t(A_t)\bigr)
+\le
+2\beta_T
+\sqrt{
+(T-\tau)\sum_{t=\tau+1}^T \|x_{t,A_t}\|_{V_t^{-1}}^2
+}.
+\]
+By the elliptical potential lemma,
+\[
+\sum_{t=\tau+1}^T \|x_{t,A_t}\|_{V_t^{-1}}^2
+\le
+2\log\frac{\det(V_{T+1})}{\det(V_{\tau+1})}.
+\]
+Using $\|x_{t,a}\|_2\le L$ and $V_{\tau+1}\succeq (\lambda+\nu\tau)P+\lambda(I-P)$,
+we obtain
+\[
+\log\frac{\det(V_{T+1})}{\det(V_{\tau+1})}
+\le
+r\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr).
+\]
+Combining the last three displays proves \eqref{eq:warm-meta-regret}.
+The cold-start bound \eqref{eq:cold-regret} is the same argument with
+initial matrix $\lambda I$ and horizon $T$.
+\end{proof}
+
+\subsection{Proof of Corollary~\ref{cor:strict-improvement-clean}}
+\label{app:proof-strict-improvement}
+
+\begin{proof}
+The first inequality says the frozen expert beats cold-start LinUCB on the
+first $\tau$ rounds. The second says warm-started LinUCB beats the frozen
+expert on the remaining $T-\tau$ rounds. The claim follows by comparing the
+decomposition in Theorem~\ref{thm:warm-start-regret} to the corresponding
+bounds for the two standalone baselines.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{thm:avg-mult}}
+\label{app:proof-avg-mult}
+
+\begin{proof}
+During the first $\tau$ rounds, the meta-algorithm and the chosen frozen
+expert $i^\star$ coincide, so there is no difference in reward relative to
+that expert on the warm-start phase.
+
+Now consider the tail $t>\tau$. By Assumption D,
+\[
+\sum_{t=\tau+1}^T \mathbb E[\mu_t(a_t^{(i^\star)})]
+\le
+\sum_{t=\tau+1}^T \mu_t(a_t^\star)
+-
+(T-\tau)\varepsilon_{\mathrm{tail}}.
+\]
+On the other hand, by Theorem~\ref{thm:warm-start-regret}, the post-handover
+LinUCB phase incurs regret at most
+\[
+C\,\beta_T
+\sqrt{
+r(T-\tau)
+\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr)
+}.
+\]
+Equivalently,
+\[
+\sum_{t=\tau+1}^T \mathbb E[r_t^{\meta}]
+\ge
+\sum_{t=\tau+1}^T \mu_t(a_t^\star)
+-
+C\,\beta_T
+\sqrt{
+r(T-\tau)
+\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr)
+}.
+\]
+Subtracting the frozen-policy bound from the meta bound yields
+\[
+T\bar r_T^{\meta}-T\bar r_T^{\fix}
+\ge
+(T-\tau)\varepsilon_{\mathrm{tail}}
+-
+C\,\beta_T
+\sqrt{
+r(T-\tau)
+\log\!\Bigl(
+1+\frac{L^2(T-\tau)}{\lambda+\nu\tau}
+\Bigr)
+},
+\]
+which proves \eqref{eq:avg-reward-improvement}. Dividing by
+$T\bar r_T^{\fix}$ gives \eqref{eq:multiplication-lower-bound}.
+\end{proof}
+
+
+\section{Extended Related Work}
+\label{sec:related}
+
+This appendix expands on the related-work discussion deferred from the introduction. We cover (i) linear contextual bandits and confidence geometry, (ii) model selection and expert aggregation, (iii) warm starts and prior information, (iv) the geometry of information gain in linear bandits, and (v) large language models for sequential decision making.
+
+Sequential decision making with contextual information has been studied
+extensively in the contextual bandit literature, where the learner must
+balance exploration and exploitation under partial feedback
+\cite{langford2007epoch,agarwal2014taming,foster2021statistical,
+lattimore2020bandit}.
+In the linear setting, algorithms such as LinUCB and OFUL achieve regret
+bounds that depend explicitly on the geometry of the accumulated design
+matrix through self-normalized confidence ellipsoids
+\cite{chu2011contextual,abbasi2011improved}.
+Subsequent work has developed statistically efficient contextual bandit
+algorithms under general function approximation assumptions
+\cite{agarwal2012contextual,foster2018practical,foster2020beyond,
+simchi2022bypassing,zhu2022contextual,rucker2023infinite,
+zhang2024efficient}.
+A central insight of this line of work is that the conditioning of the
+covariance matrix determines how quickly uncertainty shrinks and therefore
+how rapidly regret decreases. Our work builds on this perspective by showing
+that actions selected by a frozen predictor can reshape this geometry early
+in learning and accelerate subsequent adaptation.
+
+\paragraph{Model selection and expert aggregation in bandits.}
+Another closely related direction studies how to combine multiple candidate
+policies or base algorithms online.
+Classical expert-learning methods provide regret guarantees relative to the
+best fixed expert in hindsight \cite{auer2002nonstochastic}.
+In the bandit setting, CORRAL \cite{agarwal2017corralling} uses Online
+Mirror Descent with a log-barrier regularizer and a carefully designed
+learning-rate schedule to achieve regret competitive with the best base
+algorithm; subsequent refinements tighten the rates and extend the
+framework to contextual and stochastic settings
+\cite{pacchiano2020model,marinov2021pareto,zhu2022pareto,zhu2022near,dann2024data}.
+These approaches are inherently \emph{randomized} and target robustness: the
+master performs nearly as well as the best base algorithm regardless of
+which one that is. Our objective is different---we want a
+\emph{deterministic} rule that exploits the complementarity between a good
+early frozen policy and a strong asymptotic adaptive learner to
+\emph{strictly outperform} both. Correspondingly, our analysis does not
+bound a relative regret against the best base, but instead tracks how
+early actions selected by one policy reshape the design matrix and
+accelerate the statistical efficiency of another.
+
+\paragraph{Warm starts and prior information in contextual bandits.}
+Several works have investigated how prior information can be incorporated
+into contextual bandit algorithms through initialization, offline datasets,
+or pretrained predictors.
+Such approaches can substantially improve short-horizon performance by
+reducing uncertainty before online interaction begins
+\cite{bastani2021mostly,zhang2019warm}.
+Related directions in transfer learning and structured bandits further show
+that leveraging information across tasks or user populations can accelerate
+adaptation and reduce exploration requirements
+\cite{lazaric2012transfer,gentile2014online}.
+Meta-learning approaches similarly learn priors that enable faster
+exploration in new environments
+\cite{sharaf2019meta}.
+Empirical work on neural-linear bandit architectures also demonstrates that
+representation pretraining can significantly improve early decision quality
+\cite{riquelme2018deep}.
+Our analysis formalizes these intuitions in a linear bandit framework by
+showing that informative early exploration induces a contraction of the
+confidence ellipsoid, leading to a multiplicative reduction of the adaptive
+regret term.
+
+\paragraph{Geometry of information gain in linear bandits.}
+A central theme in the analysis of linear bandit algorithms is that learning
+efficiency is governed by the geometry of the accumulated design matrix.
+Early work on stochastic linear optimization under bandit feedback showed that
+regret depends explicitly on the growth of the covariance matrix associated
+with the chosen actions and the resulting confidence ellipsoid
+\cite{dani2008stochastic}.
+Subsequent analyses of linearly parameterized bandits further clarified how the
+eigenvalue structure of this matrix determines parameter identifiability and
+sample complexity \cite{rusmevichientong2010linearly}.
+Later work established sharp self-normalized confidence bounds and finite-time
+regret guarantees expressed directly in terms of the design matrix and its
+inverse \cite{abbasi2011improved}, while related results connected spectral
+growth of the covariance matrix to optimal arm identification in linear
+settings \cite{soare2014best}.
+From an information-theoretic perspective, regret can also be related to
+determinant growth and effective dimension of the covariance operator
+\cite{srinivas2012information,valko2013finite}.
+Our work extends this geometric viewpoint by showing that a fixed policy can
+shape the spectrum of the design matrix during early rounds of interaction,
+thereby improving conditioning of the confidence ellipsoid and accelerating
+the learning rate of subsequent adaptive exploration.
+
+
+
+\paragraph{Large language models for sequential decision making.}
+Recent work has explored the use of large language models (LLMs) as policies
+in contextual bandit environments, demonstrating that frozen pretrained
+models can achieve strong short-horizon performance even without online
+updates \cite{chen2024llmdecision}.
+More broadly, LLMs exhibit strong in-context learning capabilities
+\cite{brown2020language,xie2021explanation,garg2022can,akyurek2022learning},
+and instruction tuning further improves their effectiveness in downstream
+decision tasks \cite{ouyang2022training,chung2024scaling}.
+Several recent approaches interpret sequential decision making itself as a
+sequence-modeling problem and adapt transformer architectures to interactive
+settings
+\cite{chen2021decision,zheng2022online,reid2022can,
+sun2023smart,raparthy2023generalization,lee2023supervised}.
+Closest to our work is the approach of \cite{chen2024llmdecision}, who
+combine an LLM policy with an adaptive contextual bandit learner using an
+online model-selection master and empirically document the reward-
+multiplication phenomenon on large-scale recommendation datasets. Our
+contribution relative to that line is theoretical: we give a regret-based
+explanation for why such combinations can beat both components, and replace
+the randomized CORRAL-style master with a deterministic confidence-gated
+rule whose routing decision directly exposes the geometric warm-start
+mechanism.
+A concurrent line of work \cite{huangcontextual} also uses LLM
+uncertainty to gate exploration, but does so by calibrating an
+embedding-based uncertainty estimate to adjust UCB-style exploration
+bonuses, rather than by comparing self-normalized confidence radii of a
+frozen predictor and an online learner; their analysis focuses on
+regret improvement for a single calibrated agent, whereas we analyze
+routing across multiple frozen experts and quantify a multiplicative
+reduction in the post-handover adaptive regret term.
+Additional evidence that LLMs can exhibit in-context reinforcement
+learning behavior \cite{monea2024llms,krishnamurthy2024can} and that
+LLM-derived priors can jump-start exploration
+\cite{alamdari2024jumpstarting,abbasiyadkori2024believe} further
+motivates the study of principled mechanisms for combining frozen
+predictors with online learners.
+Building on the reward-multiplication phenomenon observed in
+\cite{chen2024llmdecision}, our work provides a regret-theoretic
+explanation showing how early actions selected by a fixed policy reduce
+the uncertainty radius of LinUCB and accelerate subsequent learning.
+
+
+\section*{NeurIPS Paper Checklist}
+
+%%% BEGIN INSTRUCTIONS %%%
+The checklist is designed to encourage best practices for responsible machine learning research, addressing issues of reproducibility, transparency, research ethics, and societal impact. Do not remove the checklist: {\bf The papers not including the checklist will be desk rejected.} The checklist should follow the references and follow the (optional) supplemental material.  The checklist does NOT count towards the page
+limit. 
+
+Please read the checklist guidelines carefully for information on how to answer these questions. For each question in the checklist:
+\begin{itemize}
+    \item You should answer \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item \answerNA{} means either that the question is Not Applicable for that particular paper or the relevant information is Not Available.
+    \item Please provide a short (1--2 sentence) justification right after your answer (even for \answerNA). 
+   % \item {\bf The papers not including the checklist will be desk rejected.}
+\end{itemize}
+
+{\bf The checklist answers are an integral part of your paper submission.} They are visible to the reviewers, area chairs, senior area chairs, and ethics reviewers. You will also be asked to include it (after eventual revisions) with the final version of your paper, and its final version will be published with the paper.
+
+The reviewers of your paper will be asked to use the checklist as one of the factors in their evaluation. While \answerYes{} is generally preferable to \answerNo{}, it is perfectly acceptable to answer \answerNo{} provided a proper justification is given (e.g., error bars are not reported because it would be too computationally expensive'' or ``we were unable to find the license for the dataset we used''). In general, answering \answerNo{} or \answerNA{} is not grounds for rejection. While the questions are phrased in a binary way, we acknowledge that the true answer is often more nuanced, so please just use your best judgment and write a justification to elaborate. All supporting evidence can appear either in the main paper or the supplemental material, provided in appendix. If you answer \answerYes{} to a question, in the justification please point to the section(s) where related material for the question can be found.
+
+IMPORTANT, please:
+\begin{itemize}
+    \item {\bf Delete this instruction block, but keep the section heading ``NeurIPS Paper Checklist"},
+    \item  {\bf Keep the checklist subsection headings, questions/answers and guidelines below.}
+    \item {\bf Do not modify the questions and only use the provided macros for your answers}.
+\end{itemize} 
+ 
+
+%%% END INSTRUCTIONS %%%
+
+
+\begin{enumerate}
+
+\item {\bf Claims}
+    \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
+        \item The abstract and/or introduction should clearly state the claims made, including the contributions made in the paper and important assumptions and limitations. A \answerNo{} or \answerNA{} answer to this question will not be perceived well by the reviewers. 
+        \item The claims made should match theoretical and experimental results, and reflect how much the results can be expected to generalize to other settings. 
+        \item It is fine to include aspirational goals as motivation as long as it is clear that these goals are not attained by the paper. 
+    \end{itemize}
+
+\item {\bf Limitations}
+    \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
+        \item The authors are encouraged to create a separate ``Limitations'' section in their paper.
+        \item The paper should point out any strong assumptions and how robust the results are to violations of these assumptions (e.g., independence assumptions, noiseless settings, model well-specification, asymptotic approximations only holding locally). The authors should reflect on how these assumptions might be violated in practice and what the implications would be.
+        \item The authors should reflect on the scope of the claims made, e.g., if the approach was only tested on a few datasets or with a few runs. In general, empirical results often depend on implicit assumptions, which should be articulated.
+        \item The authors should reflect on the factors that influence the performance of the approach. For example, a facial recognition algorithm may perform poorly when image resolution is low or images are taken in low lighting. Or a speech-to-text system might not be used reliably to provide closed captions for online lectures because it fails to handle technical jargon.
+        \item The authors should discuss the computational efficiency of the proposed algorithms and how they scale with dataset size.
+        \item If applicable, the authors should discuss possible limitations of their approach to address problems of privacy and fairness.
+        \item While the authors might fear that complete honesty about limitations might be used by reviewers as grounds for rejection, a worse outcome might be that reviewers discover limitations that aren't acknowledged in the paper. The authors should use their best judgment and recognize that individual actions in favor of transparency play an important role in developing norms that preserve the integrity of the community. Reviewers will be specifically instructed to not penalize honesty concerning limitations.
+    \end{itemize}
+
+\item {\bf Theory assumptions and proofs}
+    \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include theoretical results. 
+        \item All the theorems, formulas, and proofs in the paper should be numbered and cross-referenced.
+        \item All assumptions should be clearly stated or referenced in the statement of any theorems.
+        \item The proofs can either appear in the main paper or the supplemental material, but if they appear in the supplemental material, the authors are encouraged to provide a short proof sketch to provide intuition. 
+        \item Inversely, any informal proof provided in the core of the paper should be complemented by formal proofs provided in appendix or supplemental material.
+        \item Theorems and Lemmas that the proof relies upon should be properly referenced. 
+    \end{itemize}
+
+    \item {\bf Experimental result reproducibility}
+    \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item If the paper includes experiments, a \answerNo{} answer to this question will not be perceived well by the reviewers: Making the paper reproducible is important, regardless of whether the code and data are provided or not.
+        \item If the contribution is a dataset and\slash or model, the authors should describe the steps taken to make their results reproducible or verifiable. 
+        \item Depending on the contribution, reproducibility can be accomplished in various ways. For example, if the contribution is a novel architecture, describing the architecture fully might suffice, or if the contribution is a specific model and empirical evaluation, it may be necessary to either make it possible for others to replicate the model with the same dataset, or provide access to the model. In general. releasing code and data is often one good way to accomplish this, but reproducibility can also be provided via detailed instructions for how to replicate the results, access to a hosted model (e.g., in the case of a large language model), releasing of a model checkpoint, or other means that are appropriate to the research performed.
+        \item While NeurIPS does not require releasing code, the conference does require all submissions to provide some reasonable avenue for reproducibility, which may depend on the nature of the contribution. For example
+        \begin{enumerate}
+            \item If the contribution is primarily a new algorithm, the paper should make it clear how to reproduce that algorithm.
+            \item If the contribution is primarily a new model architecture, the paper should describe the architecture clearly and fully.
+            \item If the contribution is a new model (e.g., a large language model), then there should either be a way to access this model for reproducing the results or a way to reproduce the model (e.g., with an open-source dataset or instructions for how to construct the dataset).
+            \item We recognize that reproducibility may be tricky in some cases, in which case authors are welcome to describe the particular way they provide for reproducibility. In the case of closed-source models, it may be that access to the model is limited in some way (e.g., to registered users), but it should be possible for other researchers to have some path to reproducing or verifying the results.
+        \end{enumerate}
+    \end{itemize}
+
+
+\item {\bf Open access to data and code}
+    \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that paper does not include experiments requiring code.
+        \item Please see the NeurIPS code and data submission guidelines (\url{https://neurips.cc/public/guides/CodeSubmissionPolicy}) for more details.
+        \item While we encourage the release of code and data, we understand that this might not be possible, so \answerNo{} is an acceptable answer. Papers cannot be rejected simply for not including code, unless this is central to the contribution (e.g., for a new open-source benchmark).
+        \item The instructions should contain the exact command and environment needed to run to reproduce the results. See the NeurIPS code and data submission guidelines (\url{https://neurips.cc/public/guides/CodeSubmissionPolicy}) for more details.
+        \item The authors should provide instructions on data access and preparation, including how to access the raw data, preprocessed data, intermediate data, and generated data, etc.
+        \item The authors should provide scripts to reproduce all experimental results for the new proposed method and baselines. If only a subset of experiments are reproducible, they should state which ones are omitted from the script and why.
+        \item At submission time, to preserve anonymity, the authors should release anonymized versions (if applicable).
+        \item Providing as much information as possible in supplemental material (appended to the paper) is recommended, but including URLs to data and code is permitted.
+    \end{itemize}
+
+
+\item {\bf Experimental setting/details}
+    \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The experimental setting should be presented in the core of the paper to a level of detail that is necessary to appreciate the results and make sense of them.
+        \item The full details can be provided either with the code, in appendix, or as supplemental material.
+    \end{itemize}
+
+\item {\bf Experiment statistical significance}
+    \item[] Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The authors should answer \answerYes{} if the results are accompanied by error bars, confidence intervals, or statistical significance tests, at least for the experiments that support the main claims of the paper.
+        \item The factors of variability that the error bars are capturing should be clearly stated (for example, train/test split, initialization, random drawing of some parameter, or overall run with given experimental conditions).
+        \item The method for calculating the error bars should be explained (closed form formula, call to a library function, bootstrap, etc.)
+        \item The assumptions made should be given (e.g., Normally distributed errors).
+        \item It should be clear whether the error bar is the standard deviation or the standard error of the mean.
+        \item It is OK to report 1-sigma error bars, but one should state it. The authors should preferably report a 2-sigma error bar than state that they have a 96\% CI, if the hypothesis of Normality of errors is not verified.
+        \item For asymmetric distributions, the authors should be careful not to show in tables or figures symmetric error bars that would yield results that are out of range (e.g., negative error rates).
+        \item If error bars are reported in tables or plots, the authors should explain in the text how they were calculated and reference the corresponding figures or tables in the text.
+    \end{itemize}
+
+\item {\bf Experiments compute resources}
+    \item[] Question: For each experiment, does the paper provide sufficient information on the computer resources (type of compute workers, memory, time of execution) needed to reproduce the experiments?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The paper should indicate the type of compute workers CPU or GPU, internal cluster, or cloud provider, including relevant memory and storage.
+        \item The paper should provide the amount of compute required for each of the individual experimental runs as well as estimate the total compute. 
+        \item The paper should disclose whether the full research project required more compute than the experiments reported in the paper (e.g., preliminary or failed experiments that didn't make it into the paper). 
+    \end{itemize}
+    
+\item {\bf Code of ethics}
+    \item[] Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics \url{https://neurips.cc/public/EthicsGuidelines}?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the authors have not reviewed the NeurIPS Code of Ethics.
+        \item If the authors answer \answerNo, they should explain the special circumstances that require a deviation from the Code of Ethics.
+        \item The authors should make sure to preserve anonymity (e.g., if there is a special consideration due to laws or regulations in their jurisdiction).
+    \end{itemize}
+
+
+\item {\bf Broader impacts}
+    \item[] Question: Does the paper discuss both potential positive societal impacts and negative societal impacts of the work performed?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that there is no societal impact of the work performed.
+        \item If the authors answer \answerNA{} or \answerNo, they should explain why their work has no societal impact or why the paper does not address societal impact.
+        \item Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake profiles, surveillance), fairness considerations (e.g., deployment of technologies that could make decisions that unfairly impact specific groups), privacy considerations, and security considerations.
+        \item The conference expects that many papers will be foundational research and not tied to particular applications, let alone deployments. However, if there is a direct path to any negative applications, the authors should point it out. For example, it is legitimate to point out that an improvement in the quality of generative models could be used to generate Deepfakes for disinformation. On the other hand, it is not needed to point out that a generic algorithm for optimizing neural networks could enable people to train models that generate Deepfakes faster.
+        \item The authors should consider possible harms that could arise when the technology is being used as intended and functioning correctly, harms that could arise when the technology is being used as intended but gives incorrect results, and harms following from (intentional or unintentional) misuse of the technology.
+        \item If there are negative societal impacts, the authors could also discuss possible mitigation strategies (e.g., gated release of models, providing defenses in addition to attacks, mechanisms for monitoring misuse, mechanisms to monitor how a system learns from feedback over time, improving the efficiency and accessibility of ML).
+    \end{itemize}
+    
+\item {\bf Safeguards}
+    \item[] Question: Does the paper describe safeguards that have been put in place for responsible release of data or models that have a high risk for misuse (e.g., pre-trained language models, image generators, or scraped datasets)?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper poses no such risks.
+        \item Released models that have a high risk for misuse or dual-use should be released with necessary safeguards to allow for controlled use of the model, for example by requiring that users adhere to usage guidelines or restrictions to access the model or implementing safety filters. 
+        \item Datasets that have been scraped from the Internet could pose safety risks. The authors should describe how they avoided releasing unsafe images.
+        \item We recognize that providing effective safeguards is challenging, and many papers do not require this, but we encourage authors to take this into account and make a best faith effort.
+    \end{itemize}
+
+\item {\bf Licenses for existing assets}
+    \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not use existing assets.
+        \item The authors should cite the original paper that produced the code package or dataset.
+        \item The authors should state which version of the asset is used and, if possible, include a URL.
+        \item The name of the license (e.g., CC-BY 4.0) should be included for each asset.
+        \item For scraped data from a particular source (e.g., website), the copyright and terms of service of that source should be provided.
+        \item If assets are released, the license, copyright information, and terms of use in the package should be provided. For popular datasets, \url{paperswithcode.com/datasets} has curated licenses for some datasets. Their licensing guide can help determine the license of a dataset.
+        \item For existing datasets that are re-packaged, both the original license and the license of the derived asset (if it has changed) should be provided.
+        \item If this information is not available online, the authors are encouraged to reach out to the asset's creators.
+    \end{itemize}
+
+\item {\bf New assets}
+    \item[] Question: Are new assets introduced in the paper well documented and is the documentation provided alongside the assets?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not release new assets.
+        \item Researchers should communicate the details of the dataset\slash code\slash model as part of their submissions via structured templates. This includes details about training, license, limitations, etc. 
+        \item The paper should discuss whether and how consent was obtained from people whose asset is used.
+        \item At submission time, remember to anonymize your assets (if applicable). You can either create an anonymized URL or include an anonymized zip file.
+    \end{itemize}
+
+\item {\bf Crowdsourcing and research with human subjects}
+    \item[] Question: For crowdsourcing experiments and research with human subjects, does the paper include the full text of instructions given to participants and screenshots, if applicable, as well as details about compensation (if any)? 
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not involve crowdsourcing nor research with human subjects.
+        \item Including this information in the supplemental material is fine, but if the main contribution of the paper involves human subjects, then as much detail as possible should be included in the main paper. 
+        \item According to the NeurIPS Code of Ethics, workers involved in data collection, curation, or other labor should be paid at least the minimum wage in the country of the data collector. 
+    \end{itemize}
+
+\item {\bf Institutional review board (IRB) approvals or equivalent for research with human subjects}
+    \item[] Question: Does the paper describe potential risks incurred by study participants, whether such risks were disclosed to the subjects, and whether Institutional Review Board (IRB) approvals (or an equivalent approval/review based on the requirements of your country or institution) were obtained?
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not involve crowdsourcing nor research with human subjects.
+        \item Depending on the country in which research is conducted, IRB approval (or equivalent) may be required for any human subjects research. If you obtained IRB approval, you should clearly state this in the paper. 
+        \item We recognize that the procedures for this may vary significantly between institutions and locations, and we expect authors to adhere to the NeurIPS Code of Ethics and the guidelines for their institution. 
+        \item For initial submissions, do not include any information that would break anonymity (if applicable), such as the institution conducting the review.
+    \end{itemize}
+
+\item {\bf Declaration of LLM usage}
+    \item[] Question: Does the paper describe the usage of LLMs if it is an important, original, or non-standard component of the core methods in this research? Note that if the LLM is used only for writing, editing, or formatting purposes and does \emph{not} impact the core methodology, scientific rigor, or originality of the research, declaration is not required.
+    %this research? 
+    \item[] Answer: \answerTODO{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: \justificationTODO{}
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the core method development in this research does not involve LLMs as any important, original, or non-standard components.
+        \item Please refer to our LLM policy in the NeurIPS handbook for what should or should not be described.
+    \end{itemize}
+
+\end{enumerate}
+\end{document}

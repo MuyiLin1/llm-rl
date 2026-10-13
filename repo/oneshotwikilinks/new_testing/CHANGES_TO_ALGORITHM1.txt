@@ -1,0 +1,65 @@
+CHANGES MADE TO experiment_algorithm1.py
+=========================================
+Apply these same changes to experiment_algorithm1_v2.py when ready.
+
+1. IMPORT: Added scipy.linalg.eigvalsh
+   - Line: from scipy.linalg import eigvalsh
+   - Purpose: compute eigenvalues of V_warm and V_cold for theory validation
+
+2. NEW ACCUMULATORS (after "llm_rounds" / "total_rounds" initialization):
+   - TAU_THRESHOLD = 0.05  (5% LLM routing = handoff done)
+   - tau_detected, tau_round, tau_batch: track when handoff happens
+   - tail_gap_sum, tail_gap_count: accumulate (1 - r_llm) for rounds after tau
+   - llm_correct_post_tau, llm_total_post_tau: LLM accuracy post-handoff
+   - max_feat_norm: running max of ||phi||_2 across all actions (= L estimate)
+
+3. NEW HISTORY KEYS (in the history dict):
+   - 'eigenvalues_warm_bottom10': []   bottom 10 eigenvalues of V_warm per checkpoint
+   - 'eigenvalues_cold_bottom10': []   bottom 10 eigenvalues of V_cold per checkpoint
+   - 'tail_gap_cumulative': []         running epsilon_tail after tau detected
+   - 'tau_round': None                 round number where handoff detected
+   - 'tau_batch': None                 batch number where handoff detected
+   - 'max_feat_norm': []               running max feature norm per checkpoint
+
+4. PER-ROUND ADDITIONS (inside the per-sample loop):
+   a. After computing joint_base, added feature norm tracking:
+      feat_norms = np.linalg.norm(joint_base, axis=1)
+      round_max_norm = float(np.max(feat_norms))
+      if round_max_norm > max_feat_norm:
+          max_feat_norm = round_max_norm
+
+   b. After TRACK 1 (LLM only), added tail gap tracking:
+      if tau_detected:
+          tail_gap_sum += (1.0 - r_llm)
+          tail_gap_count += 1
+          llm_total_post_tau += 1
+          llm_correct_post_tau += int(r_llm)
+
+5. TAU DETECTION (after the per-sample loop, before checkpoint logging):
+   - Once total_rounds > batch_size*10 and llm_fraction < 0.05:
+     sets tau_detected=True, records tau_round and tau_batch
+
+6. CHECKPOINT LOGGING ADDITIONS (inside the bno % 10 == 0 block):
+   a. Eigenvalue computation:
+      - Computes eigvalsh(V_inv_warm), takes top 10, inverts to get bottom 10
+        eigenvalues of V_warm
+      - Same for V_inv_cold
+      - Wrapped in try/except for safety
+      - Appended to history['eigenvalues_warm_bottom10'] etc.
+
+   b. Tail gap and feature norm:
+      - eps_tail = tail_gap_sum / tail_gap_count if tau_detected else None
+      - Appended to history['tail_gap_cumulative']
+      - max_feat_norm appended to history['max_feat_norm']
+
+7. FINAL SUMMARY (after main loop):
+   - Prints tau detection info, epsilon_tail, post-tau LLM accuracy, max L
+
+NOTE FOR V2 ADAPTATION:
+- experiment_algorithm1_v2.py has the same structure but uses:
+  * ST_MODEL = 'all-mpnet-base-v2' instead of 'bert-base-nli-mean-tokens'
+  * loads mydataset.2000.v2.pickle.gz
+  * has feat_scale = np.sqrt(d) applied to action_features
+  * output files tagged with 'algo1v2_' instead of 'algo1_'
+- All 7 changes above apply identically — just add them to the same locations.
+- The eigenvalue computation works the same regardless of embedding model.

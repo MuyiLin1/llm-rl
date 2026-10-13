@@ -1,0 +1,556 @@
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:108: DeprecationWarning: numpy.core.numeric is deprecated and has been renamed to numpy._core.numeric. The numpy._core namespace contains private NumPy internals and its use is discouraged, as NumPy internals can change without warning in any release. In practice, most real-world usage of numpy.core is to access functionality in the public NumPy API. If that is the case, use the public NumPy API. If not, you are using NumPy internals. If you would still like to access an internal attribute, use numpy._core.numeric._frombuffer.
+  return pickle.load(f)
+Device: mps
+LLM: flan-t5-large | alpha=1.0 | lam=0.1
+LLM confidence (c): 100.0
+Passive update mode: covariance only (V)
+Num actions: 311
+Loading LLM cache: llm_cache_v1_large.pkl.gz
+  Cache: 622000 samples, config: {'model_family': 'v1', 'llm_type': 'large', 'llm_model': 'google/flan-t5-large', 'st_model': 'bert-base-nli-mean-tokens', 'num_samples': 622000, 'num_entities': 311}
+Feature dim: 768
+Results file: results_algo1_large_c100.0.json
+Total batches: 4860
+==========================================================================================
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:336: RuntimeWarning: divide by zero encountered in matmul
+  theta_cold = V_inv_cold @ b_cold
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:336: RuntimeWarning: overflow encountered in matmul
+  theta_cold = V_inv_cold @ b_cold
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:336: RuntimeWarning: invalid value encountered in matmul
+  theta_cold = V_inv_cold @ b_cold
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:337: RuntimeWarning: divide by zero encountered in matmul
+  Vf_cold    = joint_base @ V_inv_cold
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:337: RuntimeWarning: overflow encountered in matmul
+  Vf_cold    = joint_base @ V_inv_cold
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:337: RuntimeWarning: invalid value encountered in matmul
+  Vf_cold    = joint_base @ V_inv_cold
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:339: RuntimeWarning: divide by zero encountered in matmul
+  ucb_cold   = joint_base @ theta_cold + current_alpha * np.sqrt(np.maximum(vars_cold, 0))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:339: RuntimeWarning: overflow encountered in matmul
+  ucb_cold   = joint_base @ theta_cold + current_alpha * np.sqrt(np.maximum(vars_cold, 0))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:339: RuntimeWarning: invalid value encountered in matmul
+  ucb_cold   = joint_base @ theta_cold + current_alpha * np.sqrt(np.maximum(vars_cold, 0))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:78: RuntimeWarning: divide by zero encountered in matmul
+  Vx = V_inv @ x
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:78: RuntimeWarning: overflow encountered in matmul
+  Vx = V_inv @ x
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:78: RuntimeWarning: invalid value encountered in matmul
+  Vx = V_inv @ x
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:353: RuntimeWarning: divide by zero encountered in matmul
+  theta_warm = V_inv_warm @ b_warm
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:353: RuntimeWarning: overflow encountered in matmul
+  theta_warm = V_inv_warm @ b_warm
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:353: RuntimeWarning: invalid value encountered in matmul
+  theta_warm = V_inv_warm @ b_warm
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:354: RuntimeWarning: divide by zero encountered in matmul
+  Vf_warm    = joint_base @ V_inv_warm
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:354: RuntimeWarning: overflow encountered in matmul
+  Vf_warm    = joint_base @ V_inv_warm
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:354: RuntimeWarning: invalid value encountered in matmul
+  Vf_warm    = joint_base @ V_inv_warm
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:356: RuntimeWarning: divide by zero encountered in matmul
+  ucb_warm   = joint_base @ theta_warm + current_alpha * np.sqrt(np.maximum(vars_warm, 0))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:356: RuntimeWarning: overflow encountered in matmul
+  ucb_warm   = joint_base @ theta_warm + current_alpha * np.sqrt(np.maximum(vars_warm, 0))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:356: RuntimeWarning: invalid value encountered in matmul
+  ucb_warm   = joint_base @ theta_warm + current_alpha * np.sqrt(np.maximum(vars_warm, 0))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:368: RuntimeWarning: divide by zero encountered in matmul
+  u_linucb = np.sqrt(max(0.0, x_linucb @ V_inv_warm @ x_linucb))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:368: RuntimeWarning: overflow encountered in matmul
+  u_linucb = np.sqrt(max(0.0, x_linucb @ V_inv_warm @ x_linucb))
+/Users/linmuyi/code/DMwithLLM/oneshotwikilinks/new_testing/experiment_algorithm1.py:368: RuntimeWarning: invalid value encountered in matmul
+  u_linucb = np.sqrt(max(0.0, x_linucb @ V_inv_warm @ x_linucb))
+Batch    0 | Router: 0.1641 | LLM only: 0.1641 | Cold LinUCB: 0.0312 | LLM routing: 100.0%
+Batch   10 | Router: 0.1293 | LLM only: 0.1293 | Cold LinUCB: 0.0128 | LLM routing: 100.0%
+Batch   20 | Router: 0.0941 | LLM only: 0.1313 | Cold LinUCB: 0.0201 | LLM routing: 73.0%
+Batch   30 | Router: 0.0713 | LLM only: 0.1268 | Cold LinUCB: 0.0323 | LLM routing: 49.4%
+Batch   40 | Router: 0.0625 | LLM only: 0.1284 | Cold LinUCB: 0.0393 | LLM routing: 37.4%
+Batch   50 | Router: 0.0600 | LLM only: 0.1293 | Cold LinUCB: 0.0429 | LLM routing: 30.1%
+Batch   60 | Router: 0.0584 | LLM only: 0.1291 | Cold LinUCB: 0.0471 | LLM routing: 25.1%
+Batch   70 | Router: 0.0603 | LLM only: 0.1274 | Cold LinUCB: 0.0537 | LLM routing: 21.6%
+Batch   80 | Router: 0.0619 | LLM only: 0.1269 | Cold LinUCB: 0.0562 | LLM routing: 18.9%
+Batch   90 | Router: 0.0641 | LLM only: 0.1283 | Cold LinUCB: 0.0610 | LLM routing: 16.8%
+Batch  100 | Router: 0.0655 | LLM only: 0.1263 | Cold LinUCB: 0.0623 | LLM routing: 15.2%
+Batch  110 | Router: 0.0662 | LLM only: 0.1258 | Cold LinUCB: 0.0640 | LLM routing: 13.8%
+Batch  120 | Router: 0.0673 | LLM only: 0.1262 | Cold LinUCB: 0.0653 | LLM routing: 12.7%
+Batch  130 | Router: 0.0691 | LLM only: 0.1263 | Cold LinUCB: 0.0672 | LLM routing: 11.7%
+Batch  140 | Router: 0.0708 | LLM only: 0.1267 | Cold LinUCB: 0.0693 | LLM routing: 10.9%
+Batch  150 | Router: 0.0714 | LLM only: 0.1258 | Cold LinUCB: 0.0696 | LLM routing: 10.2%
+Batch  160 | Router: 0.0719 | LLM only: 0.1241 | Cold LinUCB: 0.0706 | LLM routing: 9.5%
+Batch  170 | Router: 0.0739 | LLM only: 0.1245 | Cold LinUCB: 0.0725 | LLM routing: 9.0%
+Batch  180 | Router: 0.0748 | LLM only: 0.1247 | Cold LinUCB: 0.0738 | LLM routing: 8.5%
+Batch  190 | Router: 0.0757 | LLM only: 0.1246 | Cold LinUCB: 0.0745 | LLM routing: 8.0%
+Batch  200 | Router: 0.0762 | LLM only: 0.1238 | Cold LinUCB: 0.0760 | LLM routing: 7.6%
+Batch  210 | Router: 0.0772 | LLM only: 0.1234 | Cold LinUCB: 0.0770 | LLM routing: 7.3%
+Batch  220 | Router: 0.0781 | LLM only: 0.1226 | Cold LinUCB: 0.0779 | LLM routing: 6.9%
+Batch  230 | Router: 0.0791 | LLM only: 0.1235 | Cold LinUCB: 0.0789 | LLM routing: 6.6%
+Batch  240 | Router: 0.0795 | LLM only: 0.1235 | Cold LinUCB: 0.0794 | LLM routing: 6.4%
+Batch  250 | Router: 0.0798 | LLM only: 0.1236 | Cold LinUCB: 0.0798 | LLM routing: 6.1%
+Batch  260 | Router: 0.0805 | LLM only: 0.1232 | Cold LinUCB: 0.0805 | LLM routing: 5.9%
+Batch  270 | Router: 0.0811 | LLM only: 0.1235 | Cold LinUCB: 0.0813 | LLM routing: 5.7%
+Batch  280 | Router: 0.0821 | LLM only: 0.1234 | Cold LinUCB: 0.0820 | LLM routing: 5.5%
+Batch  290 | Router: 0.0831 | LLM only: 0.1236 | Cold LinUCB: 0.0829 | LLM routing: 5.3%
+Batch  300 | Router: 0.0840 | LLM only: 0.1242 | Cold LinUCB: 0.0837 | LLM routing: 5.1%
+  >> TAU DETECTED at batch 306, round 39296 (LLM frac = 0.050)
+Batch  310 | Router: 0.0849 | LLM only: 0.1246 | Cold LinUCB: 0.0843 | LLM routing: 4.9%
+Batch  320 | Router: 0.0855 | LLM only: 0.1247 | Cold LinUCB: 0.0850 | LLM routing: 4.8%
+Batch  330 | Router: 0.0859 | LLM only: 0.1243 | Cold LinUCB: 0.0855 | LLM routing: 4.6%
+Batch  340 | Router: 0.0868 | LLM only: 0.1248 | Cold LinUCB: 0.0863 | LLM routing: 4.5%
+Batch  350 | Router: 0.0871 | LLM only: 0.1248 | Cold LinUCB: 0.0867 | LLM routing: 4.4%
+Batch  360 | Router: 0.0872 | LLM only: 0.1247 | Cold LinUCB: 0.0870 | LLM routing: 4.2%
+Batch  370 | Router: 0.0877 | LLM only: 0.1245 | Cold LinUCB: 0.0876 | LLM routing: 4.1%
+Batch  380 | Router: 0.0882 | LLM only: 0.1247 | Cold LinUCB: 0.0880 | LLM routing: 4.0%
+Batch  390 | Router: 0.0888 | LLM only: 0.1248 | Cold LinUCB: 0.0886 | LLM routing: 3.9%
+Batch  400 | Router: 0.0890 | LLM only: 0.1251 | Cold LinUCB: 0.0886 | LLM routing: 3.8%
+Batch  410 | Router: 0.0893 | LLM only: 0.1252 | Cold LinUCB: 0.0889 | LLM routing: 3.7%
+Batch  420 | Router: 0.0897 | LLM only: 0.1253 | Cold LinUCB: 0.0894 | LLM routing: 3.6%
+Batch  430 | Router: 0.0898 | LLM only: 0.1253 | Cold LinUCB: 0.0895 | LLM routing: 3.6%
+Batch  440 | Router: 0.0904 | LLM only: 0.1252 | Cold LinUCB: 0.0899 | LLM routing: 3.5%
+Batch  450 | Router: 0.0908 | LLM only: 0.1254 | Cold LinUCB: 0.0903 | LLM routing: 3.4%
+Batch  460 | Router: 0.0916 | LLM only: 0.1259 | Cold LinUCB: 0.0910 | LLM routing: 3.3%
+Batch  470 | Router: 0.0924 | LLM only: 0.1256 | Cold LinUCB: 0.0916 | LLM routing: 3.3%
+Batch  480 | Router: 0.0923 | LLM only: 0.1256 | Cold LinUCB: 0.0915 | LLM routing: 3.2%
+Batch  490 | Router: 0.0926 | LLM only: 0.1255 | Cold LinUCB: 0.0916 | LLM routing: 3.1%
+Batch  500 | Router: 0.0929 | LLM only: 0.1252 | Cold LinUCB: 0.0919 | LLM routing: 3.1%
+Batch  510 | Router: 0.0928 | LLM only: 0.1251 | Cold LinUCB: 0.0919 | LLM routing: 3.0%
+Batch  520 | Router: 0.0930 | LLM only: 0.1247 | Cold LinUCB: 0.0920 | LLM routing: 2.9%
+Batch  530 | Router: 0.0930 | LLM only: 0.1248 | Cold LinUCB: 0.0920 | LLM routing: 2.9%
+Batch  540 | Router: 0.0932 | LLM only: 0.1245 | Cold LinUCB: 0.0922 | LLM routing: 2.8%
+Batch  550 | Router: 0.0935 | LLM only: 0.1245 | Cold LinUCB: 0.0926 | LLM routing: 2.8%
+Batch  560 | Router: 0.0937 | LLM only: 0.1244 | Cold LinUCB: 0.0928 | LLM routing: 2.7%
+Batch  570 | Router: 0.0940 | LLM only: 0.1244 | Cold LinUCB: 0.0931 | LLM routing: 2.7%
+Batch  580 | Router: 0.0940 | LLM only: 0.1243 | Cold LinUCB: 0.0930 | LLM routing: 2.6%
+Batch  590 | Router: 0.0940 | LLM only: 0.1244 | Cold LinUCB: 0.0930 | LLM routing: 2.6%
+Batch  600 | Router: 0.0944 | LLM only: 0.1248 | Cold LinUCB: 0.0934 | LLM routing: 2.6%
+Batch  610 | Router: 0.0945 | LLM only: 0.1246 | Cold LinUCB: 0.0936 | LLM routing: 2.5%
+Batch  620 | Router: 0.0946 | LLM only: 0.1243 | Cold LinUCB: 0.0936 | LLM routing: 2.5%
+Batch  630 | Router: 0.0949 | LLM only: 0.1244 | Cold LinUCB: 0.0940 | LLM routing: 2.4%
+Batch  640 | Router: 0.0951 | LLM only: 0.1242 | Cold LinUCB: 0.0942 | LLM routing: 2.4%
+Batch  650 | Router: 0.0951 | LLM only: 0.1244 | Cold LinUCB: 0.0943 | LLM routing: 2.4%
+Batch  660 | Router: 0.0951 | LLM only: 0.1241 | Cold LinUCB: 0.0944 | LLM routing: 2.3%
+Batch  670 | Router: 0.0955 | LLM only: 0.1240 | Cold LinUCB: 0.0947 | LLM routing: 2.3%
+Batch  680 | Router: 0.0958 | LLM only: 0.1238 | Cold LinUCB: 0.0948 | LLM routing: 2.3%
+Batch  690 | Router: 0.0959 | LLM only: 0.1237 | Cold LinUCB: 0.0951 | LLM routing: 2.2%
+Batch  700 | Router: 0.0959 | LLM only: 0.1235 | Cold LinUCB: 0.0952 | LLM routing: 2.2%
+Batch  710 | Router: 0.0958 | LLM only: 0.1234 | Cold LinUCB: 0.0951 | LLM routing: 2.2%
+Batch  720 | Router: 0.0960 | LLM only: 0.1236 | Cold LinUCB: 0.0955 | LLM routing: 2.1%
+Batch  730 | Router: 0.0964 | LLM only: 0.1237 | Cold LinUCB: 0.0958 | LLM routing: 2.1%
+Batch  740 | Router: 0.0966 | LLM only: 0.1238 | Cold LinUCB: 0.0960 | LLM routing: 2.1%
+Batch  750 | Router: 0.0968 | LLM only: 0.1236 | Cold LinUCB: 0.0962 | LLM routing: 2.0%
+Batch  760 | Router: 0.0967 | LLM only: 0.1236 | Cold LinUCB: 0.0962 | LLM routing: 2.0%
+Batch  770 | Router: 0.0971 | LLM only: 0.1236 | Cold LinUCB: 0.0964 | LLM routing: 2.0%
+Batch  780 | Router: 0.0973 | LLM only: 0.1237 | Cold LinUCB: 0.0967 | LLM routing: 2.0%
+Batch  790 | Router: 0.0975 | LLM only: 0.1239 | Cold LinUCB: 0.0969 | LLM routing: 1.9%
+Batch  800 | Router: 0.0977 | LLM only: 0.1238 | Cold LinUCB: 0.0970 | LLM routing: 1.9%
+Batch  810 | Router: 0.0979 | LLM only: 0.1238 | Cold LinUCB: 0.0972 | LLM routing: 1.9%
+Batch  820 | Router: 0.0979 | LLM only: 0.1238 | Cold LinUCB: 0.0972 | LLM routing: 1.9%
+Batch  830 | Router: 0.0981 | LLM only: 0.1238 | Cold LinUCB: 0.0973 | LLM routing: 1.8%
+Batch  840 | Router: 0.0982 | LLM only: 0.1240 | Cold LinUCB: 0.0974 | LLM routing: 1.8%
+Batch  850 | Router: 0.0983 | LLM only: 0.1241 | Cold LinUCB: 0.0976 | LLM routing: 1.8%
+Batch  860 | Router: 0.0983 | LLM only: 0.1239 | Cold LinUCB: 0.0976 | LLM routing: 1.8%
+Batch  870 | Router: 0.0984 | LLM only: 0.1239 | Cold LinUCB: 0.0977 | LLM routing: 1.8%
+Batch  880 | Router: 0.0987 | LLM only: 0.1239 | Cold LinUCB: 0.0979 | LLM routing: 1.7%
+Batch  890 | Router: 0.0988 | LLM only: 0.1239 | Cold LinUCB: 0.0980 | LLM routing: 1.7%
+Batch  900 | Router: 0.0988 | LLM only: 0.1238 | Cold LinUCB: 0.0980 | LLM routing: 1.7%
+Batch  910 | Router: 0.0987 | LLM only: 0.1238 | Cold LinUCB: 0.0979 | LLM routing: 1.7%
+Batch  920 | Router: 0.0988 | LLM only: 0.1237 | Cold LinUCB: 0.0981 | LLM routing: 1.7%
+Batch  930 | Router: 0.0989 | LLM only: 0.1239 | Cold LinUCB: 0.0982 | LLM routing: 1.6%
+Batch  940 | Router: 0.0990 | LLM only: 0.1239 | Cold LinUCB: 0.0983 | LLM routing: 1.6%
+Batch  950 | Router: 0.0991 | LLM only: 0.1239 | Cold LinUCB: 0.0984 | LLM routing: 1.6%
+Batch  960 | Router: 0.0992 | LLM only: 0.1238 | Cold LinUCB: 0.0985 | LLM routing: 1.6%
+Batch  970 | Router: 0.0993 | LLM only: 0.1238 | Cold LinUCB: 0.0986 | LLM routing: 1.6%
+Batch  980 | Router: 0.0994 | LLM only: 0.1239 | Cold LinUCB: 0.0987 | LLM routing: 1.6%
+Batch  990 | Router: 0.0995 | LLM only: 0.1239 | Cold LinUCB: 0.0988 | LLM routing: 1.5%
+Batch 1000 | Router: 0.0996 | LLM only: 0.1239 | Cold LinUCB: 0.0989 | LLM routing: 1.5%
+Batch 1010 | Router: 0.0995 | LLM only: 0.1240 | Cold LinUCB: 0.0989 | LLM routing: 1.5%
+Batch 1020 | Router: 0.0996 | LLM only: 0.1239 | Cold LinUCB: 0.0989 | LLM routing: 1.5%
+Batch 1030 | Router: 0.0997 | LLM only: 0.1241 | Cold LinUCB: 0.0990 | LLM routing: 1.5%
+Batch 1040 | Router: 0.0998 | LLM only: 0.1242 | Cold LinUCB: 0.0991 | LLM routing: 1.5%
+Batch 1050 | Router: 0.1000 | LLM only: 0.1242 | Cold LinUCB: 0.0993 | LLM routing: 1.5%
+Batch 1060 | Router: 0.1003 | LLM only: 0.1244 | Cold LinUCB: 0.0996 | LLM routing: 1.4%
+Batch 1070 | Router: 0.1005 | LLM only: 0.1245 | Cold LinUCB: 0.0997 | LLM routing: 1.4%
+Batch 1080 | Router: 0.1006 | LLM only: 0.1243 | Cold LinUCB: 0.0998 | LLM routing: 1.4%
+Batch 1090 | Router: 0.1007 | LLM only: 0.1244 | Cold LinUCB: 0.0999 | LLM routing: 1.4%
+Batch 1100 | Router: 0.1007 | LLM only: 0.1244 | Cold LinUCB: 0.0999 | LLM routing: 1.4%
+Batch 1110 | Router: 0.1009 | LLM only: 0.1243 | Cold LinUCB: 0.1000 | LLM routing: 1.4%
+Batch 1120 | Router: 0.1009 | LLM only: 0.1244 | Cold LinUCB: 0.1001 | LLM routing: 1.4%
+Batch 1130 | Router: 0.1010 | LLM only: 0.1243 | Cold LinUCB: 0.1002 | LLM routing: 1.4%
+Batch 1140 | Router: 0.1011 | LLM only: 0.1242 | Cold LinUCB: 0.1002 | LLM routing: 1.3%
+Batch 1150 | Router: 0.1011 | LLM only: 0.1242 | Cold LinUCB: 0.1003 | LLM routing: 1.3%
+Batch 1160 | Router: 0.1011 | LLM only: 0.1241 | Cold LinUCB: 0.1003 | LLM routing: 1.3%
+Batch 1170 | Router: 0.1012 | LLM only: 0.1242 | Cold LinUCB: 0.1005 | LLM routing: 1.3%
+Batch 1180 | Router: 0.1014 | LLM only: 0.1242 | Cold LinUCB: 0.1005 | LLM routing: 1.3%
+Batch 1190 | Router: 0.1015 | LLM only: 0.1244 | Cold LinUCB: 0.1006 | LLM routing: 1.3%
+Batch 1200 | Router: 0.1016 | LLM only: 0.1244 | Cold LinUCB: 0.1008 | LLM routing: 1.3%
+Batch 1210 | Router: 0.1016 | LLM only: 0.1244 | Cold LinUCB: 0.1008 | LLM routing: 1.3%
+Batch 1220 | Router: 0.1017 | LLM only: 0.1244 | Cold LinUCB: 0.1009 | LLM routing: 1.3%
+Batch 1230 | Router: 0.1017 | LLM only: 0.1243 | Cold LinUCB: 0.1009 | LLM routing: 1.2%
+Batch 1240 | Router: 0.1016 | LLM only: 0.1243 | Cold LinUCB: 0.1008 | LLM routing: 1.2%
+Batch 1250 | Router: 0.1016 | LLM only: 0.1243 | Cold LinUCB: 0.1008 | LLM routing: 1.2%
+Batch 1260 | Router: 0.1016 | LLM only: 0.1242 | Cold LinUCB: 0.1009 | LLM routing: 1.2%
+Batch 1270 | Router: 0.1016 | LLM only: 0.1243 | Cold LinUCB: 0.1009 | LLM routing: 1.2%
+Batch 1280 | Router: 0.1016 | LLM only: 0.1243 | Cold LinUCB: 0.1008 | LLM routing: 1.2%
+Batch 1290 | Router: 0.1017 | LLM only: 0.1243 | Cold LinUCB: 0.1009 | LLM routing: 1.2%
+Batch 1300 | Router: 0.1017 | LLM only: 0.1242 | Cold LinUCB: 0.1009 | LLM routing: 1.2%
+Batch 1310 | Router: 0.1018 | LLM only: 0.1244 | Cold LinUCB: 0.1010 | LLM routing: 1.2%
+Batch 1320 | Router: 0.1018 | LLM only: 0.1245 | Cold LinUCB: 0.1011 | LLM routing: 1.2%
+Batch 1330 | Router: 0.1019 | LLM only: 0.1244 | Cold LinUCB: 0.1011 | LLM routing: 1.2%
+Batch 1340 | Router: 0.1019 | LLM only: 0.1244 | Cold LinUCB: 0.1011 | LLM routing: 1.1%
+Batch 1350 | Router: 0.1019 | LLM only: 0.1245 | Cold LinUCB: 0.1011 | LLM routing: 1.1%
+Batch 1360 | Router: 0.1020 | LLM only: 0.1246 | Cold LinUCB: 0.1012 | LLM routing: 1.1%
+Batch 1370 | Router: 0.1020 | LLM only: 0.1245 | Cold LinUCB: 0.1012 | LLM routing: 1.1%
+Batch 1380 | Router: 0.1021 | LLM only: 0.1244 | Cold LinUCB: 0.1013 | LLM routing: 1.1%
+Batch 1390 | Router: 0.1021 | LLM only: 0.1244 | Cold LinUCB: 0.1014 | LLM routing: 1.1%
+Batch 1400 | Router: 0.1022 | LLM only: 0.1245 | Cold LinUCB: 0.1014 | LLM routing: 1.1%
+Batch 1410 | Router: 0.1023 | LLM only: 0.1245 | Cold LinUCB: 0.1015 | LLM routing: 1.1%
+Batch 1420 | Router: 0.1023 | LLM only: 0.1245 | Cold LinUCB: 0.1015 | LLM routing: 1.1%
+Batch 1430 | Router: 0.1024 | LLM only: 0.1244 | Cold LinUCB: 0.1016 | LLM routing: 1.1%
+Batch 1440 | Router: 0.1025 | LLM only: 0.1243 | Cold LinUCB: 0.1017 | LLM routing: 1.1%
+Batch 1450 | Router: 0.1026 | LLM only: 0.1243 | Cold LinUCB: 0.1018 | LLM routing: 1.1%
+Batch 1460 | Router: 0.1026 | LLM only: 0.1244 | Cold LinUCB: 0.1018 | LLM routing: 1.0%
+Batch 1470 | Router: 0.1028 | LLM only: 0.1245 | Cold LinUCB: 0.1019 | LLM routing: 1.0%
+Batch 1480 | Router: 0.1029 | LLM only: 0.1245 | Cold LinUCB: 0.1020 | LLM routing: 1.0%
+Batch 1490 | Router: 0.1030 | LLM only: 0.1245 | Cold LinUCB: 0.1022 | LLM routing: 1.0%
+Batch 1500 | Router: 0.1030 | LLM only: 0.1246 | Cold LinUCB: 0.1021 | LLM routing: 1.0%
+Batch 1510 | Router: 0.1030 | LLM only: 0.1247 | Cold LinUCB: 0.1022 | LLM routing: 1.0%
+Batch 1520 | Router: 0.1029 | LLM only: 0.1247 | Cold LinUCB: 0.1022 | LLM routing: 1.0%
+Batch 1530 | Router: 0.1030 | LLM only: 0.1246 | Cold LinUCB: 0.1022 | LLM routing: 1.0%
+Batch 1540 | Router: 0.1029 | LLM only: 0.1246 | Cold LinUCB: 0.1021 | LLM routing: 1.0%
+Batch 1550 | Router: 0.1030 | LLM only: 0.1246 | Cold LinUCB: 0.1022 | LLM routing: 1.0%
+Batch 1560 | Router: 0.1030 | LLM only: 0.1246 | Cold LinUCB: 0.1022 | LLM routing: 1.0%
+Batch 1570 | Router: 0.1029 | LLM only: 0.1246 | Cold LinUCB: 0.1022 | LLM routing: 1.0%
+Batch 1580 | Router: 0.1031 | LLM only: 0.1246 | Cold LinUCB: 0.1024 | LLM routing: 1.0%
+Batch 1590 | Router: 0.1033 | LLM only: 0.1246 | Cold LinUCB: 0.1025 | LLM routing: 1.0%
+Batch 1600 | Router: 0.1033 | LLM only: 0.1246 | Cold LinUCB: 0.1025 | LLM routing: 1.0%
+Batch 1610 | Router: 0.1033 | LLM only: 0.1246 | Cold LinUCB: 0.1025 | LLM routing: 1.0%
+Batch 1620 | Router: 0.1033 | LLM only: 0.1246 | Cold LinUCB: 0.1025 | LLM routing: 0.9%
+Batch 1630 | Router: 0.1034 | LLM only: 0.1245 | Cold LinUCB: 0.1026 | LLM routing: 0.9%
+Batch 1640 | Router: 0.1034 | LLM only: 0.1244 | Cold LinUCB: 0.1027 | LLM routing: 0.9%
+Batch 1650 | Router: 0.1034 | LLM only: 0.1244 | Cold LinUCB: 0.1027 | LLM routing: 0.9%
+Batch 1660 | Router: 0.1035 | LLM only: 0.1243 | Cold LinUCB: 0.1027 | LLM routing: 0.9%
+Batch 1670 | Router: 0.1034 | LLM only: 0.1243 | Cold LinUCB: 0.1026 | LLM routing: 0.9%
+Batch 1680 | Router: 0.1035 | LLM only: 0.1243 | Cold LinUCB: 0.1027 | LLM routing: 0.9%
+Batch 1690 | Router: 0.1035 | LLM only: 0.1242 | Cold LinUCB: 0.1027 | LLM routing: 0.9%
+Batch 1700 | Router: 0.1037 | LLM only: 0.1242 | Cold LinUCB: 0.1028 | LLM routing: 0.9%
+Batch 1710 | Router: 0.1037 | LLM only: 0.1243 | Cold LinUCB: 0.1028 | LLM routing: 0.9%
+Batch 1720 | Router: 0.1037 | LLM only: 0.1242 | Cold LinUCB: 0.1028 | LLM routing: 0.9%
+Batch 1730 | Router: 0.1037 | LLM only: 0.1243 | Cold LinUCB: 0.1028 | LLM routing: 0.9%
+Batch 1740 | Router: 0.1038 | LLM only: 0.1242 | Cold LinUCB: 0.1029 | LLM routing: 0.9%
+Batch 1750 | Router: 0.1037 | LLM only: 0.1243 | Cold LinUCB: 0.1028 | LLM routing: 0.9%
+Batch 1760 | Router: 0.1037 | LLM only: 0.1243 | Cold LinUCB: 0.1029 | LLM routing: 0.9%
+Batch 1770 | Router: 0.1037 | LLM only: 0.1243 | Cold LinUCB: 0.1028 | LLM routing: 0.9%
+Batch 1780 | Router: 0.1038 | LLM only: 0.1245 | Cold LinUCB: 0.1029 | LLM routing: 0.9%
+Batch 1790 | Router: 0.1038 | LLM only: 0.1245 | Cold LinUCB: 0.1029 | LLM routing: 0.9%
+Batch 1800 | Router: 0.1038 | LLM only: 0.1245 | Cold LinUCB: 0.1030 | LLM routing: 0.9%
+Batch 1810 | Router: 0.1039 | LLM only: 0.1244 | Cold LinUCB: 0.1030 | LLM routing: 0.8%
+Batch 1820 | Router: 0.1039 | LLM only: 0.1244 | Cold LinUCB: 0.1030 | LLM routing: 0.8%
+Batch 1830 | Router: 0.1040 | LLM only: 0.1244 | Cold LinUCB: 0.1031 | LLM routing: 0.8%
+Batch 1840 | Router: 0.1039 | LLM only: 0.1244 | Cold LinUCB: 0.1030 | LLM routing: 0.8%
+Batch 1850 | Router: 0.1040 | LLM only: 0.1245 | Cold LinUCB: 0.1031 | LLM routing: 0.8%
+Batch 1860 | Router: 0.1041 | LLM only: 0.1244 | Cold LinUCB: 0.1031 | LLM routing: 0.8%
+Batch 1870 | Router: 0.1041 | LLM only: 0.1244 | Cold LinUCB: 0.1032 | LLM routing: 0.8%
+Batch 1880 | Router: 0.1041 | LLM only: 0.1244 | Cold LinUCB: 0.1032 | LLM routing: 0.8%
+Batch 1890 | Router: 0.1041 | LLM only: 0.1243 | Cold LinUCB: 0.1032 | LLM routing: 0.8%
+Batch 1900 | Router: 0.1043 | LLM only: 0.1243 | Cold LinUCB: 0.1034 | LLM routing: 0.8%
+Batch 1910 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 1920 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 1930 | Router: 0.1044 | LLM only: 0.1244 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 1940 | Router: 0.1043 | LLM only: 0.1244 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 1950 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 1960 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1036 | LLM routing: 0.8%
+Batch 1970 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1036 | LLM routing: 0.8%
+Batch 1980 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1036 | LLM routing: 0.8%
+Batch 1990 | Router: 0.1045 | LLM only: 0.1243 | Cold LinUCB: 0.1036 | LLM routing: 0.8%
+Batch 2000 | Router: 0.1044 | LLM only: 0.1244 | Cold LinUCB: 0.1036 | LLM routing: 0.8%
+Batch 2010 | Router: 0.1045 | LLM only: 0.1244 | Cold LinUCB: 0.1036 | LLM routing: 0.8%
+Batch 2020 | Router: 0.1044 | LLM only: 0.1244 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 2030 | Router: 0.1043 | LLM only: 0.1244 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 2040 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1035 | LLM routing: 0.8%
+Batch 2050 | Router: 0.1044 | LLM only: 0.1244 | Cold LinUCB: 0.1035 | LLM routing: 0.7%
+Batch 2060 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1035 | LLM routing: 0.7%
+Batch 2070 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1036 | LLM routing: 0.7%
+Batch 2080 | Router: 0.1044 | LLM only: 0.1243 | Cold LinUCB: 0.1036 | LLM routing: 0.7%
+Batch 2090 | Router: 0.1045 | LLM only: 0.1243 | Cold LinUCB: 0.1037 | LLM routing: 0.7%
+Batch 2100 | Router: 0.1044 | LLM only: 0.1242 | Cold LinUCB: 0.1036 | LLM routing: 0.7%
+Batch 2110 | Router: 0.1045 | LLM only: 0.1242 | Cold LinUCB: 0.1036 | LLM routing: 0.7%
+Batch 2120 | Router: 0.1045 | LLM only: 0.1242 | Cold LinUCB: 0.1036 | LLM routing: 0.7%
+Batch 2130 | Router: 0.1046 | LLM only: 0.1242 | Cold LinUCB: 0.1037 | LLM routing: 0.7%
+Batch 2140 | Router: 0.1046 | LLM only: 0.1243 | Cold LinUCB: 0.1037 | LLM routing: 0.7%
+Batch 2150 | Router: 0.1046 | LLM only: 0.1243 | Cold LinUCB: 0.1037 | LLM routing: 0.7%
+Batch 2160 | Router: 0.1046 | LLM only: 0.1243 | Cold LinUCB: 0.1037 | LLM routing: 0.7%
+Batch 2170 | Router: 0.1046 | LLM only: 0.1243 | Cold LinUCB: 0.1037 | LLM routing: 0.7%
+Batch 2180 | Router: 0.1047 | LLM only: 0.1244 | Cold LinUCB: 0.1038 | LLM routing: 0.7%
+Batch 2190 | Router: 0.1047 | LLM only: 0.1244 | Cold LinUCB: 0.1038 | LLM routing: 0.7%
+Batch 2200 | Router: 0.1047 | LLM only: 0.1244 | Cold LinUCB: 0.1039 | LLM routing: 0.7%
+Batch 2210 | Router: 0.1047 | LLM only: 0.1242 | Cold LinUCB: 0.1039 | LLM routing: 0.7%
+Batch 2220 | Router: 0.1048 | LLM only: 0.1243 | Cold LinUCB: 0.1039 | LLM routing: 0.7%
+Batch 2230 | Router: 0.1049 | LLM only: 0.1243 | Cold LinUCB: 0.1041 | LLM routing: 0.7%
+Batch 2240 | Router: 0.1049 | LLM only: 0.1243 | Cold LinUCB: 0.1041 | LLM routing: 0.7%
+Batch 2250 | Router: 0.1050 | LLM only: 0.1243 | Cold LinUCB: 0.1041 | LLM routing: 0.7%
+Batch 2260 | Router: 0.1051 | LLM only: 0.1243 | Cold LinUCB: 0.1042 | LLM routing: 0.7%
+Batch 2270 | Router: 0.1051 | LLM only: 0.1243 | Cold LinUCB: 0.1042 | LLM routing: 0.7%
+Batch 2280 | Router: 0.1051 | LLM only: 0.1243 | Cold LinUCB: 0.1042 | LLM routing: 0.7%
+Batch 2290 | Router: 0.1051 | LLM only: 0.1242 | Cold LinUCB: 0.1042 | LLM routing: 0.7%
+Batch 2300 | Router: 0.1051 | LLM only: 0.1243 | Cold LinUCB: 0.1042 | LLM routing: 0.7%
+Batch 2310 | Router: 0.1051 | LLM only: 0.1243 | Cold LinUCB: 0.1043 | LLM routing: 0.7%
+Batch 2320 | Router: 0.1052 | LLM only: 0.1243 | Cold LinUCB: 0.1043 | LLM routing: 0.7%
+Batch 2330 | Router: 0.1052 | LLM only: 0.1243 | Cold LinUCB: 0.1043 | LLM routing: 0.7%
+Batch 2340 | Router: 0.1052 | LLM only: 0.1243 | Cold LinUCB: 0.1043 | LLM routing: 0.7%
+Batch 2350 | Router: 0.1052 | LLM only: 0.1243 | Cold LinUCB: 0.1043 | LLM routing: 0.7%
+Batch 2360 | Router: 0.1053 | LLM only: 0.1244 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2370 | Router: 0.1053 | LLM only: 0.1244 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2380 | Router: 0.1053 | LLM only: 0.1243 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2390 | Router: 0.1053 | LLM only: 0.1244 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2400 | Router: 0.1053 | LLM only: 0.1243 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2410 | Router: 0.1053 | LLM only: 0.1243 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2420 | Router: 0.1053 | LLM only: 0.1243 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2430 | Router: 0.1053 | LLM only: 0.1243 | Cold LinUCB: 0.1044 | LLM routing: 0.6%
+Batch 2440 | Router: 0.1054 | LLM only: 0.1243 | Cold LinUCB: 0.1045 | LLM routing: 0.6%
+Batch 2450 | Router: 0.1054 | LLM only: 0.1243 | Cold LinUCB: 0.1045 | LLM routing: 0.6%
+Batch 2460 | Router: 0.1054 | LLM only: 0.1243 | Cold LinUCB: 0.1045 | LLM routing: 0.6%
+Batch 2470 | Router: 0.1054 | LLM only: 0.1243 | Cold LinUCB: 0.1045 | LLM routing: 0.6%
+Batch 2480 | Router: 0.1054 | LLM only: 0.1243 | Cold LinUCB: 0.1045 | LLM routing: 0.6%
+Batch 2490 | Router: 0.1054 | LLM only: 0.1243 | Cold LinUCB: 0.1045 | LLM routing: 0.6%
+Batch 2500 | Router: 0.1054 | LLM only: 0.1243 | Cold LinUCB: 0.1045 | LLM routing: 0.6%
+Batch 2510 | Router: 0.1055 | LLM only: 0.1242 | Cold LinUCB: 0.1046 | LLM routing: 0.6%
+Batch 2520 | Router: 0.1055 | LLM only: 0.1242 | Cold LinUCB: 0.1046 | LLM routing: 0.6%
+Batch 2530 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1047 | LLM routing: 0.6%
+Batch 2540 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1047 | LLM routing: 0.6%
+Batch 2550 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1047 | LLM routing: 0.6%
+Batch 2560 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1047 | LLM routing: 0.6%
+Batch 2570 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1048 | LLM routing: 0.6%
+Batch 2580 | Router: 0.1056 | LLM only: 0.1243 | Cold LinUCB: 0.1048 | LLM routing: 0.6%
+Batch 2590 | Router: 0.1057 | LLM only: 0.1243 | Cold LinUCB: 0.1048 | LLM routing: 0.6%
+Batch 2600 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1047 | LLM routing: 0.6%
+Batch 2610 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1048 | LLM routing: 0.6%
+Batch 2620 | Router: 0.1056 | LLM only: 0.1242 | Cold LinUCB: 0.1048 | LLM routing: 0.6%
+Batch 2630 | Router: 0.1057 | LLM only: 0.1242 | Cold LinUCB: 0.1048 | LLM routing: 0.6%
+Batch 2640 | Router: 0.1058 | LLM only: 0.1242 | Cold LinUCB: 0.1049 | LLM routing: 0.6%
+Batch 2650 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2660 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2670 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2680 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2690 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2700 | Router: 0.1059 | LLM only: 0.1243 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2710 | Router: 0.1058 | LLM only: 0.1243 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2720 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2730 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2740 | Router: 0.1059 | LLM only: 0.1242 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2750 | Router: 0.1059 | LLM only: 0.1243 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2760 | Router: 0.1059 | LLM only: 0.1243 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2770 | Router: 0.1059 | LLM only: 0.1243 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2780 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.6%
+Batch 2790 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2800 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2810 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2820 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2830 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2840 | Router: 0.1060 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2850 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2860 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1050 | LLM routing: 0.5%
+Batch 2870 | Router: 0.1059 | LLM only: 0.1244 | Cold LinUCB: 0.1051 | LLM routing: 0.5%
+Batch 2880 | Router: 0.1060 | LLM only: 0.1244 | Cold LinUCB: 0.1051 | LLM routing: 0.5%
+Batch 2890 | Router: 0.1061 | LLM only: 0.1244 | Cold LinUCB: 0.1051 | LLM routing: 0.5%
+Batch 2900 | Router: 0.1060 | LLM only: 0.1244 | Cold LinUCB: 0.1052 | LLM routing: 0.5%
+Batch 2910 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1052 | LLM routing: 0.5%
+Batch 2920 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1052 | LLM routing: 0.5%
+Batch 2930 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1052 | LLM routing: 0.5%
+Batch 2940 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1052 | LLM routing: 0.5%
+Batch 2950 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1053 | LLM routing: 0.5%
+Batch 2960 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1053 | LLM routing: 0.5%
+Batch 2970 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1053 | LLM routing: 0.5%
+Batch 2980 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1053 | LLM routing: 0.5%
+Batch 2990 | Router: 0.1061 | LLM only: 0.1243 | Cold LinUCB: 0.1053 | LLM routing: 0.5%
+Batch 3000 | Router: 0.1062 | LLM only: 0.1244 | Cold LinUCB: 0.1053 | LLM routing: 0.5%
+Batch 3010 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1054 | LLM routing: 0.5%
+Batch 3020 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1054 | LLM routing: 0.5%
+Batch 3030 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1054 | LLM routing: 0.5%
+Batch 3040 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1054 | LLM routing: 0.5%
+Batch 3050 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1054 | LLM routing: 0.5%
+Batch 3060 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1054 | LLM routing: 0.5%
+Batch 3070 | Router: 0.1062 | LLM only: 0.1243 | Cold LinUCB: 0.1054 | LLM routing: 0.5%
+Batch 3080 | Router: 0.1063 | LLM only: 0.1244 | Cold LinUCB: 0.1055 | LLM routing: 0.5%
+Batch 3090 | Router: 0.1063 | LLM only: 0.1244 | Cold LinUCB: 0.1055 | LLM routing: 0.5%
+Batch 3100 | Router: 0.1063 | LLM only: 0.1243 | Cold LinUCB: 0.1055 | LLM routing: 0.5%
+Batch 3110 | Router: 0.1064 | LLM only: 0.1243 | Cold LinUCB: 0.1056 | LLM routing: 0.5%
+Batch 3120 | Router: 0.1065 | LLM only: 0.1243 | Cold LinUCB: 0.1057 | LLM routing: 0.5%
+Batch 3130 | Router: 0.1065 | LLM only: 0.1243 | Cold LinUCB: 0.1057 | LLM routing: 0.5%
+Batch 3140 | Router: 0.1065 | LLM only: 0.1243 | Cold LinUCB: 0.1057 | LLM routing: 0.5%
+Batch 3150 | Router: 0.1065 | LLM only: 0.1242 | Cold LinUCB: 0.1057 | LLM routing: 0.5%
+Batch 3160 | Router: 0.1066 | LLM only: 0.1242 | Cold LinUCB: 0.1057 | LLM routing: 0.5%
+Batch 3170 | Router: 0.1066 | LLM only: 0.1242 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3180 | Router: 0.1067 | LLM only: 0.1242 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3190 | Router: 0.1066 | LLM only: 0.1242 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3200 | Router: 0.1066 | LLM only: 0.1242 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3210 | Router: 0.1066 | LLM only: 0.1242 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3220 | Router: 0.1066 | LLM only: 0.1241 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3230 | Router: 0.1066 | LLM only: 0.1241 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3240 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3250 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3260 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3270 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3280 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3290 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3300 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3310 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3320 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1058 | LLM routing: 0.5%
+Batch 3330 | Router: 0.1066 | LLM only: 0.1240 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3340 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3350 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3360 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3370 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3380 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3390 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3400 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.5%
+Batch 3410 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3420 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3430 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3440 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3450 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3460 | Router: 0.1067 | LLM only: 0.1242 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3470 | Router: 0.1067 | LLM only: 0.1242 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3480 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3490 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3500 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3510 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3520 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3530 | Router: 0.1067 | LLM only: 0.1241 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3540 | Router: 0.1067 | LLM only: 0.1242 | Cold LinUCB: 0.1059 | LLM routing: 0.4%
+Batch 3550 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3560 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3570 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3580 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3590 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3600 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3610 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3620 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3630 | Router: 0.1068 | LLM only: 0.1242 | Cold LinUCB: 0.1060 | LLM routing: 0.4%
+Batch 3640 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3650 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3660 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3670 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3680 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3690 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3700 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3710 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3720 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3730 | Router: 0.1069 | LLM only: 0.1242 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3740 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3750 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3760 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3770 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3780 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3790 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1061 | LLM routing: 0.4%
+Batch 3800 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1062 | LLM routing: 0.4%
+Batch 3810 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1062 | LLM routing: 0.4%
+Batch 3820 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1062 | LLM routing: 0.4%
+Batch 3830 | Router: 0.1069 | LLM only: 0.1241 | Cold LinUCB: 0.1062 | LLM routing: 0.4%
+Batch 3840 | Router: 0.1070 | LLM only: 0.1241 | Cold LinUCB: 0.1062 | LLM routing: 0.4%
+Batch 3850 | Router: 0.1070 | LLM only: 0.1241 | Cold LinUCB: 0.1062 | LLM routing: 0.4%
+Batch 3860 | Router: 0.1070 | LLM only: 0.1241 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3870 | Router: 0.1070 | LLM only: 0.1241 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3880 | Router: 0.1071 | LLM only: 0.1241 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3890 | Router: 0.1070 | LLM only: 0.1241 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3900 | Router: 0.1070 | LLM only: 0.1240 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3910 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3920 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3930 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3940 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1063 | LLM routing: 0.4%
+Batch 3950 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 3960 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 3970 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 3980 | Router: 0.1071 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 3990 | Router: 0.1072 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 4000 | Router: 0.1072 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 4010 | Router: 0.1072 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 4020 | Router: 0.1072 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 4030 | Router: 0.1072 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 4040 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4050 | Router: 0.1072 | LLM only: 0.1240 | Cold LinUCB: 0.1064 | LLM routing: 0.4%
+Batch 4060 | Router: 0.1072 | LLM only: 0.1239 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4070 | Router: 0.1072 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4080 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4090 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4100 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4110 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4120 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4130 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4140 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4150 | Router: 0.1073 | LLM only: 0.1240 | Cold LinUCB: 0.1065 | LLM routing: 0.4%
+Batch 4160 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4170 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4180 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4190 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4200 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4210 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4220 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4230 | Router: 0.1074 | LLM only: 0.1239 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4240 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4250 | Router: 0.1075 | LLM only: 0.1239 | Cold LinUCB: 0.1068 | LLM routing: 0.4%
+Batch 4260 | Router: 0.1075 | LLM only: 0.1239 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4270 | Router: 0.1074 | LLM only: 0.1239 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4280 | Router: 0.1074 | LLM only: 0.1239 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4290 | Router: 0.1074 | LLM only: 0.1239 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4300 | Router: 0.1074 | LLM only: 0.1239 | Cold LinUCB: 0.1066 | LLM routing: 0.4%
+Batch 4310 | Router: 0.1074 | LLM only: 0.1239 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4320 | Router: 0.1074 | LLM only: 0.1239 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4330 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4340 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4350 | Router: 0.1074 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4360 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4370 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.4%
+Batch 4380 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.3%
+Batch 4390 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4400 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.3%
+Batch 4410 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4420 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4430 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4440 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4450 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4460 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4470 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4480 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4490 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4500 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4510 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.3%
+Batch 4520 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1067 | LLM routing: 0.3%
+Batch 4530 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1067 | LLM routing: 0.3%
+Batch 4540 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1067 | LLM routing: 0.3%
+Batch 4550 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4560 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4570 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4580 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4590 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4600 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4610 | Router: 0.1075 | LLM only: 0.1240 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4620 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4630 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4640 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4650 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4660 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4670 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4680 | Router: 0.1075 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4690 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1068 | LLM routing: 0.3%
+Batch 4700 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4710 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4720 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4730 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4740 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4750 | Router: 0.1077 | LLM only: 0.1242 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4760 | Router: 0.1076 | LLM only: 0.1241 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4770 | Router: 0.1076 | LLM only: 0.1242 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4780 | Router: 0.1077 | LLM only: 0.1242 | Cold LinUCB: 0.1069 | LLM routing: 0.3%
+Batch 4790 | Router: 0.1077 | LLM only: 0.1242 | Cold LinUCB: 0.1070 | LLM routing: 0.3%
+Batch 4800 | Router: 0.1077 | LLM only: 0.1242 | Cold LinUCB: 0.1070 | LLM routing: 0.3%
+Batch 4810 | Router: 0.1078 | LLM only: 0.1242 | Cold LinUCB: 0.1070 | LLM routing: 0.3%
+Batch 4820 | Router: 0.1077 | LLM only: 0.1242 | Cold LinUCB: 0.1070 | LLM routing: 0.3%
+Batch 4830 | Router: 0.1077 | LLM only: 0.1242 | Cold LinUCB: 0.1070 | LLM routing: 0.3%
+Batch 4840 | Router: 0.1077 | LLM only: 0.1243 | Cold LinUCB: 0.1070 | LLM routing: 0.3%
+Batch 4850 | Router: 0.1077 | LLM only: 0.1242 | Cold LinUCB: 0.1070 | LLM routing: 0.3%
+==========================================================================================
+FINAL | Router: 0.1077 | LLM only: 0.1243 | Cold LinUCB: 0.1070
+LLM routing: 1962/622000 = 0.3%
+Tau detected at round 39296 (batch 306)
+Epsilon_tail (avg LLM gap post-tau): 0.8757
+LLM accuracy post-tau: 72413/582704 = 0.1243
+Max feature norm L: 20.1052
+Results saved to: results_algo1_large_c100.0.json

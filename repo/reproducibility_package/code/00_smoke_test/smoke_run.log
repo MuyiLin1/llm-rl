@@ -1,0 +1,20 @@
+Loading slim dataset fixture_slim.npz ...
+Samples: 1500, Actions: 800, Feature dim: 128
+LLM type: large | alpha=1.0 | lam=0.1
+LLM confidence (c): 0.1
+Passive update mode: full (V + b)
+Alpha decay: 0.9985
+Router mode: gate
+Results file: results_algo1_smoke_v1_large_c0.1_pfull_s1.json
+Checkpoint file: checkpoint_algo1_smoke_v1_large_c0.1_pfull_s1.npz
+Per-round log: perround_algo1_smoke_v1_large_c0.1_pfull_s1.npz
+Total samples: 1500
+==========================================================================================
+Scoring device: cpu (float64 scoring, float64 state)
+Step    1000/1500 | Router: 0.5500 | LLM: 0.2400 | Cold LinUCB: 0.3320 | LLM%: 33.8%
+Step    1500/1500 | Router: 0.6487 | LLM: 0.2287 | Cold LinUCB: 0.4787 | LLM%: 23.3%
+==========================================================================================
+FINAL | Router: 0.6487 | LLM: 0.2287 | Cold LinUCB: 0.4787
+LLM routing: 349/1500 = 23.3%
+Decomposition: A=13  V=242  B=630  (A+V=255 must equal sum(r_router)-sum(r_cold)=255)
+Saved: results_algo1_smoke_v1_large_c0.1_pfull_s1.json, perround_algo1_smoke_v1_large_c0.1_pfull_s1.npz

@@ -1,0 +1,76 @@
+Device: mps
+
+======================================================================
+STEP 1: Loading v3 dataset
+======================================================================
+Loading dataset: mydataset.0.v3.pickle.gz
+Dataset: 1186239 samples
+Entities: 13330
+
+======================================================================
+STEP 2: Partial cache llm_cache_amazon_v3_base_partial50000.pkl.gz exists, loading...
+======================================================================
+  Loaded 50000 cached predictions, 0 missing
+
+======================================================================
+STEP 3: Algorithm 1 experiment (v3/base, 50000 samples)
+======================================================================
+Contexts: (50000, 1024), Entities: (13330, 1024)
+Results file: results_algo1_amazon_v3_base_c100.0_pfull.json
+Total experiment samples: 50000
+==========================================================================================
+Step    1000/50000 | Router: 0.2120 | LLM: 0.2120 | Cold: 0.1420 | LLM%: 100.0% | ETA: 85m
+Step    2000/50000 | Router: 0.2105 | LLM: 0.2105 | Cold: 0.1600 | LLM%: 100.0% | ETA: 83m
+Step    3000/50000 | Router: 0.2107 | LLM: 0.2107 | Cold: 0.1597 | LLM%: 100.0% | ETA: 81m
+Step    4000/50000 | Router: 0.2145 | LLM: 0.2145 | Cold: 0.1680 | LLM%: 100.0% | ETA: 83m
+Step    5000/50000 | Router: 0.2118 | LLM: 0.2118 | Cold: 0.1750 | LLM%: 100.0% | ETA: 85m
+Step    6000/50000 | Router: 0.2145 | LLM: 0.2145 | Cold: 0.1755 | LLM%: 100.0% | ETA: 86m
+Step    7000/50000 | Router: 0.2161 | LLM: 0.2161 | Cold: 0.1774 | LLM%: 100.0% | ETA: 85m
+Step    8000/50000 | Router: 0.2172 | LLM: 0.2172 | Cold: 0.1836 | LLM%: 100.0% | ETA: 84m
+Step    9000/50000 | Router: 0.2178 | LLM: 0.2178 | Cold: 0.1880 | LLM%: 100.0% | ETA: 83m
+Step   10000/50000 | Router: 0.2181 | LLM: 0.2181 | Cold: 0.1962 | LLM%: 100.0% | ETA: 82m
+Step   11000/50000 | Router: 0.2189 | LLM: 0.2189 | Cold: 0.2014 | LLM%: 100.0% | ETA: 81m
+Step   12000/50000 | Router: 0.2225 | LLM: 0.2225 | Cold: 0.2056 | LLM%: 100.0% | ETA: 79m
+Step   13000/50000 | Router: 0.2240 | LLM: 0.2240 | Cold: 0.2126 | LLM%: 100.0% | ETA: 77m
+Step   14000/50000 | Router: 0.2244 | LLM: 0.2244 | Cold: 0.2214 | LLM%: 100.0% | ETA: 75m
+Step   15000/50000 | Router: 0.2241 | LLM: 0.2241 | Cold: 0.2356 | LLM%: 100.0% | ETA: 73m
+Step   16000/50000 | Router: 0.2236 | LLM: 0.2236 | Cold: 0.2479 | LLM%: 100.0% | ETA: 71m
+Step   17000/50000 | Router: 0.2243 | LLM: 0.2243 | Cold: 0.2588 | LLM%: 100.0% | ETA: 70m
+Step   18000/50000 | Router: 0.2244 | LLM: 0.2244 | Cold: 0.2686 | LLM%: 100.0% | ETA: 68m
+Step   19000/50000 | Router: 0.2233 | LLM: 0.2233 | Cold: 0.2772 | LLM%: 100.0% | ETA: 66m
+Step   20000/50000 | Router: 0.2235 | LLM: 0.2235 | Cold: 0.2859 | LLM%: 100.0% | ETA: 64m
+Step   21000/50000 | Router: 0.2240 | LLM: 0.2240 | Cold: 0.2931 | LLM%: 100.0% | ETA: 62m
+Step   22000/50000 | Router: 0.2252 | LLM: 0.2252 | Cold: 0.3000 | LLM%: 100.0% | ETA: 60m
+Step   23000/50000 | Router: 0.2254 | LLM: 0.2254 | Cold: 0.3052 | LLM%: 100.0% | ETA: 58m
+Step   24000/50000 | Router: 0.2254 | LLM: 0.2254 | Cold: 0.3114 | LLM%: 100.0% | ETA: 56m
+Step   25000/50000 | Router: 0.2253 | LLM: 0.2253 | Cold: 0.3176 | LLM%: 100.0% | ETA: 53m
+Step   26000/50000 | Router: 0.2240 | LLM: 0.2240 | Cold: 0.3212 | LLM%: 100.0% | ETA: 51m
+Step   27000/50000 | Router: 0.2245 | LLM: 0.2245 | Cold: 0.3265 | LLM%: 100.0% | ETA: 48m
+Step   28000/50000 | Router: 0.2251 | LLM: 0.2251 | Cold: 0.3326 | LLM%: 100.0% | ETA: 46m
+Step   29000/50000 | Router: 0.2247 | LLM: 0.2247 | Cold: 0.3371 | LLM%: 100.0% | ETA: 44m
+Step   30000/50000 | Router: 0.2249 | LLM: 0.2249 | Cold: 0.3410 | LLM%: 100.0% | ETA: 41m
+Step   31000/50000 | Router: 0.2244 | LLM: 0.2244 | Cold: 0.3446 | LLM%: 100.0% | ETA: 39m
+Step   32000/50000 | Router: 0.2240 | LLM: 0.2240 | Cold: 0.3480 | LLM%: 100.0% | ETA: 37m
+Step   33000/50000 | Router: 0.2236 | LLM: 0.2236 | Cold: 0.3511 | LLM%: 100.0% | ETA: 35m
+Step   34000/50000 | Router: 0.2234 | LLM: 0.2234 | Cold: 0.3534 | LLM%: 100.0% | ETA: 33m
+Step   35000/50000 | Router: 0.2231 | LLM: 0.2231 | Cold: 0.3567 | LLM%: 100.0% | ETA: 31m
+Step   36000/50000 | Router: 0.2225 | LLM: 0.2225 | Cold: 0.3596 | LLM%: 100.0% | ETA: 29m
+Step   37000/50000 | Router: 0.2224 | LLM: 0.2224 | Cold: 0.3626 | LLM%: 100.0% | ETA: 27m
+Step   38000/50000 | Router: 0.2224 | LLM: 0.2224 | Cold: 0.3651 | LLM%: 100.0% | ETA: 25m
+Step   39000/50000 | Router: 0.2218 | LLM: 0.2218 | Cold: 0.3677 | LLM%: 100.0% | ETA: 23m
+Step   40000/50000 | Router: 0.2222 | LLM: 0.2222 | Cold: 0.3700 | LLM%: 100.0% | ETA: 21m
+Step   41000/50000 | Router: 0.2223 | LLM: 0.2223 | Cold: 0.3718 | LLM%: 100.0% | ETA: 19m
+Step   42000/50000 | Router: 0.2226 | LLM: 0.2226 | Cold: 0.3739 | LLM%: 100.0% | ETA: 17m
+Step   43000/50000 | Router: 0.2227 | LLM: 0.2227 | Cold: 0.3761 | LLM%: 100.0% | ETA: 15m
+Step   44000/50000 | Router: 0.2234 | LLM: 0.2234 | Cold: 0.3785 | LLM%: 100.0% | ETA: 13m
+Step   45000/50000 | Router: 0.2233 | LLM: 0.2233 | Cold: 0.3803 | LLM%: 100.0% | ETA: 11m
+Step   46000/50000 | Router: 0.2237 | LLM: 0.2237 | Cold: 0.3826 | LLM%: 100.0% | ETA: 9m
+Step   47000/50000 | Router: 0.2232 | LLM: 0.2232 | Cold: 0.3842 | LLM%: 100.0% | ETA: 6m
+Step   48000/50000 | Router: 0.2234 | LLM: 0.2234 | Cold: 0.3861 | LLM%: 100.0% | ETA: 4m
+Step   49000/50000 | Router: 0.2236 | LLM: 0.2236 | Cold: 0.3877 | LLM%: 100.0% | ETA: 2m
+Step   50000/50000 | Router: 0.2239 | LLM: 0.2239 | Cold: 0.3901 | LLM%: 100.0% | ETA: 0m
+==========================================================================================
+FINAL | Router: 0.2239 | LLM: 0.2239 | Cold LinUCB: 0.3901
+LLM routing: 50000/50000 = 100.0%
+Experiment time: 6444s (107.4m)
+Saved: results_algo1_amazon_v3_base_c100.0_pfull.json

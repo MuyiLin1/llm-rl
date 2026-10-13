@@ -1,0 +1,44 @@
+Device: mps
+
+======================================================================
+STEP 1: Loading v3 dataset
+======================================================================
+Loading dataset: mydataset.0.v3.pickle.gz
+Dataset: 1186239 samples
+Entities: 13330
+
+======================================================================
+STEP 2: Generating Qwen-large predictions for 50000 experiment samples
+  (only 4.2% of full dataset)
+======================================================================
+  Subset: 50000 samples
+Loading Qwen/Qwen2.5-7B-Instruct with HuggingFace...
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:05,  1.84s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:09,  4.50s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.51s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  4.55s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  4.33s/it]
+/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:515: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:520: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:537: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+  [       4/50000] (0.0%) | 7s elapsed | ETA 49996s
+Traceback (most recent call last):
+  File "/Users/linmuyi/code/DMwithLLM/amazoncat13k/run_qwen_experiment.py", line 407, in <module>
+    main()
+  File "/Users/linmuyi/code/DMwithLLM/amazoncat13k/run_qwen_experiment.py", line 183, in main
+    predictions = generate_v3_predictions_hf(subset, llm_type, device,
+  File "/Users/linmuyi/code/DMwithLLM/amazoncat13k/cache_llm_predictions_amazon.py", line 254, in generate_v3_predictions_hf
+    output_ids = model.generate(
+  File "/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/transformers/generation/utils.py", line 1758, in generate
+    result = self._sample(
+  File "/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/transformers/generation/utils.py", line 2397, in _sample
+    outputs = self(
+  File "/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/linmuyi/miniconda3/envs/dmwithllm/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1163, in forward
+    logits = logits.float()
+RuntimeError: MPS backend out of memory (MPS allocated: 43.18 GB, other allocations: 23.80 MB, max allowed: 47.74 GB). Tried to allocate 10.03 GB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).
