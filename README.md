@@ -20,12 +20,6 @@ export/
 ├── repo/                      the working tree, same paths as the repo, data files removed
 ├── _from_git_head/            files committed in git but deleted from the working tree
 │   └── oneshotwikilinks/      the original (upstream) WikiLinks scripts, see section 6
-└── _meta/
-    ├── DATA_MANIFEST.tsv      every left-out data file: path, bytes, arrays inside (npz/npy)
-    ├── FILES_INCLUDED.tsv     every file copied into repo/: path, bytes
-    ├── git_log.txt            full commit history with file stats
-    ├── git_status.txt         tracked files changed since the last commit
-    └── git_uncommitted_changes.diff   uncommitted edits to amazoncat13k/*.py
 ```
 
 What goes into `repo/`: every file **except** `.gz .npz .npy .pkl .pickle .zip`, files over 50 MB
